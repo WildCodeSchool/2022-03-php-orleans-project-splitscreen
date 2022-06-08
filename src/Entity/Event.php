@@ -18,10 +18,10 @@ class Event
     #[ORM\Column(type: 'string', length: 255)]
     private string $title;
 
-    #[ORM\Column(type: 'datetime')]
+    #[ORM\Column(type: 'datetime', nullable:true)]
     private \DateTimeInterface $date;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable:true)]
     private string $images;
 
     #[ORM\Column(type: 'text')]
