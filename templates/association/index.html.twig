@@ -4,28 +4,68 @@
 {% endblock %}
 
 {% block body %}
-	
+	<header>
+		<div>
+			<h1>{{titre}}</h1>
+		</div>
+	</header>
+	<div class="d-flex justify-content-center">
+		<h3>
+			L'Art de jouer ?
+		</h3>
+	</div>
+	<div class="d-flex justify-content-center mb-5">
+		<p>
+			Gaming Events - Tournaments - Expo - Ateliers - Conférences
+		</p>
 
-	<div class="example-wrapper">
+	</div>
+
+	<div class="d-flex justify-content-center">
 		<h2>
 			Qui Sommes Nous ?
 		</h2>
+	</div>
+	<div class="container w-50">
+
 		<p>
 			L'association Split Screen une association loi 1901 basée à Orléans, dont l'objet est de promouvoir et développer la culture vidéoludique.
 		</p>
 		<p>Fondée en 2019, l'association souhaite permettre aux joueurs et fans de jeux vidéo de se retrouver afin de vivre leur passion commune, tout en partageant la culture et l’histoire dujeu vidéo au grand public.
 		</p>
-		<h3>
-			Fédérer
-		</h3>
-		<p>
-			Réunir les joueurs et communautés de joueurs dispersés sur tout le territoireorléanais grâce à des événements etmanifestations organisées tout au long del'année
-		</p>
-		<h3>
-			Promouvoir
-		</h3>
-		<p>
-			Promouvoir la culture vidéo ludique auprès du grand public via la création d’ateliers, de conférences ou d'expositions.
-		</p>
 	</div>
+
+	<section class="container d-flex flex-column align-items-center">
+
+
+		<div class="row container flex-row justify-content-center align-items-center  mx-auto">
+			<img src="{{ asset('build/images/mannettes.jpg') }}" class="col-lg-6 my-4" alt="Gaming Photo"/>
+			<div class="col-lg-6">
+				<div class="card-body">
+					<h2 class="card-title">Fédérer</h2>
+					<p class="card-text">
+						Réunir les joueurs et communautés de joueurs dispersés sur tout le territoireorléanais grâce à des événements etmanifestations organisées tout au long del'année
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<section class="history d-flex flex-column align-items-center">
+
+
+		<div class="row container flex-row justify-content-center align-items-center mx-auto">
+			<div class="col-lg-6">
+				<div class="card-body">
+					<h2 class="card-title">Promouvoir</h2>
+					<p class="card-text">
+						Promouvoir la culture vidéo ludique auprès du grand public via la création d’ateliers, de conférences ou d'expositions.
+					</p>
+				</div>
+			</div>
+			<img src="{{ asset('build/images/mannettes2.jpg') }}" class="col-lg-6 my-4" alt="Gaming Photo"/>
+
+		</div>
+	</section>
 {% endblock %}

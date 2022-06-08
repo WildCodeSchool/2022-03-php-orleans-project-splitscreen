@@ -13,6 +13,7 @@ class AssociationController extends AbstractController
     {
         return $this->render('association/index.html.twig', [
             'controller_name' => 'AssociationController',
+            'titre' => 'L\'Association',
         ]);
     }
 }
