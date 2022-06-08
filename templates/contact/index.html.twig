@@ -1,13 +1,26 @@
 {% form_theme form 'bootstrap_5_layout.html.twig' %}
 {% extends 'base.html.twig' %}
 
-{% block title %}Contact{% endblock %}
+{% block title %}Contact
+{% endblock %}
 
 {% block body %}
-    {{ form(form) }}
-            {% for message in app.flashes('success') %}
-            <div class="alert alert-success">
-                {{ message }}
-            </div>
-        {% endfor %}
+	<h3 class="text-center">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</h3>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<img src="{{ asset('build/images/img_contact.jpg') }}" alt="stick arcade" class="w-100">
+			</div>
+			<div
+				class="col-lg-6 align-self-center">
+				{{ form(form) }}
+				{% for message in app.flashes('success') %}
+					<div class="alert alert-success">
+						{{ message }}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 {% endblock %}
