@@ -14,25 +14,4 @@ h2 {
     position: relative;
     padding: 10px;
   }
-  
-  .box:before,
-  .box:after {
-    height: 14px;
-    width: 14px;
-    position: absolute;
-    content: '';
-  }
-  
-  .box:before {
-    right: 0;
-    top: 0;
-    border-right: 3px solid #9b59b6;
-    border-top: 3px solid #9b59b6;
-  }
-  
-  .box:after {
-    left: 0;
-    bottom: 0;
-    border-left: 3px solid black;
-    border-bottom: 3px solid black;
-  }
+ 
