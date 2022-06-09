@@ -1,26 +1,77 @@
 {% form_theme form 'bootstrap_5_layout.html.twig' %}
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ title }}
+{% block title %}
+	{{ title }}
 {% endblock %}
 
 {% block body %}
-	<h3 class="text-center">"Nous sommes à votre écoute"</h3>
+	<h2 class="text-center py-5">"Nous sommes à votre écoute"</h2>
 
-	<div class="container">
+	<div class="container mb-5">
 		<div class="row">
 			<div class="col-lg-6">
 				<img src="{{ asset('build/images/img_contact.jpg') }}" alt="stick arcade" class="w-100">
 			</div>
-			<div
-				class="col-lg-6 align-self-center">
+			<div class="col-lg-6 align-self-center">
 				{{ form(form) }}
-				{% for message in app.flashes('success') %}
-					<div class="alert alert-success">
-						{{ message }}
-					</div>
-				{% endfor %}
+					{% for message in app.flashes('success') %}
+						<div class="alert alert-success">
+							{{ message }}
+						</div>
+					{% endfor %}
+				</div>
 			</div>
 		</div>
-	</div>
-{% endblock %}
+
+		<h2 class="text-center py-5">Nos réseaux sociaux</h2>
+
+		<div class="container mb-5">
+			<div class="row">
+				<div class="col-lg-6 align-self-center">
+					<table class="table text-center display-6">
+						<tbody>
+							<tr>
+								<td>Facebook</td>
+								<td class="text-start">
+									<a href="" class="link-secondary">
+										<i class="bi bi-facebook"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Instagram</td>
+								<td class="text-start">
+									<a href="" class="link-secondary">
+										<i class="bi bi-instagram"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Discord</td>
+								<td class="text-start">
+									<a href="" class="link-secondary">
+										<i class="bi bi-discord"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Twitch</td>
+								<td class="text-start">
+									<a href="" class="link-secondary">
+										<i class="bi bi-twitch"></i>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+				<div class="col-lg-6">
+					<img src="{{ asset('build/images/rs_contact.jpg') }}" alt="réseaux sociaux" class="w-100">
+				</div>
+			</div>
+		</div>
+
+
+	{% endblock %}
