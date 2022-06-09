@@ -16,16 +16,17 @@
 	<main>
 		<div class="p-2">
 			<h3 class="border-bottom border-2 border-secondary pb-2">Nos Évènements</h3>
-			
+
 		</div>
-		<div>
-			{% for event in events %}
-				<img src="{{ asset('build/images/' ~ event.image) }}" alt="">
-				-
-				{{ event.title }}
-				-
-				{{ event.description }}
-			{% endfor %}
+		{% for event in events %}
+		<div class="card" style="width: 18rem;">
+			<img src="{{ asset('build/images/' ~ event.image) }}" alt="" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title text-center">{{ event.title }}</h5>
+				<p class="card-text text-center">{{ event.description }}</p>
+				<a href="#" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
+			</div>
+		{% endfor %}	
 		</div>
 	</main>
 
