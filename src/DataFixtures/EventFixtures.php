@@ -12,7 +12,8 @@ class EventFixtures extends Fixture
     {
         $event = new Event();
         $event->setTitle('Max effect');
-        $event->setDescription('Premier tournois de l\'association');
+        $event->setImage('clash-royale-esport.jpg');
+        $event->setDescription('Premier tournoi de l\'association');
         $manager->persist($event);
         $manager->flush();
     }

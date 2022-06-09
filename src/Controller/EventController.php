@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[Route('/evenement', name: 'event_')]
 class EventController extends AbstractController
 {
-    #[Route('/', name: 'app_index')]
+    #[Route('/', name: 'index')]
     public function index(EventRepository $eventRepository): Response
     {
         $events = $eventRepository->findAll();

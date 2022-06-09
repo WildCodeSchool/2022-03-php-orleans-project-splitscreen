@@ -19,10 +19,11 @@ class Event
     private string $title;
 
     #[ORM\Column(type: 'datetime', nullable:true)]
+
     private \DateTimeInterface $date;
 
     #[ORM\Column(type: 'string', length: 255, nullable:true)]
-    private string $images;
+    private string $image;
 
     #[ORM\Column(type: 'text')]
     private string $description;
@@ -56,14 +57,14 @@ class Event
         return $this;
     }
 
-    public function getImages(): ?string
+    public function getImage(): ?string
     {
-        return $this->images;
+        return $this->image;
     }
 
-    public function setImages(string $images): self
+    public function setImage(string $image): self
     {
-        $this->images = $images;
+        $this->image = $image;
 
         return $this;
     }
