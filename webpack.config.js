@@ -32,7 +32,6 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
-    .addStyleEntry('association', './assets/styles/association.scss')
 
     
 
