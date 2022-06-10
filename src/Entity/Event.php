@@ -5,6 +5,7 @@ namespace App\Entity;
 use DateTime;
 use DateTimeInterface;
 use App\Repository\EventRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
@@ -27,6 +28,11 @@ class Event
 
     #[ORM\Column(type: 'text')]
     private string $description;
+
+    public function __construct()
+    {
+        $this->date = new DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
