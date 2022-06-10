@@ -3,12 +3,13 @@
 {% block stylesheets %}
 	{{ encore_entry_link_tags('association') }}
 {% endblock %}
-{% block title %}Split Screen{% endblock %}
+{% block title %}Split Screen
+{% endblock %}
 
 {% block body %}
 	<header>
 		<div>
-			<h1>{{titre}}</h1>
+			<h1>{{titile}}</h1>
 		</div>
 	</header>
 	<main class="container d-flex justify-content-center flex-column">
@@ -35,19 +36,15 @@
 		</section>
 
 		<section class="row align-items-center">
-			
-				<div class="col-lg-6">
-					<div class="card-body">
-						<h2 class="card-title text-secondary">Promouvoir</h2>
-						<p class="card-text">
-							Promouvoir la culture vidéo ludique auprès du grand public via la création d’ateliers, de conférences ou d'expositions.
-						</p>
-					</div>
+			<div class="col-lg-6">
+				<div class="card-body">
+					<h2 class="card-title text-secondary">Promouvoir</h2>
+					<p class="card-text">
+						Promouvoir la culture vidéo ludique auprès du grand public via la création d’ateliers, de conférences ou d'expositions.
+					</p>
 				</div>
-				<img src="{{ asset('build/images/mannettes2.jpg') }}" class="col-lg-6 my-4" alt="Gaming Photo"/>
-
-
 			</div>
+			<img src="{{ asset('build/images/mannettes2.jpg') }}" class="col-lg-6 my-4" alt="Gaming Photo"/>
 		</section>
 	</main>
 {% endblock %}
