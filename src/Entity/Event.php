@@ -20,7 +20,6 @@ class Event
     private string $title;
 
     #[ORM\Column(type: 'datetime', nullable:true)]
-
     private \DateTimeInterface $date;
 
     #[ORM\Column(type: 'string', length: 255, nullable:true)]

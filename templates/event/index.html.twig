@@ -3,7 +3,7 @@
 	{{ encore_entry_link_tags('event') }}
 {% endblock %}
 
-{% block title %}Event index
+{% block title %}Évènements
 {% endblock %}
 
 {% block body %}
@@ -20,8 +20,8 @@
 		<div class="row">
 			{% for event in events %}
 				<div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
-					<div class="card m-2" style="width: 18rem;">
-						<img src="{{ asset('build/images/' ~ event.image) }}" alt="" class="card-img-top" alt="...">
+					<div class="card m-2" >
+						<img src="{{ asset('build/images/' ~ event.image) }}" alt="photographie mise en avant" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title text-center">{{ event.title }}</h5>
 							<p class="text-center">

@@ -9,11 +9,12 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class EventFixtures extends Fixture
 {
+    public const VALUE = 6;
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create();
 
-        for ($i = 0; $i < 6; $i++) {
+        for ($i = 0; $i < self::VALUE; $i++) {
             $event = new Event();
             $event->setTitle($faker->word());
             $event->setImage('clash-royale-esport-min.jpg');
