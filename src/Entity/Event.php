@@ -19,15 +19,22 @@ class Event
     #[ORM\Column(type: 'string', length: 255)]
     private string $title;
 
-    #[ORM\Column(type: 'datetime', nullable:true)]
+    #[ORM\Column(type: 'datetime', nullable: true)]
 
     private \DateTimeInterface $date;
 
-    #[ORM\Column(type: 'string', length: 255, nullable:true)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private string $image;
 
     #[ORM\Column(type: 'text')]
+    private string $resume;
+
+    #[ORM\Column(type: 'text')]
     private string $description;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private string $slug;
+
 
     public function __construct()
     {
@@ -75,6 +82,19 @@ class Event
         return $this;
     }
 
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(string $resume): self
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
     public function getDescription(): ?string
     {
         return $this->description;
@@ -83,6 +103,18 @@ class Event
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

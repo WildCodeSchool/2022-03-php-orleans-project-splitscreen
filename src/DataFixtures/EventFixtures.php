@@ -17,7 +17,8 @@ class EventFixtures extends Fixture
             $event = new Event();
             $event->setTitle($faker->word());
             $event->setImage('clash-royale-esport-min.jpg');
-            $event->setDescription($faker->sentence(5));
+            $event->setResume($faker->sentence(5));
+            $event->setDescription($faker->sentence(28));
             $manager->persist($event);
         }
         $manager->flush();
