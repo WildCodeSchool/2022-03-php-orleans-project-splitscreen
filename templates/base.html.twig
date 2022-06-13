@@ -14,6 +14,12 @@
 		{% block javascripts %}{% endblock %}
 	</head>
 	<body>
+		<header>
+			{% block header %}
+				{% include '_navbar.html.twig' %}
+				{% include '_headerImg.html.twig' %}
+			{% endblock %}
+		</header>
 		{% block body %}{% endblock %}
 		{% block footer%}
 			{% include '_footer.html.twig' %}
