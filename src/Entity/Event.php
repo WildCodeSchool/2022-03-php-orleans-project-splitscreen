@@ -7,6 +7,7 @@ use DateTimeInterface;
 use App\Repository\EventRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
 class Event
@@ -16,16 +17,27 @@ class Event
     #[ORM\Column(type: 'integer')]
     private int $id;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 80)]
+    #[Assert\NotBlank(message: 'Ne me laisse pas tout vide')]
+    #[Assert\Length(
+        max: 80,
+        maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères'
+    )]
     private string $title;
 
-    #[ORM\Column(type: 'datetime', nullable:true)]
+    #[ORM\Column(type: 'datetime')]
     private \DateTimeInterface $date;
 
-    #[ORM\Column(type: 'string', length: 255, nullable:true)]
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: 'Ne me laisse pas tout vide')]
     private string $image;
 
-    #[ORM\Column(type: 'text')]
+    #[ORM\Column(type: 'text', length: 25000)]
+    #[Assert\NotBlank(message: 'Ne me laisse pas tout vide')]
+    #[Assert\Length(
+        max: 25000,
+        maxMessage: 'Le text ne doit pas dépasser {{ limit }} caractères'
+    )]
     private string $description;
 
     public function __construct()
