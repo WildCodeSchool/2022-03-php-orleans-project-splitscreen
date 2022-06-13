@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('event') }}
+{% endblock %}
+
+{% block title %}Évènements
+{% endblock %}
+
+{% block body %}
+	<div>
+		<h1>{{title}}</h1>
+	</div>
+	<section>
+		<h2 class="text-center p-2">Se tenir informé pour mieux jouer !</h2>
+	</section>
+	<main class="container">
+		<div class="p-2">
+			<h3 class="border-bottom border-2 border-secondary pb-2">Nos Évènements</h3>
+		</div>
+		<div class="row">
+			{% for event in events %}
+				<div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+					<div class="card m-2" >
+						<img src="{{ asset('build/images/' ~ event.image) }}" alt="photographie mise en avant" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title text-center">{{ event.title }}</h5>
+							<p class="text-center">
+								{{ event.date| date }}
+							</p>
+							<p class="card-text text-center">{{ event.description }}</p>
+							<a href="#" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</main>
+
+{% endblock %}
