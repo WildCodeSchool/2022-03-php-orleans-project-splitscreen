@@ -6,9 +6,12 @@
 {% endblock %}
 
 {% block body %}
+	{% include '_header.html.twig' with {'title': 'Accueil'} %}
+
 	<h1>
 		<span class="text-primary">Split</span>
 		<span class="text-secondary">Screen</span>
 	</h1>
-	<p><i class="bi bi-arrow-down-circle-fill"></i>Bienvenue sur le site</p>
+	<p>
+		<i class="bi bi-arrow-down-circle-fill"></i>Bienvenue sur le site</p>
 {% endblock %}
