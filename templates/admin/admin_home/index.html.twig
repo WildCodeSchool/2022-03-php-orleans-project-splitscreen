@@ -1,9 +1,12 @@
 {% extends 'admin/baseAdmin.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}
+	{{parent()}}
+	| Home
+{% endblock %}
 
 {% block body %}
 
-<h2 class="text-center">Welcome to your gaming editing</h2>
+	<h2 class="text-center">Welcome to your gaming editing</h2>
 
 {% endblock %}
