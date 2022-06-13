@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/event')]
+#[Route('/admin/evenements')]
 class AdminEventController extends AbstractController
 {
     #[Route('/', name: 'app_admin_event_index', methods: ['GET'])]
