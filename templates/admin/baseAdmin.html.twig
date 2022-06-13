@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Admin{% endblock %}
+{% block title %}
+	{{parent()}} | Home
+{% endblock %}
 
-{% block header %}{% include 'admin/_navbarAdmin.html.twig' %} 
+{% block header %}
+	{% include 'admin/_navbarAdmin.html.twig' %}
 {% endblock %}
