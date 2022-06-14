@@ -1,0 +1,14 @@
+.navgradiant {
+    background: rgb(23, 23, 23);
+    background: linear-gradient(
+        -45deg,
+        rgba(23, 23, 23, 1) 32%,
+        rgba(0, 0, 0, 1) 45%,
+        rgba(255, 255, 255, 1) 45%,
+        rgba(255, 255, 255, 1) 60%
+    );
+}
+
+.mix {
+    mix-blend-mode: difference;
+}
