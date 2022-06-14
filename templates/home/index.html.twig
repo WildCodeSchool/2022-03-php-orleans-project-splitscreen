@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+	{{ encore_entry_link_tags('home') }}
+{% endblock %}
+
 {% block title %}
 	{{ parent() }}
 	| Accueil
@@ -7,11 +11,25 @@
 
 {% block body %}
 	{% include '_header.html.twig' with {'title': 'Accueil'} %}
+	<h1 class="text-center mt-5">L’Art de jouer</h1>
+	<h2 class="text-center">Events Gaming - Tournois - Expo - Ateliers - Conférences</h2>
 
-	<h1>
-		<span class="text-primary">Split</span>
-		<span class="text-secondary">Screen</span>
-	</h1>
-	<p>
-		<i class="bi bi-arrow-down-circle-fill"></i>Bienvenue sur le site</p>
+	<div class="w-100 controller-img my-5 text-center">
+		<a href="https://www.helloasso.com/associations/split-screen" target="blank"><button type="button" class="btn btn-secondary btn-lg my-4">Nous rejoindre</button></a><img class="w-25" src="{{ asset('build/images/Helloasso-logo.png') }}" alt=""></div>
+
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col">
+				<h2 class="border-bottom border-2 border-secondary pb-2 text-primary">Nos Évènements</h2>
+			</div>
+			<div class="col">
+				<h2 class="border-bottom border-2 border-secondary pb-2 text-primary">Dernières actus</h2>
+			</div>
+		</div>
+		<div class="row">
+		{% for event in events %}
+			{{event.title}}
+		{% endfor %}
+		</div>
+	</div>
 {% endblock %}
