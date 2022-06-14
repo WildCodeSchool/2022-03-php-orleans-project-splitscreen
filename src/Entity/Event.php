@@ -18,7 +18,7 @@ class Event
     private int $id;
 
     #[ORM\Column(type: 'string', length: 80)]
-    #[Assert\NotBlank(message: 'Ne me laisse pas tout vide')]
+    #[Assert\NotBlank(message: 'Ce champ ne devra pas etre vide!')]
     #[Assert\Length(
         max: 80,
         maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères'
@@ -29,11 +29,11 @@ class Event
     private \DateTimeInterface $date;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank(message: 'Ne me laisse pas tout vide')]
+    #[Assert\NotBlank(message: 'Ce champ ne devra pas etre vide!')]
     private string $image;
 
     #[ORM\Column(type: 'text', length: 25000)]
-    #[Assert\NotBlank(message: 'Ne me laisse pas tout vide')]
+    #[Assert\NotBlank(message: 'Ce champ ne devra pas etre vide!')]
     #[Assert\Length(
         max: 25000,
         maxMessage: 'Le text ne doit pas dépasser {{ limit }} caractères'
