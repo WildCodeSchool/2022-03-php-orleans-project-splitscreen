@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AssociationController extends AbstractController
 {
-    #[Route('/association', name: 'association')]
+    #[Route('/association', name: 'association_index')]
     public function index(): Response
     {
         return $this->render('association/index.html.twig', [

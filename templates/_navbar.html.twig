@@ -9,19 +9,19 @@
 		<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 			<ul class="navbar-nav mb-2 mb-lg-0 d-flex gap-3 align-items-end">
 				<li class="nav-item">
-					<a class="nav-link text-light" aria-current="page" href="/">Accueil</a>
+					<a class="nav-link text-light" aria-current="page" href="{{ path('home_index') }}"> Accueil </a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="#">Association</a>
+					<a class="nav-link text-light" href="{{ path('association_index') }}"> Association </a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="#">Calendrier</a>
+					<a class="nav-link text-light" href="{{ path('event_index') }}"> Evénements </a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="#">Actu</a>
+					<a class="nav-link text-light" href="#"> Actus </a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="#">Contact</a>
+					<a class="nav-link text-light" href="{{ path('contact_index') }}"> Contact </a>
 				</li>
 			</ul>
 		</div>
