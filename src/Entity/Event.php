@@ -4,9 +4,12 @@ namespace App\Entity;
 
 use DateTime;
 use DateTimeInterface;
-use App\Repository\EventRepository;
 use DateTimeImmutable;
+use App\Entity\Picture;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\EventRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
 class Event
@@ -35,10 +38,13 @@ class Event
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private string $slug;
 
+    #[ORM\OneToMany(targetEntity: Picture::class, mappedBy: 'event')]
+    private Collection $pictures;
 
     public function __construct()
     {
         $this->date = new DateTimeImmutable();
+        $this->pictures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -115,6 +121,36 @@ class Event
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Picture>
+     */
+    public function getPictures(): Collection
+    {
+        return $this->pictures;
+    }
+
+    public function addPicture(Picture $picture): self
+    {
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures[] = $picture;
+            $picture->setEvent($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Picture $picture): self
+    {
+        if ($this->pictures->removeElement($picture)) {
+            // set the owning side to null (unless already changed)
+            if ($picture->getEvent() === $this) {
+                $picture->setEvent(null);
+            }
+        }
 
         return $this;
     }
