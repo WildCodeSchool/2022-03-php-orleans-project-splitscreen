@@ -28,11 +28,6 @@ class Event
     #[ORM\Column(type: 'text')]
     private string $description;
 
-    public function __construct()
-    {
-        $this->date = new DateTimeImmutable();
-    }
-
     public function getId(): ?int
     {
         return $this->id;
