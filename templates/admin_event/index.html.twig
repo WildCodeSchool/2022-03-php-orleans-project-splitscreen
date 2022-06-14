@@ -3,13 +3,13 @@
 {% block title %}Event index{% endblock %}
 
 {% block body %}
-    <h1>Event index</h1>
+    <h1>Événements</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>
+                <th>Titre</th>
                 <th>Date</th>
                 <th>Image</th>
                 <th>Description</th>
@@ -25,8 +25,8 @@
                 <td>{{ event.image }}</td>
                 <td>{{ event.description }}</td>
                 <td>
-                    <a href="{{ path('app_admin_event_show', {'id': event.id}) }}">show</a>
-                    <a href="{{ path('app_admin_event_edit', {'id': event.id}) }}">edit</a>
+                    <a href="{{ path('app_admin_event_show', {'id': event.id}) }}">Details</a>
+                    <a href="{{ path('app_admin_event_edit', {'id': event.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
