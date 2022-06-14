@@ -11,25 +11,44 @@
 
 {% block body %}
 	{% include '_header.html.twig' with {'title': 'Accueil'} %}
-	<h1 class="text-center mt-5">L’Art de jouer</h1>
+	<h1 class="text-center mt-5">Split Screen : l’art de jouer</h1>
 	<h2 class="text-center">Events Gaming - Tournois - Expo - Ateliers - Conférences</h2>
 
 	<div class="w-100 controller-img my-5 text-center">
-		<a href="https://www.helloasso.com/associations/split-screen" target="blank"><button type="button" class="btn btn-secondary btn-lg my-4">Nous rejoindre</button></a><img class="w-25" src="{{ asset('build/images/Helloasso-logo.png') }}" alt=""></div>
+		<a href="https://www.helloasso.com/associations/split-screen" target="blank">
+			<button type="button" class="btn btn-secondary btn-lg my-4">Nous rejoindre</button>
+		</a><img class="w-25" src="{{ asset('build/images/Helloasso-logo.png') }}" alt=""></div>
 
-	<div class="container mt-5">
+	<div class="container my-5">
 		<div class="row">
-			<div class="col">
+			<div class="col mb-5">
 				<h2 class="border-bottom border-2 border-secondary pb-2 text-primary">Nos Évènements</h2>
 			</div>
-			<div class="col">
+			<div class="col mb-5">
 				<h2 class="border-bottom border-2 border-secondary pb-2 text-primary">Dernières actus</h2>
 			</div>
 		</div>
-		<div class="row">
+
 		{% for event in events %}
-			{{event.title}}
+			<div class="row py-2">
+				<div class="col me-5">
+					<div class="card m-2">
+						<img src="{{ asset('build/images/' ~ event.image) }}" alt="photographie mise en avant" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title text-center">{{ event.title }}</h5>
+							<p class="text-center">
+								{{ event.date| date }}
+							</p>
+							<p class="card-text text-center">{{ event.description }}</p>
+							<a href="#" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
+						</div>
+					</div>
+				</div>
+				{# ceci est un exemple car les actu n'existe pas encore merci d'etre compréhensif :) #}
+				<div class="col">
+					<h1>actus récentes</h1>
+				</div>
+			</div>
 		{% endfor %}
-		</div>
 	</div>
 {% endblock %}
