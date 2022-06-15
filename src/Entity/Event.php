@@ -26,7 +26,7 @@ class Event
     private string $image;
 
     #[ORM\Column(type: 'text')]
-    private string $resume;
+    private string $catchPhrase;
 
     #[ORM\Column(type: 'text')]
     private string $description;
@@ -77,14 +77,14 @@ class Event
         return $this;
     }
 
-    public function getResume(): ?string
+    public function getCatchPhrase(): ?string
     {
-        return $this->resume;
+        return $this->catchPhrase;
     }
 
-    public function setResume(string $resume): self
+    public function setCatchPhrase(string $catchPhrase): self
     {
-        $this->resume = $resume;
+        $this->catchPhrase = $catchPhrase;
 
         return $this;
     }
