@@ -20,7 +20,7 @@
 		<div class="row">
 			{% for event in events %}
 				<div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
-					<div class="card m-2" >
+					<div class="card m-2">
 						<img src="{{ asset('build/images/' ~ event.image) }}" alt="photographie mise en avant" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title text-center">{{ event.title }}</h5>
@@ -34,6 +34,19 @@
 				</div>
 			{% endfor %}
 		</div>
+		<section class="EventType">
+			<div>
+				<h1>Tournois</h1>
+				<img src="{{ asset('build/images/Tournois1.jpg')}}" class="rounded" height="100" width="100" alt="Image tournois">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ducimus sapiente deleniti dolores sit harum necessitatibus eaque mollitia, nemo, dolore, neque sint repellat quia explicabo? Perferendis totam vel vero reiciendis.</p>
+				<h1>Table Ronde</h1>
+				<img src="{{ asset('build/images/TablesRondes.jpg')}}" class="rounded" height="100" width="100" alt="Image table ronde">
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, aut culpa! Ullam ad culpa, expedita possimus sed, nesciunt eum deserunt consectetur excepturi autem molestiae ipsa sit exercitationem. Magni, ut neque!</p>
+				<h1>Atelier</h1>
+				<img src="{{ asset('build/images/Atelier.jpg')}}" class="rounded" height="100" width="100" alt="Image tournois">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti necessitatibus velit doloribus doloremque architecto temporibus ipsum consequuntur at corporis reiciendis excepturi repudiandae, nobis impedit. Molestiae iusto maxime perspiciatis voluptas culpa.</p>
+			</div>
+		</section>
 	</main>
 
 {% endblock %}
