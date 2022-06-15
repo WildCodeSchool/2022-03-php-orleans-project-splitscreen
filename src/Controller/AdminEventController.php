@@ -10,10 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/evenements')]
+#[Route('/admin/evenements', name: 'admin_event_')]
 class AdminEventController extends AbstractController
 {
-    #[Route('/', name: 'app_admin_event_index', methods: ['GET'])]
+    #[Route('/', name: 'index', methods: ['GET'])]
     public function index(EventRepository $eventRepository): Response
     {
         return $this->render('admin_event/index.html.twig', [
@@ -21,7 +21,7 @@ class AdminEventController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_admin_event_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
     public function new(Request $request, EventRepository $eventRepository): Response
     {
         $event = new Event();
@@ -31,7 +31,7 @@ class AdminEventController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $eventRepository->add($event, true);
 
-            return $this->redirectToRoute('app_admin_event_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_event_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('admin_event/new.html.twig', [
@@ -40,7 +40,7 @@ class AdminEventController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_admin_event_show', methods: ['GET'])]
+    #[Route('/{id}', name: 'show', methods: ['GET'])]
     public function show(Event $event): Response
     {
         return $this->render('admin_event/show.html.twig', [
@@ -48,7 +48,7 @@ class AdminEventController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_admin_event_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Event $event, EventRepository $eventRepository): Response
     {
         $form = $this->createForm(EventType::class, $event);
@@ -57,7 +57,7 @@ class AdminEventController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $eventRepository->add($event, true);
 
-            return $this->redirectToRoute('app_admin_event_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_event_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('admin_event/edit.html.twig', [
@@ -66,13 +66,13 @@ class AdminEventController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_admin_event_delete', methods: ['POST'])]
+    #[Route('/{id}', name: 'delete', methods: ['POST'])]
     public function delete(Request $request, Event $event, EventRepository $eventRepository): Response
     {
         if ($this->isCsrfTokenValid('delete' . $event->getId(), $request->request->get('_token'))) {
             $eventRepository->remove($event, true);
         }
 
-        return $this->redirectToRoute('app_admin_event_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_event_index', [], Response::HTTP_SEE_OTHER);
     }
 }

@@ -25,8 +25,8 @@
                 <td>{{ event.image }}</td>
                 <td>{{ event.description }}</td>
                 <td>
-                    <a href="{{ path('app_admin_event_show', {'id': event.id}) }}">Details</a>
-                    <a href="{{ path('app_admin_event_edit', {'id': event.id}) }}">Modifier</a>
+                    <a href="{{ path('admin_event_show', {'id': event.id}) }}">Details</a>
+                    <a href="{{ path('admin_event_edit', {'id': event.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_event_new') }}">Create new</a>
+    <a href="{{ path('admin_event_new') }}">Create new</a>
 {% endblock %}

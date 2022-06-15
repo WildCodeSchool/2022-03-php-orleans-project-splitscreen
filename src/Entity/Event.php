@@ -18,7 +18,7 @@ class Event
     private int $id;
 
     #[ORM\Column(type: 'string', length: 80)]
-    #[Assert\NotBlank(message: 'Ce champ ne devra pas etre vide!')]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas etre vide')]
     #[Assert\Length(
         max: 80,
         maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères'
