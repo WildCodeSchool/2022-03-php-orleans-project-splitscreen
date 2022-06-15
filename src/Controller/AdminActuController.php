@@ -21,7 +21,7 @@ class AdminActuController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
+    #[Route('/ajout', name: 'new', methods: ['GET', 'POST'])]
     public function new(Request $request, ActuRepository $actuRepository): Response
     {
         $actu = new Actu();

@@ -8,11 +8,11 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <th>Image</th>
                 <th>Description</th>
                 <th>Date</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,17 +23,17 @@
                 <td>{{ actu.description }}</td>
                 <td>{{ actu.date ? actu.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('admin_actu_show', {'id': actu.id}) }}">show</a>
-                    <a href="{{ path('admin_actu_edit', {'id': actu.id}) }}">edit</a>
+                    <a href="{{ path('admin_actu_show', {'id': actu.id}) }}">Afficher</a>
+                    <a href="{{ path('admin_actu_edit', {'id': actu.id}) }}">Éditer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Pas de données trouvées</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('admin_actu_new') }}">Create new</a>
+    <a href="{{ path('admin_actu_new') }}">Nouvelle actu</a>
 {% endblock %}
