@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('event') }}
+{% endblock %}
+
+{% block title %}Event :
+	{{ title }}
+{% endblock %}
+
+{% block body %}
+	<div class="mt-5 ms-5">
+		<a href="{{ path('event_index') }}">
+			<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-left-white" viewbox="0 0 16 16">
+				<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+			</svg>
+		</a>
+	</div>
+	<h1 class="text-center">{{ title }}</h1>
+	<section class="d-flex justify-content-center mb-3">
+		<div class="card mb-3 m-5 w-50">
+			<img src="{{ asset('build/images/' ~ image) }}" class="card-img-top" alt="...">
+			<div class="card-body">
+
+				<p class="card-text">{{ description }}</p>
+				<p class="card-text">
+					<small class="text-muted">{{ date|date }}</small>
+				</p>
+			</div>
+		</div>
+	</section>
+	<section>
+		<h3 class="border-bottom border-2 border-secondary pb-2 m-4">Galerie de l'évènement :
+		</h3>
+		<div class="m-2 col-lg-4 col-md-6 col-sm-12 d-flex ">
+			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
+			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
+			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
+			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
+			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
+			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
+		</div>
+	</section>
+
+{% endblock %}

@@ -20,4 +20,21 @@ class EventController extends AbstractController
             'title' => 'Les Évènements',
         ]);
     }
+
+    #[Route('/{id}', methods: ['GET'], name: 'show')]
+    public function show(int $id, Event $event): Response
+    {
+        $title = $event->getTitle();
+        $image = $event->getImage();
+        $description = $event->getDescription();
+        $date = $event->getDate();
+        return $this->render('event/show.html.twig', [
+            'id' => $id,
+            'title' => $title,
+            'image' => $image,
+            'description' => $description,
+            'date' => $date,
+
+        ]);
+    }
 }
