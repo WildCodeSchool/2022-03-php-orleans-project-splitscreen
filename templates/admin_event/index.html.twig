@@ -8,18 +8,16 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Titre</th>
                 <th>Date</th>
                 <th>Image</th>
                 <th>Description</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for event in events %}
             <tr>
-                <td>{{ event.id }}</td>
                 <td>{{ event.title }}</td>
                 <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ event.image }}</td>
@@ -31,7 +29,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">pas d'événements trouvés</td>
+                <td colspan="6">Pas d'événements trouvés</td>
             </tr>
         {% endfor %}
         </tbody>
