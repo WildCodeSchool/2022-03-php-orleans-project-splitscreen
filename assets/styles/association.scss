@@ -1,6 +1,4 @@
-h1{
-    background-color: #9b59b6;
-}
+@import "variables.scss";
 
 .corners {
     display: inline-block;
@@ -19,16 +17,16 @@ h1{
   .corners:before {
     right: 0;
     top: 0;
-    border-right: 3px solid #460259;
-    border-top: 3px solid #460259;
+    border-right: 3px solid  $primary;
+    border-top: 3px solid  $primary;
   }
   
   .corners:after {
     margin: -18px;
     left: 0;
     bottom: 0;
-    border-left: 3px solid #460259;
-    border-bottom: 3px solid #460259;
+    border-left: 3px solid  $primary;
+    border-bottom: 3px solid  $primary;
   }
 
   .corner {
@@ -50,13 +48,13 @@ h1{
   .corner:before {
     right: 0;
     top: 0;
-    border-right: 3px solid #460259;
-    border-top: 3px solid #460259;
+    border-right: 3px solid  $primary;
+    border-top: 3px solid  $primary;
   }
   
   .corner:after {
     left: 0;
     bottom: 0;
-    border-left: 3px solid #460259;
-    border-bottom: 3px solid #460259;
+    border-left: 3px solid  $primary;
+    border-bottom: 3px solid  $primary;
   }
