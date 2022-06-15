@@ -1,24 +1,28 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %}{% endblock %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('association') }}
+{% endblock %}
 {% block title %}Split Screen
 {% endblock %}
 
 {% block body %}
 	<main class="container d-flex justify-content-center flex-column">
-		<h2 class="text-center text-secondary">
-			Qui sommes-nous ?
-		</h2>
+		<div class="corner mt-5 mb-5">
+			<h2 class="text-center text-secondary">
+				Qui sommes-nous ?
+			</h2>
 
-		<div class="row justify-content-center">
-			<p class="w-50">
-				L'association Split Screen est une association loi 1901 basée à Orléans, dont l'objet est de promouvoir et développer la culture vidéo ludique.<br><br>Fondée en 2019, l'association souhaite permettre aux joueurs et fans de jeux vidéo de se retrouver afin de vivre leur passion commune, tout en partageant la culture et l’histoire du jeu vidéo au grand public.
-			</p>
+			<div class="row justify-content-center">
+				<p class="w-50">
+					L'association Split Screen est une association loi 1901 basée à Orléans, dont l'objet est de promouvoir et développer la culture vidéo ludique.<br><br>Fondée en 2019, l'association souhaite permettre aux joueurs et fans de jeux vidéo de se retrouver afin de vivre leur passion commune, tout en partageant la culture et l’histoire du jeu vidéo au grand public.
+				</p>
+			</div>
 		</div>
 
 		<section class="row align-items-center">
 			<img src="{{ asset('build/images/mannettes.jpg') }}" class="col-lg-6 my-4" alt="Gaming Photo"/>
 			<div class="col-lg-6">
-				<div class="card-body">
+				<div class="corners card-body">
 					<h2 class="card-title text-secondary">Fédérer</h2>
 					<p class="card-text">
 						Réunir les joueurs et communautés de joueurs dispersés sur tout le territoire orléanais grâce à des événements et manifestations organisés tout au long del'année
@@ -29,7 +33,7 @@
 
 		<section class="row align-items-center">
 			<div class="col-lg-6">
-				<div class="card-body">
+				<div class="corners card-body">
 					<h2 class="card-title text-secondary">Promouvoir</h2>
 					<p class="card-text">
 						Promouvoir la culture vidéo ludique auprès du grand public via la création d’ateliers, de conférences ou d'expositions.
