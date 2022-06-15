@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Event;
+use App\Entity\Picture;
 use App\Repository\EventRepository;
+use App\Repository\PictureRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,19 +24,13 @@ class EventController extends AbstractController
     }
 
     #[Route('/{id}', methods: ['GET'], name: 'show')]
-    public function show(int $id, Event $event): Response
+    public function show(Event $id, PictureRepository $pictureRepository): Response
     {
-        $title = $event->getTitle();
-        $image = $event->getImage();
-        $description = $event->getDescription();
-        $date = $event->getDate();
+        $pictures = $pictureRepository->findBy(['event' => $id]);
+
         return $this->render('event/show.html.twig', [
             'id' => $id,
-            'title' => $title,
-            'image' => $image,
-            'description' => $description,
-            'date' => $date,
-
+            'images' => $pictures,
         ]);
     }
 }

@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="mt-5 ms-5">
+	{# <div class="mt-5 ms-5">
 		<a href="{{ path('event_index') }}">
 			<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-left-white" viewbox="0 0 16 16">
 				<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
@@ -27,17 +27,14 @@
 				</p>
 			</div>
 		</div>
-	</section>
+	</section> #}
 	<section>
 		<h3 class="border-bottom border-2 border-secondary pb-2 m-4">Galerie de l'évènement :
 		</h3>
 		<div class="m-2 col-lg-4 col-md-6 col-sm-12 d-flex ">
-			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
-			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
-			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
-			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
-			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
-			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
+			{% for picture in pictures %}
+				<img src="{{ asset('assets/images/uploads/' ~ pictures.nom) }}" alt="">
+			{% endfor %}
 		</div>
 	</section>
 

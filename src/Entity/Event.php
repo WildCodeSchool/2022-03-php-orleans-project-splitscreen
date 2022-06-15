@@ -26,9 +26,6 @@ class Event
 
     private \DateTimeInterface $date;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private string $image;
-
     #[ORM\Column(type: 'text')]
     private string $resume;
 
@@ -75,19 +72,6 @@ class Event
 
         return $this;
     }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
 
     public function getResume(): ?string
     {
