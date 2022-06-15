@@ -21,7 +21,7 @@ class AdminEventController extends AbstractController
         ]);
     }
 
-    #[Route('/nouveau', name: 'nouveau', methods: ['GET', 'POST'])]
+    #[Route('/ajouter', name: 'add', methods: ['GET', 'POST'])]
     public function new(Request $request, EventRepository $eventRepository): Response
     {
         $event = new Event();
@@ -48,7 +48,7 @@ class AdminEventController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/modifier', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Event $event, EventRepository $eventRepository): Response
     {
         $form = $this->createForm(EventType::class, $event);

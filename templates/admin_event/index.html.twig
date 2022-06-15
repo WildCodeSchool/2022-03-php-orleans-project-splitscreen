@@ -11,7 +11,6 @@
                 <th>Titre</th>
                 <th>Date</th>
                 <th>Image</th>
-                <th>Description</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,9 +20,8 @@
                 <td>{{ event.title }}</td>
                 <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ event.image }}</td>
-                <td>{{ event.description }}</td>
                 <td>
-                    <a href="{{ path('admin_event_show', {'id': event.id}) }}">Details</a>
+                    <a href="{{ path('admin_event_show', {'id': event.id}) }}">Détails</a>
                     <a href="{{ path('admin_event_edit', {'id': event.id}) }}">Modifier</a>
                 </td>
             </tr>
@@ -35,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_event_nouveau') }}">Créer</a>
+    <a href="{{ path('admin_event_add') }}">Créer</a>
 {% endblock %}

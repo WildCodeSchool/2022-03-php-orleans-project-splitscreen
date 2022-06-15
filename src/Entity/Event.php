@@ -30,15 +30,11 @@ class Event
     private \DateTimeInterface $date;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank(message: 'Ce champ ne devra pas etre vide!')]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private string $image;
 
-    #[ORM\Column(type: 'text', length: 25000)]
-    #[Assert\NotBlank(message: 'Ce champ ne devra pas etre vide!')]
-    #[Assert\Length(
-        max: 25000,
-        maxMessage: 'Le text ne doit pas dépasser {{ limit }} caractères'
-    )]
+    #[ORM\Column(type: 'text')]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private string $description;
 
     public function __construct()
