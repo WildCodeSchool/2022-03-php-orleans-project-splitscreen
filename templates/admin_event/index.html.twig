@@ -31,11 +31,11 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">pas d'événements trouvés</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('admin_event_new') }}">Create new</a>
+    <a href="{{ path('admin_event_new') }}">Créer</a>
 {% endblock %}
