@@ -22,8 +22,8 @@ security:
             # https://symfony.com/doc/current/security.html#the-firewall
             form_login:
                 # "login" is the name of the route created previously
-                login_path: login
-                check_path: login
+                login_path: connection
+                check_path: connection
                 enable_csrf: true
             logout:
                 path: app_logout

@@ -1,0 +1,13 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Edit Actu{% endblock %}
+
+{% block body %}
+    <h1>Edit Actu</h1>
+
+    {{ include('admin/admin_actu/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_actu_index') }}">back to list</a>
+
+    {{ include('admin/admin_actu/_delete_form.html.twig') }}
+{% endblock %}

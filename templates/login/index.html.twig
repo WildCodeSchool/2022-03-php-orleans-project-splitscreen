@@ -13,12 +13,12 @@
 
 	<h1 class="text-center py-5">Connexion administrateur</h1>
 
-	<form action="{{ path('login') }}" method="post" class="w-50 mx-auto mb-5">
+	<form action="{{ path('connection') }}" method="post" class="w-50 mx-auto mb-5">
 		<label for="username" class="form-label"><i class="bi bi-person-bounding-box"></i> Nom d'utilisateur</label>
 		<input class="form-control mb-3" type="text" id="username" name="_username" value="{{ last_username }}"/>
 		<label for="password" class="form-label"><i class="bi bi-key-fill"></i> Mot de passe</label>
 		<input class="form-control mb-3" type="password" id="password" name="_password"/>
-		<input type="hidden" name="_target_path" value="/admin/home"/>
+		<input type="hidden" name="_target_path" value="{{ path('admin_home') }}"/>
 		<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 		<button type="submit" class="btn btn-primary my-2"><i class="bi bi-arrow-right-square-fill"></i> Connexion</button>
 	</form>

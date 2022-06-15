@@ -1,0 +1,11 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}New Actu{% endblock %}
+
+{% block body %}
+    <h1>Create new Actu</h1>
+
+    {{ include('admin/admin_actu/_form.html.twig') }}
+
+    <a href="{{ path('admin_actu_index') }}">back to list</a>
+{% endblock %}
