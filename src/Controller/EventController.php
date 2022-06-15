@@ -27,12 +27,14 @@ class EventController extends AbstractController
         $title = $event->getTitle();
         $image = $event->getImage();
         $description = $event->getDescription();
+        $resume = $event->getResume();
         $date = $event->getDate();
         return $this->render('event/show.html.twig', [
             'id' => $id,
             'title' => $title,
             'image' => $image,
             'description' => $description,
+            'resume' => $resume,
             'date' => $date,
 
         ]);

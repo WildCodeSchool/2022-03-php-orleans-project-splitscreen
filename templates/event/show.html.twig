@@ -15,30 +15,19 @@
 			</svg>
 		</a>
 	</div>
-	<h1 class="text-center">{{ title }}</h1>
+	<div class="corner d-flex justify-content-center">
+		<h1 class="">{{ title }}</h1>
+	</div>
 	<section class="d-flex justify-content-center mb-3">
-		<div class="card mb-3 m-5 w-50">
+		<div class="mb-3 m-5 w-75">
 			<img src="{{ asset('build/images/' ~ image) }}" class="card-img-top" alt="...">
 			<div class="card-body">
 
-				<p class="card-text">{{ description }}</p>
 				<p class="card-text">
 					<small class="text-muted">{{ date|date }}</small>
 				</p>
+				<p class="card-text">{{ description }}</p>
 			</div>
 		</div>
 	</section>
-	<section>
-		<h3 class="border-bottom border-2 border-secondary pb-2 m-4">Galerie de l'évènement :
-		</h3>
-		<div class="m-2 col-lg-4 col-md-6 col-sm-12 d-flex ">
-			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
-			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
-			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
-			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
-			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
-			<img src="{{ asset('build/images/' ~ image) }}" class="rounded float-start w-50 m-1" alt="...">
-		</div>
-	</section>
-
 {% endblock %}

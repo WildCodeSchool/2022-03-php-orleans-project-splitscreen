@@ -26,6 +26,9 @@ class Event
     private string $image;
 
     #[ORM\Column(type: 'text')]
+    private string $resume;
+
+    #[ORM\Column(type: 'text')]
     private string $description;
 
     public function __construct()
@@ -70,6 +73,18 @@ class Event
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(string $resume): self
+    {
+        $this->resume = $resume;
 
         return $this;
     }

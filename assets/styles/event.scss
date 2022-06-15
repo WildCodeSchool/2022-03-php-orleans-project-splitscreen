@@ -1,3 +1,33 @@
 h3 {
     width: fit-content;
 }
+
+.corner {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+  }
+
+.corner:before,
+.corner:after {
+    margin-left: 35%;
+    margin-right: 35%;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    content: '';
+  }
+
+.corner:before {
+    right: 0;
+    top: 0;
+    border-right: 3px solid #460259;
+    border-top: 3px solid #460259;
+  }
+
+.corner:after {
+    left: 0;
+    bottom: 0;
+    border-left: 3px solid #460259;
+    border-bottom: 3px solid #460259;
+  }
