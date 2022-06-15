@@ -34,54 +34,6 @@
 				</div>
 			{% endfor %}
 		</div>
-		<section class="EventType">
-
-			<h2 class="text-center text-secondary">
-				Nos Différents Evénements
-			</h2>
-
-			<div class="row justify-content-center">
-				<p class="w-50">
-					Blabla
-				</p>
-			</div>
-
-			<section class="row align-items-center">
-				<img src="{{ asset('build/images/Tournois1.jpg') }}" class="col-lg-6 my-4" alt="Tournois"/>
-				<div class="col-lg-6">
-					<div class="card-body">
-						<h2 class="card-title text-secondary">Tournois</h2>
-						<p class="card-text">
-							Blabla
-						</p>
-					</div>
-				</div>
-			</section>
-
-			<section class="row align-items-center">
-				<div class="col-lg-6">
-					<div class="card-body">
-						<h2 class="card-title text-secondary">Tables Rondes</h2>
-						<p class="card-text">
-							Blabla
-						</p>
-					</div>
-				</div>
-				<img src="{{ asset('build/images/TablesRondes.jpg') }}" class="col-lg-6 my-4" alt="Tables Rondes"/>
-			</section>
-
-			<section class="row align-items-center">
-				<img src="{{ asset('build/images/Atelier.jpg') }}" class="col-lg-6 my-4" alt="Atelier"/>
-				<div class="col-lg-6">
-					<div class="card-body">
-						<h2 class="card-title text-secondary">Atelier</h2>
-						<p class="card-text">
-							Blabla
-						</p>
-					</div>
-				</div>
-			</section>
-
-		</section>
+		{% include '/event/_eventType.html.twig' %}
 	</main>
 {% endblock %}
