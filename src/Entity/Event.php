@@ -18,7 +18,7 @@ class Event
     private int $id;
 
     #[ORM\Column(type: 'string', length: 80)]
-    #[Assert\NotBlank(message: 'Ce champ ne peut pas etre vide')]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     #[Assert\Length(
         max: 80,
         maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères'
@@ -26,6 +26,7 @@ class Event
     private string $title;
 
     #[ORM\Column(type: 'datetime')]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private \DateTimeInterface $date;
 
     #[ORM\Column(type: 'string', length: 255)]
