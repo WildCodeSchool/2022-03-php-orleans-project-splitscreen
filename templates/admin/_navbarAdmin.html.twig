@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
 	<div class="container-fluid mx-4">
-		<a class="navbar-brand" href="/">
+		<a class="navbar-brand" href="{{path('home_index')}}">
 			<img src="{{ asset('build/images/LogoSplitScreen.png') }}" class="rounded" alt="Logo Split Screen" width="100" height="50">
 		</a>
 		<button class="navbar-toggler ms-auto me-2 text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,19 +9,20 @@
 		<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 			<ul class="navbar-nav mb-2 mb-lg-0 d-flex gap-3 align-items-end">
 				<li class="nav-item">
-					<a class="nav-link text-light" aria-current="page" href="/">Accueil</a>
+					<a class="nav-link text-light" aria-current="page" href="{{ path('admin_home') }}">Accueil
+					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="#">Association</a>
+					<a class="nav-link text-light" href="#">Événements</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="#">Calendrier</a>
+					<a class="nav-link text-light" href="#">Actualités</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="#">Actu</a>
+					<a class="nav-link text-light" href="#">Membres</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="#">Contact</a>
+					<a class="nav-link text-light" href="#">Résultats</a>
 				</li>
 			</ul>
 		</div>

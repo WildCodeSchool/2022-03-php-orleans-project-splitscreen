@@ -1,0 +1,43 @@
+{% block stylesheets %}
+	{{ encore_entry_link_tags('navbar') }}
+{% endblock %}
+
+<nav class="navgradiant navbar navbar-dark navbar-expand-lg">
+	<div class="container-fluid mx-4">
+		<a class="navbar-brand" href="/">
+			<img src="{{ asset('build/images/LogoSplitScreen.png') }}" class="rounded" alt="Logo Split Screen" width="150" height="75">
+		</a>
+		<button class="mix navbar-toggler ms-auto me-2 text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+			<ul class="navbar-nav mb-2 mb-lg-0 d-flex gap-3 align-items-end">
+				<li class="nav-item">
+					<a class="mix nav-link text-light" aria-current="page" href="{{ path('home_index') }}">
+						Accueil
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class=" mix nav-link text-light" href="{{ path('association_index') }}">
+						Association
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class=" mix nav-link text-light" href="{{ path('event_index') }}">
+						Evénements
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="mix nav-link text-light" href="#">
+						Actus
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="mix nav-link text-light" href="{{ path('contact_index') }}">
+						Contact
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

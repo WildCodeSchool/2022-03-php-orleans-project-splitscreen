@@ -1,0 +1,9 @@
+<div class="ms-1 border border-3 border-primary p-3">
+{{ form_start(form) }}
+		{{ form_row(form.title) }}
+		{{ form_row(form.date) }}
+		{{ form_row(form.description) }}
+		{{ form_row(form.image) }}
+		<button class="btn btn-secondary btn-lg m-2">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+</div>

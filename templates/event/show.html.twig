@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('event') }}
+{% endblock %}
+
+{% block title %}Évènement :
+	{{ event.title }}
+{% endblock %}
+
+{% block body %}
+	<div class="mt-5 ms-5">
+		<a href="{{ path('event_index') }}">
+			<i class="bi bi-arrow-left fs-1"></i>
+		</a>
+	</div>
+	<div class="corner d-flex justify-content-center">
+		<h1 class="">{{ event.title }}</h1>
+	</div>
+	<section class="d-flex justify-content-center mb-3">
+		<div class="mb-3 m-5 w-75">
+			<img src="{{ asset('build/images/' ~ event.image) }}" class="card-img-top" alt="...">
+			<div class="card-body">
+
+				<p class="card-text">
+					<small class="text-muted">{{ event.date|date }}</small>
+				</p>
+				<p class="card-text">{{ event.description }}</p>
+			</div>
+		</div>
+	</section>
+{% endblock %}
