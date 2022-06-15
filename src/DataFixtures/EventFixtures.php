@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use DateTime;
 use Faker\Factory;
 use App\Entity\Event;
 use Doctrine\Persistence\ObjectManager;
@@ -17,6 +18,7 @@ class EventFixtures extends Fixture
         for ($i = 0; $i < self::VALUE; $i++) {
             $event = new Event();
             $event->setTitle($faker->words(2, true));
+            $event->setDate($faker->dateTime());
             $event->setImage('clash-royale-esport-min.jpg');
             $event->setCatchPhrase($faker->words(5, true));
             $event->setDescription($faker->sentence(50));
