@@ -57,4 +57,23 @@
     bottom: 0;
     border-left: 3px solid  $primary;
     border-bottom: 3px solid  $primary;
+  } 
+
+  @media screen and (max-width: 600px) {
+    .corner::before,.corner::after {
+      display:none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .corners::before,.corners::after {
+      display:none;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .promouvoir {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
