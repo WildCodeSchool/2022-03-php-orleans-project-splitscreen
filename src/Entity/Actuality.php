@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\ActuRepository;
+use App\Repository\ActualityRepository;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ActuRepository::class)]
-class Actu
+#[ORM\Entity(repositoryClass: ActualityRepository::class)]
+class Actuality
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

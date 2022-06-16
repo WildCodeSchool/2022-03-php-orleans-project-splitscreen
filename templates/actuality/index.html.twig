@@ -6,25 +6,25 @@
 {% endblock %}
 
 {% block body %}
-<section>
-		<h2 class="text-center p-2"> Suivez toutes nos actualités !</h2>
+	<section>
+		<h2 class="text-center p-2">Suivez toutes nos actualités !</h2>
 	</section>
 	<main class="container">
 		<div class="p-2">
 			<h3 class="border-bottom border-2 border-secondary pb-2">Nos Actualités</h3>
 		</div>
 		<div class="row">
-			{% for actu in actus %}
-				<div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
-					<div class="card m-2" >
-						<img src="{{ asset('build/images/' ~ actu.image) }}" alt="Image d'un actualité" class="card-img-top ">
+			{% for actuality in actualities %}
+				<div class="col-lg-4 col-md-6 d-flex justify-content-center">
+					<div class="card m-2">
+						<img src="{{ asset('build/images/' ~ actuality.image) }}" alt="Image d'un actualité" class="card-img-top ">
 						<div class="card-body">
-							<h5 class="card-title text-center">{{ actu.title }}</h5>
+							<h5 class="card-title text-center">{{ actuality.title }}</h5>
 							<p class="text-center">
-								{{ actu.date| date("H:i d/m/Y") }}
+								{{ actuality.date| date("H:i d/m/Y") }}
 							</p>
-							<p class="card-text text-center">{{ actu.message }}</p>
-							<a href="#" class="btn btn-primary d-block mx-auto"> Plus d'informations </a>
+							<p class="card-text text-center">{{ actuality.message }}</p>
+							<a href="#" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
 						</div>
 					</div>
 				</div>
