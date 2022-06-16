@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Modifier l'événement</h1>
 
-    {{ include('admin_event/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin/admin_event/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('admin_event_index') }}">Retour a la liste</a>
 
-    {{ include('admin_event/_delete_form.html.twig') }}
+    {{ include('admin/admin_event/_delete_form.html.twig') }}
 {% endblock %}
