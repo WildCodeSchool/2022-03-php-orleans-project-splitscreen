@@ -3,7 +3,11 @@
 {% block title %}Événements{% endblock %}
 
 {% block body %}
+<main class="container">
     <h1>Événements</h1>
+    <div class="d-flex justify-content-start">
+    <a class="btn btn- btn-lg m-2" href="{{ path('admin_event_add') }}">Créer</a>
+    </div>
 
     <table class="table">
         <thead>
@@ -21,8 +25,9 @@
                 <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ event.image }}</td>
                 <td>
-                    <a href="{{ path('admin_event_show', {'id': event.id}) }}">Détails</a>
-                    <a href="{{ path('admin_event_edit', {'id': event.id}) }}">Modifier</a>
+                    <a class="btn btn-primary btn-lg m-2" href="{{ path('admin_event_show', {'id': event.id}) }}">Détails</a>
+                    <a class="btn btn-primary btn-lg m-2" href="{{ path('admin_event_edit', {'id': event.id}) }}">Modifier</a>
+                   {{ include('admin_event/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
@@ -33,5 +38,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_event_add') }}">Créer</a>
+    
+    </main>
 {% endblock %}
