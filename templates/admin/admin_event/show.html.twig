@@ -1,20 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/baseAdmin.html.twig' %}
 
 {% block title %}Événements{% endblock %}
 
 {% block body %}
-    <h1></h1>
+<main class="container">
+    <h1 class="border-bottom border-secondary">{{ event.title }}</h1>
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ event.title }}</td>
-            </tr>
             <tr>
                 <th>Date</th>
                 <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
@@ -30,9 +23,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_event_index') }}">Retour à la liste</a>
+    <a class="btn btn-secondary btn-lg m-2" href="{{ path('admin_event_edit', {'id': event.id}) }}">Modifier</a>
 
-    <a href="{{ path('admin_event_edit', {'id': event.id}) }}">Modifier</a>
+    <a class="btn btn-primary btn-lg m-2" href="{{ path('admin_event_index') }}">Retour à la liste</a>
 
-    {{ include('admin_event/_delete_form.html.twig') }}
+    
+
+    </main>
 {% endblock %}
