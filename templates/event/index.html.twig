@@ -3,13 +3,11 @@
 	{{ encore_entry_link_tags('event') }}
 {% endblock %}
 
-{% block title %}Évènements
+{% block title %}{{ parent() }}
+	| Évènements
 {% endblock %}
 
 {% block body %}
-	<div>
-		<h1>{{title}}</h1>
-	</div>
 	<section>
 		<h2 class="text-center p-2">Se tenir informé pour mieux jouer !</h2>
 	</section>
