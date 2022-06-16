@@ -3,7 +3,8 @@
 	{{ encore_entry_link_tags('event') }}
 {% endblock %}
 
-{% block title %}{{ parent() }}
+{% block title %}
+	{{ parent() }}
 	| Évènements
 {% endblock %}
 
@@ -32,6 +33,7 @@
 				</div>
 			{% endfor %}
 		</div>
+		{% include 'components/_banner.html.twig'%}
 		{% include '/event/_eventList.html.twig' %}
 	</main>
 {% endblock %}
