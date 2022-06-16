@@ -20,4 +20,15 @@ class EventController extends AbstractController
             'title' => 'Les Évènements',
         ]);
     }
+
+    #[Route('/{id}', methods: ['GET'], name: 'show')]
+    public function show(int $id, EventRepository $eventRepository): Response
+    {
+        $event = $eventRepository->findOneById($id);
+        return $this->render('event/show.html.twig', [
+            'event' => $event,
+            'id' => $id,
+
+        ]);
+    }
 }

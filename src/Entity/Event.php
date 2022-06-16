@@ -7,6 +7,7 @@ use DateTimeInterface;
 use App\Repository\EventRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
 class Event
@@ -16,22 +17,28 @@ class Event
     #[ORM\Column(type: 'integer')]
     private int $id;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 80)]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    #[Assert\Length(
+        max: 80,
+        maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères'
+    )]
     private string $title;
 
-    #[ORM\Column(type: 'datetime', nullable:true)]
+    #[ORM\Column(type: 'datetime')]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private \DateTimeInterface $date;
 
-    #[ORM\Column(type: 'string', length: 255, nullable:true)]
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private string $image;
 
     #[ORM\Column(type: 'text')]
-    private string $description;
+    private string $catchPhrase;
 
-    public function __construct()
-    {
-        $this->date = new DateTimeImmutable();
-    }
+    #[ORM\Column(type: 'text')]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    private string $description;
 
     public function getId(): ?int
     {
@@ -70,6 +77,18 @@ class Event
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getCatchPhrase(): ?string
+    {
+        return $this->catchPhrase;
+    }
+
+    public function setCatchPhrase(string $catchPhrase): self
+    {
+        $this->catchPhrase = $catchPhrase;
 
         return $this;
     }
