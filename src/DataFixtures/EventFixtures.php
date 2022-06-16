@@ -17,10 +17,11 @@ class EventFixtures extends Fixture
 
         for ($i = 0; $i < self::VALUE; $i++) {
             $event = new Event();
-            $event->setTitle($faker->word());
+            $event->setTitle($faker->words(2, true));
             $event->setDate($faker->dateTime());
             $event->setImage('clash-royale-esport-min.jpg');
-            $event->setDescription($faker->sentence(5));
+            $event->setCatchPhrase($faker->words(5, true));
+            $event->setDescription($faker->sentence(50));
             $manager->persist($event);
         }
         $manager->flush();

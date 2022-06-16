@@ -34,6 +34,9 @@ class Event
     private string $image;
 
     #[ORM\Column(type: 'text')]
+    private string $catchPhrase;
+
+    #[ORM\Column(type: 'text')]
     #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private string $description;
 
@@ -74,6 +77,18 @@ class Event
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getCatchPhrase(): ?string
+    {
+        return $this->catchPhrase;
+    }
+
+    public function setCatchPhrase(string $catchPhrase): self
+    {
+        $this->catchPhrase = $catchPhrase;
 
         return $this;
     }
