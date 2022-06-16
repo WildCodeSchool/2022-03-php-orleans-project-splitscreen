@@ -27,7 +27,7 @@
                 <td class="d-flex">
                     <a class="btn btn-primary btn-lg m-2" href="{{ path('admin_event_show', {'id': event.id}) }}">Détails</a>
                     <a class="btn btn-primary btn-lg m-2" href="{{ path('admin_event_edit', {'id': event.id}) }}">Modifier</a>
-                    {{ include('admin_event/_delete_form.html.twig') }}
+                    {{ include('admin/admin_event/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
