@@ -16,7 +16,7 @@ class AdminEventController extends AbstractController
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(EventRepository $eventRepository): Response
     {
-        return $this->render('admin_event/index.html.twig', [
+        return $this->render('admin/admin_event/index.html.twig', [
             'events' => $eventRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class AdminEventController extends AbstractController
             return $this->redirectToRoute('admin_event_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('admin_event/new.html.twig', [
+        return $this->renderForm('admin/admin_event/new.html.twig', [
             'event' => $event,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class AdminEventController extends AbstractController
     #[Route('/{id}', name: 'show', methods: ['GET'])]
     public function show(Event $event): Response
     {
-        return $this->render('admin_event/show.html.twig', [
+        return $this->render('admin/admin_event/show.html.twig', [
             'event' => $event,
         ]);
     }
@@ -60,7 +60,7 @@ class AdminEventController extends AbstractController
             return $this->redirectToRoute('admin_event_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('admin_event/edit.html.twig', [
+        return $this->renderForm('admin/admin_event/edit.html.twig', [
             'event' => $event,
             'form' => $form,
         ]);
