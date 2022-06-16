@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/actualité', name: 'actuality_')]
+#[Route('/actualite', name: 'actuality_')]
 class ActualityController extends AbstractController
 {
     #[Route('/', name: 'index')]
