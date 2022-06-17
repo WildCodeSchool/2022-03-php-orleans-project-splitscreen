@@ -17,11 +17,18 @@
 				<img src="{{ asset('build/images/img_contact.jpg') }}" alt="stick arcade" class="w-100">
 			</div>
 			<div class="col-lg-6 align-self-center">
-				{{ form(form) }}
-				</div>
+				{{ form_start(form) }}
+				{{ form_row(form.firstName) }}
+				{{ form_row(form.lastName) }}
+				{{ form_row(form.phone) }}
+				{{ form_row(form.email) }}
+				{{ form_row(form.message) }}
+				<button class="btn btn-primary btn-lg m-2">{{ button_label|default('Envoyer') }}</button>
+				{{ form_end(form) }}
 			</div>
+		</div>
 
-			<h1 id="reseaux" class="text-center py-5">Nos réseaux sociaux</h1>
+		<h1 id="reseaux" class="text-center py-5">Nos réseaux sociaux</h1>
 
 			<div class="row">
 				<div class="col-lg-6 align-self-center">
@@ -69,12 +76,11 @@
 							</tr>
 						</tbody>
 					</table>
-
-				</div>
-				<div class="col-lg-6">
-					<img src="{{ asset('build/images/rs_contact.jpg') }}" alt="réseaux sociaux" class="w-100">
-				</div>
+		
+			</div>
+			<div class="col-lg-6">
+				<img src="{{ asset('build/images/rs_contact.jpg') }}" alt="réseaux sociaux" class="w-100">
 			</div>
 		</div>
 	</div>
-{% endblock %}
+</div>{% endblock %}
