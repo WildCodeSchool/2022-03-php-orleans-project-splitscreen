@@ -3,9 +3,36 @@
 }
 
 .controller-img {
-    background-image: url('../images/manette.jpg');
+    background-image: url("../images/manette.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+img {
+    height: 200px;
+    width: 150px;
+}
+
+@media screen and (max-width: 768px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+    img {
+        height: initial;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    img {
+        height: 250px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    img {
+        height: 300px;
+    }
 }
