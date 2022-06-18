@@ -17,8 +17,14 @@
 		<h1 class="">{{ event.title }}</h1>
 	</div>
 	<div class="mb-3 m-5">
-		<div class="d-flex justify-content-center">
+		<div class="d-flex justify-content-center align-items-center">
+			<a href="{{ path('event_show', {id:event.id}) }}">
+				<i class="bi bi-caret-left-fill fs-1 me-5"></i>
+			</a>
 			<img src="{{ asset('build/images/' ~ event.image) }}" class="w-50" alt="...">
+			<a href="{{ path('event_show', {id:event.id}) }}">
+				<i class="bi bi-caret-right-fill fs-1 ms-5"></i>
+			</a>
 		</div>
 		<div class="ms-5 me-5 mt-5 ps-5 pe-5">
 			<p class="">{{ event.description }}</p>
