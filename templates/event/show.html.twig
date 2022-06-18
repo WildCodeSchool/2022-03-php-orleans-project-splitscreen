@@ -16,16 +16,16 @@
 	<div class="corner d-flex justify-content-center">
 		<h1 class="">{{ event.title }}</h1>
 	</div>
-	<section class="d-flex justify-content-center mb-3">
-		<div class="mb-3 m-5 w-75">
-			<img src="{{ asset('build/images/' ~ event.image) }}" class="card-img-top" alt="...">
-			<div class="card-body">
-
-				<p class="card-text">
-					<small class="text-muted">{{ event.date|date }}</small>
-				</p>
-				<p class="card-text">{{ event.description }}</p>
-			</div>
+	<div class="mb-3 m-5">
+		<div class="d-flex justify-content-center">
+			<img src="{{ asset('build/images/' ~ event.image) }}" class="w-50" alt="...">
 		</div>
-	</section>
+		<div class="ms-5 me-5 mt-5 ps-5 pe-5">
+			<p class="">{{ event.description }}</p>
+			<p class="card-text mt-2">
+				<small class="text-muted">{{ event.date|date }}</small>
+			</p>
+		</div>
+	</div>
+
 {% endblock %}
