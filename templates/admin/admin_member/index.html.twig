@@ -4,16 +4,18 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Member index</h1>
+	<h1>Membres</h1>
+	<div class="d-flex justify-content-start">
+    <a class="btn btn-secondary btn-lg m-2" href="{{ path('admin_member_add') }}">Créer</a>
+    </div>
 
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Id</th>
-				<th>LastName</th>
-				<th>FisrtName</th>
+				<th>Nom</th>
+				<th>Prénom</th>
 				<th>Image</th>
-				<th>actions</th>
+				<th>Rôle</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -24,17 +26,16 @@
 					<td>{{ member.fisrtName }}</td>
 					<td>{{ member.image }}</td>
 					<td>
-						<a href="{{ path('admin_member_show', {'id': member.id}) }}">show</a>
-						<a href="{{ path('admin_member_edit', {'id': member.id}) }}">edit</a>
+						<a href="{{ path('admin_member_show', {'id': member.id}) }}">Détails</a>
+						<a href="{{ path('admin_member_edit', {'id': member.id}) }}">Modifier</a>
+						{{ include('admin/admin_member/_delete_form.html.twig') }}
 					</td>
 				</tr>
 			{% else %}
 				<tr>
-					<td colspan="5">no records found</td>
+					<td colspan="6">pas de membres trouvés</td>
 				</tr>
 			{% endfor %}
 		</tbody>
 	</table>
-
-	{# <a href="{{ path('app_member_new') }}">Create new</a> #}
 {% endblock %}

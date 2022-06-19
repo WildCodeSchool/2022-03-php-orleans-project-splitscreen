@@ -1,34 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Member{% endblock %}
+{% block title %}Member
+{% endblock %}
 
 {% block body %}
-    <h1>Member</h1>
+	<main class="container">
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Image</th>
+					<td>{{ member.image }}</td>
+				</tr>
+				<tr>
+					<th>LastName</th>
+					<td>{{ member.lastName }}</td>
+				</tr>
+				<tr>
+					<th>FisrtName</th>
+					<td>{{ member.firstName }}</td>
+				</tr>
+				<tr>
+					<th>Id</th>
+					<td>{{ member.id }}</td>
+				</tr>
+			</tbody>
+		</table>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ member.id }}</td>
-            </tr>
-            <tr>
-                <th>LastName</th>
-                <td>{{ member.lastName }}</td>
-            </tr>
-            <tr>
-                <th>FisrtName</th>
-                <td>{{ member.fisrtName }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ member.image }}</td>
-            </tr>
-        </tbody>
-    </table>
+		<a href="{{ path('amdin_member_index') }}">back to list</a>
 
-    <a href="{{ path('app_member_index') }}">back to list</a>
+		<a href="{{ path('admin_member_edit', {'id': member.id}) }}">edit</a>
 
-    <a href="{{ path('app_member_edit', {'id': member.id}) }}">edit</a>
-
-    {{ include('member/_delete_form.html.twig') }}
+		{{ include('admin/member/_delete_form.html.twig') }}
+	</main>
 {% endblock %}

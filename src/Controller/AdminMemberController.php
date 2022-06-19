@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/admin/membres', name: 'admin_member_')]
-class MemberController extends AbstractController
+class AdminMemberController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(MemberRepository $memberRepository): Response

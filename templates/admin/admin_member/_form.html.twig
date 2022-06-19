@@ -1,4 +1,8 @@
+<div class="ms-1 border border-3 border-primary p-3">
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_row(form.lastName) }}
+	{{ form_row(form.firstName) }}
+	{{ form_row(form.image) }}
+	{#{{ form_row(form.role) }}#}
+    <button class="btn">{{ button_label|default('ajouter') }}</button>
 {{ form_end(form) }}
