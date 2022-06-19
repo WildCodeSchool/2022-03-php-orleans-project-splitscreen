@@ -1,13 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modifier un membre{% endblock %}
+{% block title %}Modifier un membre
+{% endblock %}
 
 {% block body %}
-    <h1 class="ms-2 text-center">Modifier le membre</h1>
+	<div class="mt-5 ms-5 mb-5 ">
+		<a href="{{ path('admin_member_index') }}">
+			<i class="bi bi-arrow-left fs-1"></i>
+		</a>
+	</div>
+	<h1 class="ms-2 text-center">Modifier le membre</h1>
 	<div class="row justify-content-center">
 		<div class="w-50">
 			{{ include('admin/admin_member/_form.html.twig', {'button_label': 'Modifier'}) }}
-				<a class=" btn btn-primary btn-lg m-2" href="{{ path('admin_member_index') }}">Retour à la liste</a>
 		</div>
 	</div>
 {% endblock %}

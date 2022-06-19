@@ -4,6 +4,11 @@
 {% endblock %}
 
 {% block body %}
+	<div class="mt-5 ms-5 mb-5 ">
+		<a href="{{ path('admin_member_index') }}">
+			<i class="bi bi-arrow-left fs-1"></i>
+		</a>
+	</div>
 	<main class="container">
 		<table class="table">
 			<tbody>
@@ -17,7 +22,11 @@
 				</tr>
 				<tr>
 					<th>FisrtName</th>
-					<td>{{ member.firstName }}</td>
+					<td>{{ member.fisrtName }}</td>
+				</tr>
+				<tr>
+					<th>Rôle</th>
+					{# <td>{{ member.role }}</td> #}
 				</tr>
 				<tr>
 					<th>Id</th>
@@ -26,10 +35,11 @@
 			</tbody>
 		</table>
 
-		<a href="{{ path('amdin_member_index') }}">back to list</a>
-
-		<a href="{{ path('admin_member_edit', {'id': member.id}) }}">edit</a>
-
-		{{ include('admin/member/_delete_form.html.twig') }}
+		<section class="container d-flex justify-content-between">
+			<a href="{{ path('admin_member_edit', {'id': member.id}) }}" class="btn btn-warning btn-lg m-2 mb-3">Modifier<i class="bi bi-pen ms-2"></i></a>
+			<div class="">
+			{{ include('admin/admin_member/_delete_form.html.twig') }}
+			</div>
+		</section>
 	</main>
 {% endblock %}

@@ -20,7 +20,7 @@ class Member
     #[ORM\Column(type: 'string', length: 255)]
     private string $fisrtName;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private string $image;
 
     public function getId(): ?int
