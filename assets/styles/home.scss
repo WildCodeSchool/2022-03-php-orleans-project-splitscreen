@@ -10,29 +10,17 @@
     background-attachment: fixed;
 }
 
-img {
-    height: 200px;
-    width: 150px;
+.eventActu {
+    height: 300px;
+    
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
     .row {
         display: flex;
         flex-direction: column;
     }
-    img {
+    .eventActu {
         height: initial;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    img {
-        height: 250px;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    img {
-        height: 300px;
     }
 }
