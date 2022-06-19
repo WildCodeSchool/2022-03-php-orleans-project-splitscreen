@@ -18,7 +18,7 @@ class Member
     private string $lastName;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private string $firstName;
+    private string $fisrtName;
 
     #[ORM\Column(type: 'string', length: 255)]
     private string $image;
@@ -40,14 +40,14 @@ class Member
         return $this;
     }
 
-    public function getFirstName(): ?string
+    public function getFisrtName(): ?string
     {
-        return $this->firstName;
+        return $this->fisrtName;
     }
 
-    public function setFirstName(string $firstName): self
+    public function setFisrtName(string $fisrtName): self
     {
-        $this->firstName = $firstName;
+        $this->fisrtName = $fisrtName;
 
         return $this;
     }

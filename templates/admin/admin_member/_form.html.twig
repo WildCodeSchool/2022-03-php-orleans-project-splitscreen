@@ -1,8 +1,11 @@
-<div class="ms-1 border border-3 border-primary p-3">
-{{ form_start(form) }}
-    {{ form_row(form.lastName) }}
-	{{ form_row(form.firstName) }}
+<div class="ms-1 mb-3 border border-3 border-primary p-3">
+	{{ form_start(form) }}
+	{{ form_row(form.lastName) }}
+	{{ form_row(form.fisrtName) }}
 	{{ form_row(form.image) }}
 	{#{{ form_row(form.role) }}#}
-    <button class="btn">{{ button_label|default('ajouter') }}</button>
+    <div class="d-flex justify-content-center">
+	<button class="btn btn-secondary">{{ button_label|default('ajouter') }}</button>
+    </div>
+</div>
 {{ form_end(form) }}
