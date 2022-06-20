@@ -14,10 +14,10 @@ class MemberType extends AbstractType
     {
         $builder
             ->add('lastName', TextType::class, [
-                'label' => 'Lastname',
+                'label' => 'Nom',
             ])
             ->add('fisrtName', TextType::class, [
-                'label' => 'Firstname',
+                'label' => 'Prénom',
             ])
             ->add('image', TextType::class, [
                 'label' => 'Image',
