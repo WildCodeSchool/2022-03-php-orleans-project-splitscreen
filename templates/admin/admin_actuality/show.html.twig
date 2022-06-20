@@ -1,0 +1,38 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Actualité
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-center">Actualité</h1>
+	<a href="{{ path('admin_actuality_index') }}" class="ms-5 btn btn-primary">
+		<i class="bi bi-arrow-left"></i>
+		Retour a la liste</a>
+	<div class="w-50 mx-auto my-4 border border-3 border-primary p-3">
+
+		<table class="table">
+			<tbody>
+
+				<tr>
+					<th>Titre</th>
+					<td>{{ actuality.title }}</td>
+				</tr>
+				<tr>
+					<th>Date</th>
+					<td>{{ actuality.date ? actuality.date|date('Y-m-d H:i:s') : '' }}</td>
+				</tr>
+				<tr>
+					<th>Image</th>
+					<td>{{ actuality.image }}</td>
+				</tr>
+				<tr>
+					<th>Message</th>
+					<td>{{ actuality.message }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a class="btn btn-primary m-2" href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}">Modifier<i class="bi bi-pen ms-2"></i>
+		</a>
+	</div>
+{% endblock %}
