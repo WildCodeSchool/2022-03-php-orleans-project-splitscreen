@@ -1,0 +1,45 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Actualité index
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<h1>Actualité index</h1>
+		<div class="d-flex justify-content-start">
+			<a class="btn btn-secondary btn-lg m-2" href="{{ path('admin_actuality_new') }}">Ajouter<i class="bi bi-cloud-plus ms-2"></i></a>
+		</div>
+
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Titre</th>
+					<th>Date</th>
+					<th>Image</th>
+					<th>Message</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for actuality in actualities %}
+					<tr>
+						<td>{{ actuality.title }}</td>
+						<td>{{ actuality.date ? actuality.date|date('Y-m-d H:i:s') : '' }}</td>
+						<td>{{ actuality.image }}</td>
+						<td>{{ actuality.message }}</td>
+						<td class="d-flex">
+							<a class="btn btn-primary m-2" href="{{ path('admin_actuality_show', {'id': actuality.id}) }}">Détails<i class="bi bi-eye ms-2"></i></a>
+							<a class="btn btn-primary m-2" href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}">Modifier<i class="bi bi-pen ms-2"></i></a>
+							{{ include('admin/admin_actuality/_delete_form.html.twig') }}
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="6">Pas de résultats</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</main>
+{% endblock %}
