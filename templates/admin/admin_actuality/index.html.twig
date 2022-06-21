@@ -29,7 +29,6 @@
 						<td>{{ actuality.image }}</td>
 						<td>{{ actuality.message }}</td>
 						<td class="d-flex">
-							<a class="btn btn-primary m-2" href="{{ path('admin_actuality_show', {'id': actuality.id}) }}">Détails<i class="bi bi-eye ms-2"></i></a>
 							<a class="btn btn-primary m-2" href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}">Modifier<i class="bi bi-pen ms-2"></i></a>
 							{{ include('admin/admin_actuality/_delete_form.html.twig') }}
 						</td>
