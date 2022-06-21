@@ -16,7 +16,7 @@ class MemberType extends AbstractType
             ->add('lastName', TextType::class, [
                 'label' => 'Nom',
             ])
-            ->add('fisrtName', TextType::class, [
+            ->add('firstName', TextType::class, [
                 'label' => 'Prénom',
             ])
             ->add('image', TextType::class, [

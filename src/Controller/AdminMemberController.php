@@ -40,14 +40,6 @@ class AdminMemberController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'show', methods: ['GET'])]
-    public function show(Member $member): Response
-    {
-        return $this->render('admin/admin_member/show.html.twig', [
-            'member' => $member,
-        ]);
-    }
-
     #[Route('/{id}/modifier', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Member $member, MemberRepository $memberRepository): Response
     {
