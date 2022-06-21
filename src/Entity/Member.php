@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\MemberRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: MemberRepository::class)]
 #[ORM\Table(name: '`member`')]
@@ -15,12 +16,23 @@ class Member
     private int $id;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères'
+    )]
     private string $lastName;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères'
+    )]
     private string $firstName;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private string $image;
 
     public function getId(): ?int
