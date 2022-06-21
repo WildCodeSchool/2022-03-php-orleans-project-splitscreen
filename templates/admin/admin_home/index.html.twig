@@ -1,8 +1,34 @@
 {% extends 'admin/baseAdmin.html.twig' %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('homeAdmin') }}
+{% endblock %}
 {% block title %}
 	{{parent()}}
 	| Home
 {% endblock %}
 {% block body %}
 	<h2 class="text-center">Bienvenue dans votre espace administrateur</h2>
+<section>
+	<div class="Card container mb-5">
+		<div class="card">
+			<div class='contentBx'>
+				<h2>Événements</h2>
+			</div>
+		</div>
+	</div>
+	<div class="Card container mb-5">
+		<div class="card">
+			<div class='contentBx'>
+				<h2>Actualites</h2>
+			</div>
+		</div>
+	</div>
+	<div class="Card container mb-5">
+		<div class="card">
+			<div class='contentBx'>
+				<h2>Membres</h2>
+			</div>
+		</div>
+	</div>
+	</section>
 {% endblock %}

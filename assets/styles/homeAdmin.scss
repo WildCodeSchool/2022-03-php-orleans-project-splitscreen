@@ -1,0 +1,24 @@
+@import "variables.scss";
+
+
+.Card 
+{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-color: $primary;
+}
+.Card .card
+{
+    width: 320px;
+    margin: 20px;
+    padding: 40px 30px;
+    border-radius: 40px;
+    box-shadow: -6px -6px 40px $secondary, 6px 6px 20px $primary;
+}
+
+.Card .card:hover
+{
+    transform: scale(1.10);
+}
