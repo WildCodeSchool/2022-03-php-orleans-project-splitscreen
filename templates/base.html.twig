@@ -14,11 +14,9 @@
 		{% block javascripts %}{% endblock %}
 	</head>
 	<body>
-		<header>
-			{% block header %}
-				{% include 'components/_navbar.html.twig' %}
-			{% endblock %}
-		</header>
+		{% block header %}
+			{% include 'components/_navbar.html.twig' %}
+		{% endblock %}
 		{% include 'components/_flash.html.twig' %}
 		{% block body %}{% endblock %}
 		{% block footer%}
