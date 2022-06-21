@@ -32,7 +32,7 @@ class ContactType extends AbstractType
                 'label' => 'Email',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Adresse email requise.'
+                        'message' => 'Une adresse email est requise.'
                     ]),
                     new Email(['message' => 'Format d\'email invalide.'])
                 ]
