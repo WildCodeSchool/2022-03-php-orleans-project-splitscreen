@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 .navgradiant {
     background: rgb(23, 23, 23);
     background: linear-gradient(
@@ -23,5 +25,30 @@
             rgba(255, 255, 255, 1) 51%,
             rgba(255, 255, 255, 1) 88%
         );
+    }
+}
+
+.navbar-nav .nav-link {
+    &::after {
+        content: "";
+        width: 0%;
+        height: 3px;
+        display: block;
+        transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out;
+        bottom: 0%;
+    }
+    &:hover {
+        &::after {
+            width: 100%;
+            height: 3px;
+            background-color: $secondary;
+        }
+    }
+    &.active {
+        &::after {
+            width: 100%;
+            height: 3px;
+            background-color: $secondary;
+        }
     }
 }
