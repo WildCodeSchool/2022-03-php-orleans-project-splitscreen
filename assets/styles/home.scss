@@ -12,15 +12,5 @@
 
 .eventActu {
     height: 300px;
-    
 }
 
-@media screen and (max-width: 991px) {
-    .row {
-        display: flex;
-        flex-direction: column;
-    }
-    .eventActu {
-        height: initial;
-    }
-}
