@@ -9,13 +9,13 @@
     <a class="btn btn-secondary btn-lg m-2" href="{{ path('admin_event_add') }}">Ajouter<i class="bi bi-cloud-plus ms-2"></i></a>
     </div>
 
-    <table class="table">
+    <table class="table align-middle">
         <thead>
             <tr>
                 <th>Titre</th>
                 <th>Date</th>
                 <th>Image</th>
-                <th>Actions</th>
+                <th class="d-flex justify-content-center">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -24,9 +24,8 @@
                 <td>{{ event.title }}</td>
                 <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ event.image }}</td>
-                <td class="d-flex">
-                    <a class="btn btn-primary btn-lg m-2" href="{{ path('admin_event_show', {'id': event.id}) }}">Détails</a>
-                    <a class="btn btn-primary btn-lg m-2" href="{{ path('admin_event_edit', {'id': event.id}) }}">Modifier</a>
+                <td class="d-flex justify-content-end">
+                    <a href="{{ path('admin_event_edit', {'id': event.id}) }}" class="btn btn-warning btn-lg m-2">Modifier<i class="bi bi-pen ms-2"></i></a>
                     {{ include('admin/admin_event/_delete_form.html.twig') }}
                 </td>
             </tr>
