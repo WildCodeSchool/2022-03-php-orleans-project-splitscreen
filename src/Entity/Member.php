@@ -26,7 +26,7 @@ class Member
     #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     #[Assert\Length(
         max: 255,
-        maxMessage: 'Le prenom ne doit pas dépasser {{ limit }} caractères'
+        maxMessage: 'Le prénom ne doit pas dépasser {{ limit }} caractères'
     )]
     private string $firstName;
 
