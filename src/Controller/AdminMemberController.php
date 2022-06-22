@@ -30,7 +30,7 @@ class AdminMemberController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $memberRepository->add($member, true);
-
+            $this->addFlash('success', 'Nouveau membre correctement ajouté');
             return $this->redirectToRoute('admin_member_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -48,7 +48,7 @@ class AdminMemberController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $memberRepository->add($member, true);
-
+            $this->addFlash('success', 'Membre correctement modifié');
             return $this->redirectToRoute('admin_member_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -64,7 +64,7 @@ class AdminMemberController extends AbstractController
         if ($this->isCsrfTokenValid('delete' . $member->getId(), $request->request->get('_token'))) {
             $memberRepository->remove($member, true);
         }
-
+        $this->addFlash('success', 'Membre correctement supprimé');
         return $this->redirectToRoute('admin_member_index', [], Response::HTTP_SEE_OTHER);
     }
 }
