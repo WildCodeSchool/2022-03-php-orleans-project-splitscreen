@@ -38,12 +38,4 @@ class EventRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-
-    public function fetchAllId(): array
-    {
-        return $this->createQueryBuilder('e')
-            ->select('e.id')
-            ->getQuery()
-            ->getResult();
-    }
 }

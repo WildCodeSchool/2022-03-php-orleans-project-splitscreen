@@ -24,10 +24,8 @@ class EventController extends AbstractController
     #[Route('/{id}', methods: ['GET'], name: 'show')]
     public function show(int $id, EventRepository $eventRepository): Response
     {
-        $eventsId = $eventRepository->fetchAllId();
         $event = $eventRepository->findOneById($id);
         return $this->render('event/show.html.twig', [
-            'eventsId' => $eventsId,
             'event' => $event,
             'id' => $id,
         ]);
