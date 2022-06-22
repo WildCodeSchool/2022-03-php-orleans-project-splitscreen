@@ -19,7 +19,7 @@ class ActualityFixtures extends Fixture
             $actuality->setTitle($faker->word());
             $actuality->setDate($faker->dateTime());
             $actuality->setImage('Actuality.jpg');
-            $actuality->setMessage($faker->sentence(5));
+            $actuality->setMessage($faker->words(5, true));
             $manager->persist($actuality);
         }
         $manager->flush();

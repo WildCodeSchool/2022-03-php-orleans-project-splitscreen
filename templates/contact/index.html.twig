@@ -1,6 +1,10 @@
 {% form_theme form 'bootstrap_5_layout.html.twig' %}
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+	{{ encore_entry_link_tags('contact') }}
+{% endblock %}
+
 {% block title %}
 	{{ parent() }}
 	| Contact
@@ -14,7 +18,7 @@
 	<div class="container mb-5">
 		<div class="row">
 			<div class="col-lg-6">
-				<img src="{{ asset('build/images/img_contact.jpg') }}" alt="stick arcade" class="w-100">
+				<img src="{{ asset('build/images/img_contact.jpg') }}" alt="stick arcade" class="w-100 form-img d-lg-block d-none">
 			</div>
 			<div class="col-lg-6 align-self-center">
 				{{ form_start(form) }}
@@ -32,7 +36,7 @@
 
 			<div class="row">
 				<div class="col-lg-6 align-self-center">
-					<table class="table text-center display-6">
+					<table class="table text-center align-middle">
 						<tbody>
 							<tr>
 								<td class="text-primary">
@@ -40,7 +44,7 @@
 								</td>
 								<td class="text-start">
 									<a href="https://www.facebook.com/splitscreenasso" class="link-secondary" target="_blank">
-										<i class="bi bi-facebook"></i>
+										<i class="bi bi-facebook fs-3"></i>
 									</a>
 								</td>
 							</tr>
@@ -50,7 +54,7 @@
 								</td>
 								<td class="text-start">
 									<a href="https://www.instagram.com/splitscreenasso" class="link-secondary" target="_blank">
-										<i class="bi bi-instagram"></i>
+										<i class="bi bi-instagram fs-3"></i>
 									</a>
 								</td>
 							</tr>
@@ -60,7 +64,7 @@
 								</td>
 								<td class="text-start">
 									<a href="https://discord.gg/ftJeetZT9j" class="link-secondary" target="_blank">
-										<i class="bi bi-discord"></i>
+										<i class="bi bi-discord fs-3"></i>
 									</a>
 								</td>
 							</tr>
@@ -70,13 +74,13 @@
 								</td>
 								<td class="text-start">
 									<a href="https://www.twitch.tv/splitscreen_live" class="link-secondary" target="_blank">
-										<i class="bi bi-twitch"></i>
+										<i class="bi bi-twitch fs-3"></i>
 									</a>
 								</td>
 							</tr>
 						</tbody>
 					</table>
-		
+
 			</div>
 			<div class="col-lg-6">
 				<img src="{{ asset('build/images/rs_contact.jpg') }}" alt="réseaux sociaux" class="w-100">
