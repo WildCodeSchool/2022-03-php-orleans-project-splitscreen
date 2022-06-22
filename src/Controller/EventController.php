@@ -28,7 +28,6 @@ class EventController extends AbstractController
         return $this->render('event/show.html.twig', [
             'event' => $event,
             'id' => $id,
-
         ]);
     }
 }
