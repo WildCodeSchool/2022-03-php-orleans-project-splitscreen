@@ -21,8 +21,8 @@
                 <td>{{ network.title }}</td>
                 <td>{{ network.link }}</td>
                 <td>
-                    <a href="{{ path('app_admin_network_show', {'id': network.id}) }}">show</a>
-                    <a href="{{ path('app_admin_network_edit', {'id': network.id}) }}">edit</a>
+                    <a href="{{ path('admin_network_show', {'id': network.id}) }}">show</a>
+                    <a href="{{ path('admin_network_edit', {'id': network.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_network_new') }}">Create new</a>
+    <a href="{{ path('admin_network_new') }}">Create new</a>
 {% endblock %}

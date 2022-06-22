@@ -22,9 +22,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_network_index') }}">back to list</a>
+    <a href="{{ path('admin_network_index') }}">back to list</a>
 
-    <a href="{{ path('app_admin_network_edit', {'id': network.id}) }}">edit</a>
+    <a href="{{ path('admin_network_edit', {'id': network.id}) }}">edit</a>
 
-    {{ include('admin_network/_delete_form.html.twig') }}
+    {{ include('admin/admin_network/_delete_form.html.twig') }}
 {% endblock %}
