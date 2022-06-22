@@ -27,7 +27,7 @@
 							<p class="text-center">
 								{{ event.date| date("H:i d/m/Y") }}
 							</p>
-							<p class="card-text text-center">{{ event.catchPhrase }}</p>
+							<p class="card-text text-center text-truncate">{{ event.catchPhrase }}</p>
 							<a href="{{ path('event_show', { id: event.id }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
 						</div>
 					</div>
