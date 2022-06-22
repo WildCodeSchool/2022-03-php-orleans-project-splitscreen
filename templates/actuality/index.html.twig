@@ -6,8 +6,9 @@
 {% endblock %}
 
 {% block body %}
+{% include 'components/_header.html.twig' with {'title': 'Actualités'} %}
 	<section>
-		<h2 class="text-center p-2">Suivez toutes nos actualités !</h2>
+		<h1 class="text-center p-2 mt-5">"Suivez toutes nos actualités !"</h1>
 	</section>
 	<main class="container">
 		<div class="p-2">
@@ -23,7 +24,7 @@
 							<p class="text-center">
 								{{ actuality.date| date("H:i d/m/Y") }}
 							</p>
-							<p class="card-text text-center">{{ actuality.message }}</p>
+							<p class="messageActus card-text text-center text-truncate">{{ actuality.message }}</p>
 							<a href="#" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
 						</div>
 					</div>
