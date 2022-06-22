@@ -23,13 +23,18 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="mix nav-link text-light" href="#">
+					<a class="mix nav-link text-light" href="{{ path('admin_actuality_index') }}">
 						Actus
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="mix nav-link text-light" href="{{ path('contact_index') }}">
+					<a class="mix nav-link text-light" href="{{ path('admin_member_index') }}">
 						Membres
+					</a>
+				</li>
+				<li class="nav-item btn btn-danger text-light">
+					<a class="text-light" href="{{ path('app_logout') }}">
+						Déconnexion
 					</a>
 				</li>
 			</ul>
