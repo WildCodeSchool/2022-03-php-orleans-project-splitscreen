@@ -15,6 +15,7 @@
                 <th>Titre</th>
                 <th>Date</th>
                 <th>Image</th>
+                <th>Phrase d'accroche</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@
                 <td>{{ event.title }}</td>
                 <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ event.image }}</td>
+                <td>{{ event.catchPhrase }}</td>
                 <td class="d-flex">
                     <a class="btn btn-primary btn-lg m-2" href="{{ path('admin_event_show', {'id': event.id}) }}">Détails</a>
                     <a class="btn btn-primary btn-lg m-2" href="{{ path('admin_event_edit', {'id': event.id}) }}">Modifier</a>
