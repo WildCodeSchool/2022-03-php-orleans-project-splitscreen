@@ -26,11 +26,11 @@
 							<div class="card m-2">
 								<img src="{{ asset('build/images/' ~ event.image) }}" alt="photographie mise en avant" class="eventActu card-img-top">
 								<div class="card-body">
-									<h5 class="card-title text-center">{{ event.title }}</h5>
+									<h5 class="text-truncate card-title text-center">{{ event.title }}</h5>
 									<p class="text-center">
 										{{ event.date| date }}
 									</p>
-									<p class="overflow-ellipsis card-text text-center">{{ event.catchPhrase }}</p>
+									<p class="text-truncate card-text text-center">{{ event.catchPhrase }}</p>
 									<a href="{{ path('event_show', { id: event.id }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
 								</div>
 							</div>
