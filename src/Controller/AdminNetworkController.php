@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/network', name: 'admin_network_')]
+#[Route('/admin/reseaux', name: 'admin_network_')]
 class AdminNetworkController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]

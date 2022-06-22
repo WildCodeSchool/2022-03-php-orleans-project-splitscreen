@@ -1,10 +1,10 @@
 {% extends 'admin/baseAdmin.html.twig' %}
 
-{% block title %}Reseaux sociaux{% endblock %}
+{% block title %}Réseaux sociaux{% endblock %}
 
 {% block body %}
 <main class="container">
-    <h1>Reseaux sociaux</h1>
+    <h1>Réseaux sociaux</h1>
     <div class="d-flex justify-content-start">
     <table class="table">
         <thead>
@@ -20,12 +20,12 @@
                 <td>{{ network.title }}</td>
                 <td>{{ network.link }}</td>
                 <td class="d-flex">
-                    <a class="btn btn-primary btn-lg m-2" href="{{ path('admin_network_edit', {'id': network.id}) }}">Modifier</a>
+                    <a class="btn btn-primary btn-lg" href="{{ path('admin_network_edit', {'id': network.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">Pas de reseaux sociaux trouvés</td>
+                <td colspan="4">Pas de réseaux sociaux trouvés</td>
             </tr>
         {% endfor %}
         </tbody>
