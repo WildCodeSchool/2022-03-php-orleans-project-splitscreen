@@ -4,37 +4,35 @@ namespace App\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-
 class ContactForm
 {
+    #[Assert\Length(
+        max: 255,
+    )]
+    #[Assert\NotBlank]
+    private string $firstName;
 
     #[Assert\Length(
         max: 255,
     )]
     #[Assert\NotBlank]
-    private $firstName;
-
-    #[Assert\Length(
-        max: 255,
-    )]
-    #[Assert\NotBlank]
-    private $lastName;
+    private string $lastName;
 
     #[Assert\Length(
         max: 255
     )]
     #[Assert\NotBlank]
-    private $phone;
+    private string $phone;
 
     #[Assert\Length(
         max: 255
     )]
     #[Assert\NotBlank]
     #[Assert\Email]
-    private $email;
+    private string $email;
 
     #[Assert\NotBlank]
-    private $message;
+    private string $message;
 
 
     public function getFirstName(): ?string
