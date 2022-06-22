@@ -27,7 +27,7 @@ class EventType extends AbstractType
                 'label' => 'Description',
             ])
             ->add('catchPhrase', TextType::class, [
-                'label' => 'Phrase d\'accorche',
+                'label' => 'Phrase d\'accroche',
             ]);
     }
 
