@@ -40,14 +40,6 @@ class AdminEventController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'show', methods: ['GET'])]
-    public function show(Event $event): Response
-    {
-        return $this->render('admin/admin_event/show.html.twig', [
-            'event' => $event,
-        ]);
-    }
-
     #[Route('/{id}/modifier', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Event $event, EventRepository $eventRepository): Response
     {
