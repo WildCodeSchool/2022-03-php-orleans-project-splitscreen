@@ -10,7 +10,7 @@
     <a class="btn btn-secondary btn-lg m-2" href="{{ path('admin_member_add') }}">Ajouter<i class="bi bi-cloud-plus ms-2"></i></a>
     </div>
 
-	<table class="table">
+	<table class="table align-middle">
 		<thead>
 			<tr>
 				<th>Image</th>
@@ -27,7 +27,6 @@
 					<td>{{ member.firstName }}</td>
 					<td>{{ member.id }}</td>
 					<td class="d-flex justify-content-end">
-						<a href="{{ path('admin_member_show', {'id': member.id}) }}" class="btn btn-info btn-lg m-2">Détails<i class="bi bi-eye ms-2"></i></a>
 						<a href="{{ path('admin_member_edit', {'id': member.id}) }}" class="btn btn-warning btn-lg m-2">Modifier<i class="bi bi-pen ms-2"></i></a>
 						{{ include('admin/admin_member/_delete_form.html.twig') }}
 					</td>
