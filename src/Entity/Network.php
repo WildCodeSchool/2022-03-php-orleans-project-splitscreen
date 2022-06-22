@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\NetworkRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: NetworkRepository::class)]
 class Network
@@ -17,6 +18,10 @@ class Network
     private string $title;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: 'Le lien ne doit pas dépasser {{ limit }} caractères'
+    )]
     private string $link;
 
     public function getId(): ?int

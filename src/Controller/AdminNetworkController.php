@@ -21,33 +21,6 @@ class AdminNetworkController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
-    public function new(Request $request, NetworkRepository $networkRepository): Response
-    {
-        $network = new Network();
-        $form = $this->createForm(NetworkType::class, $network);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $networkRepository->add($network, true);
-
-            return $this->redirectToRoute('admin_network_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('admin/admin_network/new.html.twig', [
-            'network' => $network,
-            'form' => $form,
-        ]);
-    }
-
-    #[Route('/{id}', name: 'show', methods: ['GET'])]
-    public function show(Network $network): Response
-    {
-        return $this->render('admin/admin_network/show.html.twig', [
-            'network' => $network,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Network $network, NetworkRepository $networkRepository): Response
     {
@@ -57,22 +30,12 @@ class AdminNetworkController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $networkRepository->add($network, true);
 
-            return $this->redirectToRoute('admin/admin_network_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_network_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('admin/admin_network/edit.html.twig', [
             'network' => $network,
             'form' => $form,
         ]);
-    }
-
-    #[Route('/{id}', name: 'delete', methods: ['POST'])]
-    public function delete(Request $request, Network $network, NetworkRepository $networkRepository): Response
-    {
-        if ($this->isCsrfTokenValid('delete' . $network->getId(), $request->request->get('_token'))) {
-            $networkRepository->remove($network, true);
-        }
-
-        return $this->redirectToRoute('admin/admin_network_index', [], Response::HTTP_SEE_OTHER);
     }
 }
