@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Network index{% endblock %}
+
+{% block body %}
+    <h1>Network index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Link</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for network in networks %}
+            <tr>
+                <td>{{ network.id }}</td>
+                <td>{{ network.title }}</td>
+                <td>{{ network.link }}</td>
+                <td>
+                    <a href="{{ path('app_admin_network_show', {'id': network.id}) }}">show</a>
+                    <a href="{{ path('app_admin_network_edit', {'id': network.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_network_new') }}">Create new</a>
+{% endblock %}
