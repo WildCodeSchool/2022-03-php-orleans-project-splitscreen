@@ -31,12 +31,18 @@ class Actuality
     #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private string $image;
 
+    #[ORM\Column(type: 'text')]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    private string $description;
+
     #[ORM\Column(type: 'string', length: 80)]
     #[Assert\Length(
         max: 80,
         maxMessage: 'La phrase d\'accroche ne doit pas dépasser {{ limit }} caractères'
     )]
     private string $catchPhrase;
+
+
 
     public function getId(): ?int
     {
@@ -63,6 +69,18 @@ class Actuality
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
