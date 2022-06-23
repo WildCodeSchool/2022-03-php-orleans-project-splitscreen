@@ -10,19 +10,28 @@
 	<h2 class="text-center">Bienvenue dans votre espace administrateur</h2>
 	<section class="d-flex flex-row">
 		<div class="Card container mb-5">
-			<div class="card">
-					<h3>Événements</h3>
-			</div>
+			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
+				<div class="card">
+
+					<h3 class="m-5">Événements</h3>
+				</div>
+			</a>
 		</div>
 		<div class="Card container mb-5">
-			<div class="card">
-					<h3>Actualites</h3>
-			</div>
+			<a class="text-decoration-none" href="{{ path('admin_actuality_index') }}">
+
+				<div class="card">
+					<h3 class="m-5">Actualites</h3>
+				</div>
+			</a>
 		</div>
 		<div class="Card container mb-5">
-			<div class="card">
-					<h3>Membres</h3>
-			</div>
+			<a class="text-decoration-none" href="{{ path('admin_member_index') }}">
+
+				<div class="card">
+					<h3 class="m-5">Membres</h3>
+				</div>
+			</a>
 		</div>
 	</section>
 {% endblock %}
