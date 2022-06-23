@@ -24,8 +24,8 @@
 							<p class="text-center">
 								{{ actuality.date| date("H:i d/m/Y") }}
 							</p>
-							<p class="messageActus card-text text-center text-truncate">{{ actuality.message }}</p>
-							<a href="#" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
+							<p class="card-text text-center text-truncate">{{ actuality.catchPhrase }}</p>
+							<a href="{{ path('actuality_show', { id: actuality.id }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
 						</div>
 					</div>
 				</div>
