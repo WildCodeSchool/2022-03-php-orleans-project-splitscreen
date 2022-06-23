@@ -30,7 +30,7 @@ class AdminActualityController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $actualityRepository->add($actuality, true);
-
+            $this->addFlash('success', 'Nouvelle actualité ajoutée');
             return $this->redirectToRoute('admin_actuality_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -56,7 +56,7 @@ class AdminActualityController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $actualityRepository->add($actuality, true);
-
+            $this->addFlash('success', 'Actualité modifiée');
             return $this->redirectToRoute('admin_actuality_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -72,7 +72,7 @@ class AdminActualityController extends AbstractController
         if ($this->isCsrfTokenValid('delete' . $actuality->getId(), $request->request->get('_token'))) {
             $actualityRepository->remove($actuality, true);
         }
-
+        $this->addFlash('success', 'Actualité supprimée');
         return $this->redirectToRoute('admin_actuality_index', [], Response::HTTP_SEE_OTHER);
     }
 }
