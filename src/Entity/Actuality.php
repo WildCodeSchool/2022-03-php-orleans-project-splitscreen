@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ActualityRepository;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ActualityRepository::class)]
 class Actuality
@@ -15,15 +16,26 @@ class Actuality
     private int $id;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\Length(
+        max: 255,
+    )]
+    #[Assert\NotBlank]
     private string $title;
 
     #[ORM\Column(type: 'datetime')]
+    #[Assert\NotBlank]
+    #[Assert\DateTime]
     private DateTimeInterface $date;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\Length(
+        max: 255,
+    )]
+    #[Assert\NotBlank]
     private string $image;
 
     #[ORM\Column(type: 'text')]
+    #[Assert\NotBlank]
     private string $message;
 
     public function getId(): ?int
