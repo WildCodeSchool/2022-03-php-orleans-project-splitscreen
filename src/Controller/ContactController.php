@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Form\ContactType;
+use App\Form\ContactFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,13 +16,13 @@ class ContactController extends AbstractController
     #[Route('/', name: 'index')]
     public function index(Request $request, MailerInterface $mailer): Response
     {
-        $form = $this->createForm(ContactType::class);
+        $form = $this->createForm(ContactFormType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $contactFormData = $form->getData();
             $email = (new Email())
-                ->from($contactFormData['email'])
+                ->from($contactFormData->getEmail())
                 ->to('test@test.com')
                 ->subject('Message Split Screen')
                 ->html($this->renderView('contact/_email.html.twig', ['form' => $contactFormData]));
