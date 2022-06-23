@@ -1,0 +1,17 @@
+<div class="container mb-5">
+	<div class="row">
+		<div class="col-lg-6">
+			<img src="{{ asset('build/images/img_contact.jpg') }}" alt="stick arcade" class="w-100 form-img d-lg-block d-none">
+		</div>
+		<div class="col-lg-6 align-self-center">
+			{{ form_start(form) }}
+			{{ form_row(form.firstName) }}
+			{{ form_row(form.lastName) }}
+			{{ form_row(form.phone) }}
+			{{ form_row(form.email) }}
+			{{ form_row(form.message) }}
+			{{ form_rest(form) }}
+			<button class="btn btn-primary btn-lg m-2">{{ button_label|default('Envoyer') }}</button>
+			{{ form_end(form) }}
+		</div>
+	</div>
