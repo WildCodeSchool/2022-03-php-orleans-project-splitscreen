@@ -33,7 +33,11 @@ class Event
     #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private string $image;
 
-    #[ORM\Column(type: 'text')]
+    #[ORM\Column(type: 'string', length: 80)]
+    #[Assert\Length(
+        max: 80,
+        maxMessage: 'La phrase d\'accroche ne doit pas dépasser {{ limit }} caractères'
+    )]
     private string $catchPhrase;
 
     #[ORM\Column(type: 'text')]
