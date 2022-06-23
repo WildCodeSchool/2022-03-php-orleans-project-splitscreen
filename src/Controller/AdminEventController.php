@@ -30,7 +30,7 @@ class AdminEventController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $eventRepository->add($event, true);
-
+            $this->addFlash('success', 'Nouvel évènement ajouté');
             return $this->redirectToRoute('admin_event_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -48,7 +48,7 @@ class AdminEventController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $eventRepository->add($event, true);
-
+            $this->addFlash('success', 'Évènement modifié');
             return $this->redirectToRoute('admin_event_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -64,7 +64,7 @@ class AdminEventController extends AbstractController
         if ($this->isCsrfTokenValid('delete' . $event->getId(), $request->request->get('_token'))) {
             $eventRepository->remove($event, true);
         }
-
+        $this->addFlash('success', 'Évènement supprimé');
         return $this->redirectToRoute('admin_event_index', [], Response::HTTP_SEE_OTHER);
     }
 }
