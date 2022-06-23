@@ -40,7 +40,6 @@ Encore
     .addStyleEntry('navbar', './assets/styles/navbar.scss')
     .addStyleEntry('banner', './assets/styles/banner.scss')
     .addStyleEntry('association', './assets/styles/association.scss')
-    .addStyleEntry('actualityShow', './assets/styles/actualityShow.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
