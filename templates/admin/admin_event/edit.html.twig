@@ -1,13 +1,18 @@
 {% extends 'admin/baseAdmin.html.twig' %}
 
-{% block title %}Modifier l'événement{% endblock %}
+{% block title %}Modifier l'événement
+{% endblock %}
 
 {% block body %}
-    <h1 class="ms-2 text-center">Modifier l'événement</h1>
+	<h1 class="ms-2 text-center">Modifier l'événement</h1>
 	<div class="row justify-content-center">
 		<div class="w-50">
 			{{ include('admin/admin_event/_form.html.twig', {'button_label': 'Modifier'}) }}
-				<a class=" btn btn-primary btn-lg m-2" href="{{ path('admin_event_index') }}">Retour à la liste</a>
+			<a class=" btn btn-primary btn-lg m-2" href="{{ path('admin_event_index') }}">Retour à la liste</a>
 		</div>
+	</div>
+
+	<div style="width: 500px">
+		<iframe src="https://start.gg/tournament/test-4510/register/embed" frameborder="1" height="600" width="100%"></iframe>
 	</div>
 {% endblock %}
