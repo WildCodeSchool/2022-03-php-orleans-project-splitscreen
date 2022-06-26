@@ -1,0 +1,15 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Modifier un partenaire
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-center pt-4">Modifier une partenaire</h1>
+	<a href="{{ path('partners_index') }}" class="ms-5 btn btn-primary">
+		<i class="bi bi-arrow-left"></i>
+		Retour à la liste</a>
+	<div class="w-50 mx-auto my-4">
+		{{ include('admin/partners/_form.html.twig', {'button_label': 'Modifier'}) }}
+	</div>
+
+{% endblock %}
