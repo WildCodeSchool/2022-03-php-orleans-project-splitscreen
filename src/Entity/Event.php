@@ -48,7 +48,7 @@ class Event
     #[Assert\Length(
         max: 255,
     )]
-    private $slug;
+    private ?string $slug;
 
     public function getId(): ?int
     {
