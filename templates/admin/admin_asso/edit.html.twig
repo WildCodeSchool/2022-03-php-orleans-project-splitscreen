@@ -1,13 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends '/admin/baseAdmin.html.twig' %}
 
 {% block title %}Modifier le lien HelloAsso
 {% endblock %}
 
 {% block body %}
-	<h1>Modifier le lien HelloAsso</h1>
-
-	{{ include('admin/admin_asso/_form.html.twig', {'button_label': 'Modifier'}) }}
-
-	<a href="{{ path('admin_asso_index') }}">Retour à la liste</a>
-
+	<h1 class="ms-2 text-center">Modifier le lien HelloAsso</h1>
+	<div class="row justify-content-center">
+		<div class="w-50">
+			{{ include('admin/admin_asso/_form.html.twig', {'button_label': 'Modifier'}) }}
+			<a class=" btn btn-primary btn-lg m-2" href="{{ path('admin_asso_index') }}">Retour à la liste</a>
+		</div>
+	</div>
 {% endblock %}

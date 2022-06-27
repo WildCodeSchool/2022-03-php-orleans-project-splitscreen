@@ -1,32 +1,36 @@
-{% extends 'base.html.twig' %}
+{% extends '/admin/baseAdmin.html.twig' %}
 
-{% block title %}HelloAsso{% endblock %}
+{% block title %}HelloAsso
+{% endblock %}
 
 {% block body %}
-    <h1>HelloAsso</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Lien</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for hello_asso in hello_assos %}
-            <tr>
-                <td>{{ hello_asso.id }}</td>
-                <td>{{ hello_asso.link }}</td>
-                <td>
-                    <a href="{{ path('admin_asso_edit', {'id': hello_asso.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">Aucun lien trouvé</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<main class="container">
+		<h1>HelloAsso</h1>
+		<div class="d-flex justify-content-start">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Lien</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for hello_asso in hello_assos %}
+						<tr>
+							<td>{{ hello_asso.id }}</td>
+							<td>{{ hello_asso.link }}</td>
+							<td class="d-flex">
+								<a href="{{ path('admin_asso_edit', {'id': hello_asso.id}) }}">Modifier</a>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="3">Aucun lien trouvé</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</main>
 {% endblock %}
