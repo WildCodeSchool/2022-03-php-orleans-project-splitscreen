@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}HelloAsso index{% endblock %}
+{% block title %}HelloAsso{% endblock %}
 
 {% block body %}
-    <h1>HelloAsso index</h1>
+    <h1>HelloAsso</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Link</th>
-                <th>actions</th>
+                <th>Lien</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -19,12 +19,12 @@
                 <td>{{ hello_asso.id }}</td>
                 <td>{{ hello_asso.link }}</td>
                 <td>
-                    <a href="{{ path('admin_asso_edit', {'id': hello_asso.id}) }}">edit</a>
+                    <a href="{{ path('admin_asso_edit', {'id': hello_asso.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucun lien trouvé</td>
             </tr>
         {% endfor %}
         </tbody>

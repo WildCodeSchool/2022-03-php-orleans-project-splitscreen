@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit HelloAsso
+{% block title %}Modifier le lien HelloAsso
 {% endblock %}
 
 {% block body %}
-	<h1>Edit HelloAsso</h1>
+	<h1>Modifier le lien HelloAsso</h1>
 
-	{{ include('admin/admin_asso/_form.html.twig', {'button_label': 'Update'}) }}
+	{{ include('admin/admin_asso/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-	<a href="{{ path('admin_asso_index') }}">back to list</a>
+	<a href="{{ path('admin_asso_index') }}">Retour à la liste</a>
 
 {% endblock %}
