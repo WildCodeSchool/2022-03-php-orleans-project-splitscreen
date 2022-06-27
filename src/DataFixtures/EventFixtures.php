@@ -22,6 +22,9 @@ class EventFixtures extends Fixture
             $event->setImage('clash-royale-esport-min.jpg');
             $event->setCatchPhrase($faker->words(5, true));
             $event->setDescription($faker->sentence(50));
+            $imageName = 'event' . $i . '.jpg';
+            copy('src/DataFixtures/event.jpg', 'public/uploads/event/' . $imageName);
+            $event->setImage($imageName);
             $manager->persist($event);
         }
         $manager->flush();
