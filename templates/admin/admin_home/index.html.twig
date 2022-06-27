@@ -7,31 +7,56 @@
 	| Home
 {% endblock %}
 {% block body %}
-	<h2 class="text-center">Bienvenue dans votre espace administrateur</h2>
+	<h1 class="text-center my-4">Bienvenue dans votre espace administrateur</h1>
 	<section class="row">
-		<div class="Card container mb-5">
+		<div class="Card container mb-5 d-flex justify-content-center">
 			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
-				<div class="card">
+				<div class="box border border-dark">
 
-					<h3 class="m-5 text-light">Événements</h3>
+					<h2 class="m-5 text-light">Événements</h2>
 				</div>
 			</a>
 		</div>
-		<div class="Card container mb-5">
-			<a class="text-decoration-none" href="{{ path('admin_actuality_index') }}">
+		<div class="Card container mb-5 d-flex justify-content-center">
+			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
+				<div class="box border border-dark">
 
-				<div class="card">
-					<h3 class="m-5 text-light">Actualites</h3>
+					<h2 class="m-5 text-light">Actualités</h2>
 				</div>
 			</a>
 		</div>
-		<div class="Card container mb-5">
-			<a class="text-decoration-none" href=>
+		<div class="Card container mb-5 d-flex justify-content-center">
+			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
+				<div class="box border border-dark">
 
-				<div class="card">
-					<h3 class="m-5 text-light">Membres</h3>
+					<h2 class="m-5 text-light">Membres</h2>
 				</div>
 			</a>
 		</div>
+		<div class="Card container mb-5 d-flex justify-content-center">
+			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
+				<div class="box border border-dark">
+
+					<h2 class="m-5 text-light">Reseaux</h2>
+				</div>
+			</a>
+		</div>
+		<div class="Card container mb-5 d-flex justify-content-center">
+			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
+				<div class="box border border-dark">
+
+					<h2 class="m-5 text-light">Partenaire</h2>
+				</div>
+			</a>
+		</div>
+		<div class="Card container mb-5 d-flex justify-content-center">
+			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
+				<div class="box border border-dark">
+
+					<h2 class="m-5 text-light">HelloAsso</h2>
+				</div>
+			</a>
+		</div>
+
 	</section>
 {% endblock %}

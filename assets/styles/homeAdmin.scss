@@ -1,24 +1,12 @@
 @import "variables.scss";
-h3
+h2
 {
     mix-blend-mode: difference;
-    font-size: 4rem;
-    
 }
 
-.Card 
-{   
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-color: $primary;
-    width: 75%;
-}
-.Card .card
+
+.Card .box
 {  
-    display: flex;
-    justify-content: center;
     background: rgb(23, 23, 23);
     background: linear-gradient(
         -50deg,
@@ -30,9 +18,4 @@ h3
     width: 80rem;
     height: 15vh;
     box-shadow: -6px -6px 10px white, 6px 6px 5px white
-}
-
-.Card .card:hover
-{
-    transform: scale(1.01);
 }
