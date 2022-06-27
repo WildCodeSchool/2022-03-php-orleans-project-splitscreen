@@ -6,11 +6,11 @@
 {% endblock %}
 
 {% block body %}
-{% include 'components/_header.html.twig' with {'title': 'Association'} %}
+	{% include 'components/_header.html.twig' with {'title': 'Association'} %}
 	<main class="container d-flex justify-content-center flex-column">
-	<section>
-		<h1 class="text-center p-2 mt-5">"Découvrez ce qu'est Split Screen !"</h1>
-	</section>
+		<section>
+			<h1 class="text-center p-2 mt-5">"Découvrez ce qu'est Split Screen !"</h1>
+		</section>
 		<div class="corner my-5">
 			<h2 class="text-center text-secondary">
 				Qui sommes-nous ?
@@ -47,4 +47,5 @@
 			<img src="{{ asset('build/images/mannettes2.jpg') }}" class="col-lg-6 my-4" alt="Gaming Photo"/>
 		</section>
 	</main>
+	{% include 'components/_partners.html.twig' %}
 {% endblock %}
