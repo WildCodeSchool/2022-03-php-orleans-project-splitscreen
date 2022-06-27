@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Event;
 use App\Repository\EventRepository;
+use App\Repository\HelloAssoRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,12 +13,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class EventController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(EventRepository $eventRepository): Response
+    public function index(EventRepository $eventRepository, HelloAssoRepository $helloAssoRepository): Response
     {
         $events = $eventRepository->findAll();
+        $assoLink = $helloAssoRepository->findOneBy([])->getLink();
         return $this->render('event/index.html.twig', [
             'events' => $events,
             'title' => 'Les Évènements',
+            'assoLink' => $assoLink,
         ]);
     }
 
