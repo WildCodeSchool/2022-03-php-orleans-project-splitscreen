@@ -19,7 +19,7 @@
                 <td>{{ hello_asso.id }}</td>
                 <td>{{ hello_asso.link }}</td>
                 <td>
-                    <a href="{{ path('admin/admin_asso_edit', {'id': hello_asso.id}) }}">edit</a>
+                    <a href="{{ path('admin_asso_edit', {'id': hello_asso.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
