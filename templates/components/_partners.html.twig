@@ -4,13 +4,15 @@
 
 <h1 class="d-flex justify-content-center">Nos Partenaires</h1>
 <section class="partners">
-	<div class="">
+	<div class="container-fluid pt-3">
 		<div class="d-flex justify-content-between mx-3">
-			<img src="{{ asset('build/images/Logo_Mairie.png') }}" class="col-lg-2 partner-image" alt="Logo de la Mairie">
-			<img src="{{ asset('build/images/Logo6.png') }}" class="col-lg-2 partner-image" alt="Logo test">
-			<img src="{{ asset('build/images/Logo2.png') }}" class="col-lg-2 partner-image" alt="Logo test">
-			<img src="{{ asset('build/images/Logo3.png') }}" class="col-lg-2 partner-image" alt="Logo test">
-			<img src="{{ asset('build/images/Logo4.png') }}" class="col-lg-2 partner-image" alt="Logo test">
+			{% if partners is not empty %}
+				{% for partner in partners %}
+					<img href="{{ partner.link }}" src="{{ asset('images/partners/' ~ partner.image) }}" class="col-lg-2 partner-image"/>
+				{% endfor %}
+			{% else %}
+				<h2 class="h3">Partenaires à venir !</h2>
+			{% endif %}
 		</div>
 	</div>
 </section>
