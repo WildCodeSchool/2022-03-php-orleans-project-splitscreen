@@ -44,6 +44,12 @@ class Event
     #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private string $description;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Assert\Length(
+        max: 255,
+    )]
+    private $slug;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +111,18 @@ class Event
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
