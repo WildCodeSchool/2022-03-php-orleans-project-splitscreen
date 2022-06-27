@@ -20,7 +20,7 @@
 		<div class="mb-5">
 			<h3 class="text-light text-center mx-auto mt-4 py-1 px-2 mb-3 mx-auto bg-primary">à venir</h3>
 			{% if upcomingEvents is empty %}
-				<p class="text-center mb-5">Pas d'évènements à venir ...</p>
+				<p class="text-center mb-5">Pas d'évènements à venir.</p>
 			{% else %}
 				{% include 'components/_card_event.html.twig' with {'events': upcomingEvents } %}
 			{% endif %}
@@ -28,7 +28,7 @@
 		<div class="mb-5">
 			<h3 class="text-light text-center mx-auto mt-4 py-1 px-2 mb-3 mx-auto bg-secondary">Passés</h3>
 			{% if pastEvents is empty %}
-				<p class="text-center">Pas d'évènements passées ...</p>
+				<p class="text-center">Pas d'évènements passées.</p>
 			{% else %}
 				{% include 'components/_card_event.html.twig' with {'events': pastEvents } %}
 			{% endif %}
