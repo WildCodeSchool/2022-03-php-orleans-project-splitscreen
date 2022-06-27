@@ -1,3 +1,18 @@
+@import "variables.scss";
+
 .partners {
-    background-color: red;
+    // background-color: $primary;
+    border: 0.2rem solid;
+    width: fit-content;
+}
+
+.partner-image {
+    filter: opacity(0.5) grayscale(100%);
+    object-fit: contain;
+    height: 200px;
+    transition: filter 0.5s ease-in-out;
+}
+
+.partner-image:hover {
+    filter: none;
 }
