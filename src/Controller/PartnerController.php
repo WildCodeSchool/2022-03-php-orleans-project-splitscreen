@@ -16,7 +16,7 @@ class PartnerController extends AbstractController
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(PartnerRepository $partnersRepository): Response
     {
-        return $this->render('admin/partners/index.html.twig', [
+        return $this->render('admin/partner/index.html.twig', [
             'partners' => $partnersRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class PartnerController extends AbstractController
             return $this->redirectToRoute('partners_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('admin/partners/new.html.twig', [
+        return $this->renderForm('admin/partner/new.html.twig', [
             'partner' => $partner,
             'form' => $form,
         ]);
@@ -53,7 +53,7 @@ class PartnerController extends AbstractController
             return $this->redirectToRoute('partners_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('admin/partners/edit.html.twig', [
+        return $this->renderForm('admin/partner/edit.html.twig', [
             'partner' => $partner,
             'form' => $form,
         ]);
