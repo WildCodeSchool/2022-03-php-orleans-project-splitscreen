@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\HelloAssoRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: HelloAssoRepository::class)]
 class HelloAsso
@@ -13,6 +14,7 @@ class HelloAsso
     #[ORM\Column(type: 'integer')]
     private int $id;
 
+    #[Assert\NotBlank]
     #[ORM\Column(type: 'string', length: 255)]
     private string $link;
 
