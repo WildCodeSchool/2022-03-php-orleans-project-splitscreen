@@ -17,8 +17,8 @@
 					<th>Titre</th>
 					<th>Date</th>
 					<th>Image</th>
-					<th>Message</th>
-					<th>Actions</th>
+					<th>Phrase d'accroche</th>
+					<th class="d-flex justify-content-center">Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,9 +27,9 @@
 						<td>{{ actuality.title }}</td>
 						<td>{{ actuality.date ? actuality.date|date('Y-m-d H:i:s') : '' }}</td>
 						<td>{{ actuality.image }}</td>
-						<td>{{ actuality.message }}</td>
+						<td>{{ actuality.catchPhrase }}</td>
 						<td class="d-flex">
-							<a class="btn btn-primary m-2" href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}">Modifier<i class="bi bi-pen ms-2"></i></a>
+							<a href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}" class="btn btn-warning m-2" >Modifier<i class="bi bi-pen ms-2"></i></a>
 							{{ include('admin/admin_actuality/_delete_form.html.twig') }}
 						</td>
 					</tr>
