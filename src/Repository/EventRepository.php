@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Event;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use DateTime;
 
 /**
  * @extends ServiceEntityRepository<Event>
@@ -37,5 +38,25 @@ class EventRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    public function findAllPastEvents(): array|false
+    {
+        return $this->createQueryBuilder('e')
+            ->Where('e.date < :now')
+            ->setParameter('now', new DateTime())
+            ->OrderBy('e.date', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findAllUpcomingEvents(): array|false
+    {
+        return $this->createQueryBuilder('e')
+            ->Where('e.date > :now')
+            ->setParameter('now', new DateTime())
+            ->OrderBy('e.date', 'ASC')
+            ->getQuery()
+            ->getResult();
     }
 }
