@@ -17,7 +17,6 @@
 					<th>Titre</th>
 					<th>Date</th>
 					<th>Image</th>
-					<th>Phrase d'accroche</th>
 					<th class="d-flex justify-content-center">Actions</th>
 				</tr>
 			</thead>
@@ -27,9 +26,8 @@
 						<td>{{ event.title }}</td>
 						<td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
 						<td>{{ event.image }}</td>
-						<td>{{ event.catchPhrase }}</td>
 						<td class="d-flex justify-content-end">
-							<a href="{{ path('admin_event_edit', {'id': event.id}) }}" class="btn btn-warning btn-lg m-2">Modifier<i class="bi bi-pen ms-2"></i>
+							<a href="{{ path('admin_event_edit', {'id': event.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
 							</a>
 							{{ include('admin/admin_event/_delete_form.html.twig') }}
 						</td>
