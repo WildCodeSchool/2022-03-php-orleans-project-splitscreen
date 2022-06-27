@@ -13,6 +13,7 @@ h3
     justify-content: space-around;
     align-items: center;
     border-color: $primary;
+    width: 25%;
 }
 .Card .card
 {  
@@ -27,7 +28,7 @@ h3
         rgba(255, 255, 255, 1) 50%
     );
     width: 100%;
-    height: 75vh;
+    height: 25vh;
     box-shadow: -6px -6px 10px white, 6px 6px 5px white
 }
 
