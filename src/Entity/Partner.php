@@ -2,16 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\PartnersRepository;
+use App\Repository\PartnerRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use DateTimeImmutable;
 
-#[ORM\Entity(repositoryClass: PartnersRepository::class)]
+#[ORM\Entity(repositoryClass: PartnerRepository::class)]
 #[Vich\Uploadable]
-class Partners
+class Partner
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

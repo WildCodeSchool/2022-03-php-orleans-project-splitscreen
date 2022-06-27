@@ -2,19 +2,19 @@
 
 namespace App\Controller;
 
-use App\Entity\Partners;
-use App\Form\PartnersType;
-use App\Repository\PartnersRepository;
+use App\Entity\Partner;
+use App\Form\PartnerType;
+use App\Repository\PartnerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('admin/partenaires', name: 'partners_')]
-class PartnersController extends AbstractController
+class PartnerController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
-    public function index(PartnersRepository $partnersRepository): Response
+    public function index(PartnerRepository $partnersRepository): Response
     {
         return $this->render('admin/partners/index.html.twig', [
             'partners' => $partnersRepository->findAll(),
@@ -22,10 +22,10 @@ class PartnersController extends AbstractController
     }
 
     #[Route('/ajouter', name: 'new', methods: ['GET', 'POST'])]
-    public function new(Request $request, PartnersRepository $partnersRepository): Response
+    public function new(Request $request, PartnerRepository $partnersRepository): Response
     {
-        $partner = new Partners();
-        $form = $this->createForm(PartnersType::class, $partner);
+        $partner = new Partner();
+        $form = $this->createForm(PartnerType::class, $partner);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -42,9 +42,9 @@ class PartnersController extends AbstractController
 
 
     #[Route('/{id}/modifier', name: 'edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Partners $partner, PartnersRepository $partnersRepository): Response
+    public function edit(Request $request, Partner $partner, PartnerRepository $partnersRepository): Response
     {
-        $form = $this->createForm(PartnersType::class, $partner);
+        $form = $this->createForm(PartnerType::class, $partner);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -60,7 +60,7 @@ class PartnersController extends AbstractController
     }
 
     #[Route('/{id}', name: 'delete', methods: ['POST'])]
-    public function delete(Request $request, Partners $partner, PartnersRepository $partnersRepository): Response
+    public function delete(Request $request, Partner $partner, PartnerRepository $partnersRepository): Response
     {
         if ($this->isCsrfTokenValid('delete' . $partner->getId(), $request->request->get('_token'))) {
             $partnersRepository->remove($partner, true);
