@@ -18,4 +18,14 @@ class ActualityController extends AbstractController
             'actualities' => $actualities,
         ]);
     }
+
+    #[Route('/{id}', methods: ['GET'], name: 'show')]
+    public function show(int $id, ActualityRepository $actualityRepository): Response
+    {
+        $actuality = $actualityRepository->findOneById($id);
+        return $this->render('actuality/show.html.twig', [
+            'actuality' => $actuality,
+            'id' => $id,
+        ]);
+    }
 }

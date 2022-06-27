@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ActualityRepository;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ActualityRepository::class)]
 class Actuality
@@ -15,16 +16,34 @@ class Actuality
     private int $id;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères'
+    )]
     private string $title;
 
     #[ORM\Column(type: 'datetime')]
+    #[Assert\DateTime]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private DateTimeInterface $date;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private string $image;
 
     #[ORM\Column(type: 'text')]
-    private string $message;
+    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    private string $description;
+
+    #[ORM\Column(type: 'string', length: 80)]
+    #[Assert\Length(
+        max: 80,
+        maxMessage: 'La phrase d\'accroche ne doit pas dépasser {{ limit }} caractères'
+    )]
+    private string $catchPhrase;
+
+
 
     public function getId(): ?int
     {
@@ -55,14 +74,26 @@ class Actuality
         return $this;
     }
 
-    public function getMessage(): ?string
+    public function getDescription(): ?string
     {
-        return $this->message;
+        return $this->description;
     }
 
-    public function setMessage(string $message): self
+    public function setDescription(string $description): self
     {
-        $this->message = $message;
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getCatchPhrase(): ?string
+    {
+        return $this->catchPhrase;
+    }
+
+    public function setCatchPhrase(string $catchPhrase): self
+    {
+        $this->catchPhrase = $catchPhrase;
 
         return $this;
     }

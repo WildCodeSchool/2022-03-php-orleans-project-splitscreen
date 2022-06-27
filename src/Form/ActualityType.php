@@ -23,8 +23,11 @@ class ActualityType extends AbstractType
             ->add('image', TextType::class, [
                 'label' => 'Image',
             ])
-            ->add('message', TextType::class, [
-                'label' => 'Texte',
+            ->add('catchPhrase', TextType::class, [
+                'label' => 'Phrase d\'accroche',
+            ])
+            ->add('description', TextType::class, [
+                'label' => 'Description',
             ]);
     }
 
