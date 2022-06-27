@@ -32,14 +32,11 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
-    .addStyleEntry('eventShow', './assets/styles/eventShow.scss')
-    .addStyleEntry('event', './assets/styles/event.scss')
     .addStyleEntry('contact', './assets/styles/contact.scss')
     .addStyleEntry('header', './assets/styles/header.scss')
     .addStyleEntry('home', './assets/styles/home.scss')
     .addStyleEntry('navbar', './assets/styles/navbar.scss')
     .addStyleEntry('banner', './assets/styles/banner.scss')
-    .addStyleEntry('association', './assets/styles/association.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
