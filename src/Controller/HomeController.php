@@ -11,10 +11,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'home_index')]
-    public function index(
-        EventRepository $eventRepository,
-        ActualityRepository $actualityRepository,
-    ): Response {
+    public function index(EventRepository $eventRepository, ActualityRepository $actualityRepository): Response
+    {
         $events = $eventRepository->findBy(
             [],
             ['date' => 'DESC'],

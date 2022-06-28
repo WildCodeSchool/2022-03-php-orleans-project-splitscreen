@@ -21,7 +21,7 @@ class AdminAssoController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/modifier', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, HelloAsso $helloAsso, HelloAssoRepository $helloAssoRepository): Response
     {
         $form = $this->createForm(HelloAssoType::class, $helloAsso);
