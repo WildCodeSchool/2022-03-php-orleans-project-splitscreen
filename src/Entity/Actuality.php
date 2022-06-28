@@ -24,7 +24,6 @@ class Actuality
     private string $title;
 
     #[ORM\Column(type: 'datetime')]
-    #[Assert\DateTime]
     #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private DateTimeInterface $date;
 
