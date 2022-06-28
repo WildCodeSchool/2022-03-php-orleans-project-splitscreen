@@ -2,16 +2,18 @@
 	{{ encore_entry_link_tags('partners') }}
 {% endblock %}
 
-<h1 class="d-flex justify-content-center">Nos Partenaires</h1>
-<section class="partners">
-	<div class="container-fluid pt-3">
-		<div class="d-flex justify-content-between mx-3">
+<h1 class="text-center">Nos Partenaires</h1>
+<section class="partners mb-5">
+	<div class="container-fluid">
+		<div class="row justify-content-around mx-3">
 			{% if partners is not empty %}
 				{% for partner in partners %}
-					<img href="{{ partner.link }}" src="{{ asset('images/partners/' ~ partner.image) }}" class="col-lg-2 partner-image"/>
+					<a href=" {{ partner.link }}" class="col-lg-2">
+						<img src="{{ asset('images/partners/' ~ partner.image) }}" class=" w-100 partner-image"/>
+					</a>
 				{% endfor %}
 			{% else %}
-				<h2 class="h3">Partenaires à venir !</h2>
+				<h2 class="d-flex justify-content-center h3">Partenaires à venir !</h2>
 			{% endif %}
 		</div>
 	</div>
