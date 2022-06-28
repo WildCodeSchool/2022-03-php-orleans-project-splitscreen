@@ -17,7 +17,7 @@ class AdminAssoController extends AbstractController
     public function index(HelloAssoRepository $helloAssoRepository): Response
     {
         return $this->render('admin/admin_asso/index.html.twig', [
-            'hello_assos' => $helloAssoRepository->findAll(),
+            'hello_asso_link' => $helloAssoRepository->findOneBy([]),
         ]);
     }
 
@@ -34,7 +34,7 @@ class AdminAssoController extends AbstractController
         }
 
         return $this->renderForm('admin/admin_asso/edit.html.twig', [
-            'hello_asso' => $helloAsso,
+            'hello_asso_link' => $helloAsso,
             'form' => $form,
         ]);
     }

@@ -15,6 +15,10 @@ class HelloAsso
     private int $id;
 
     #[Assert\NotBlank]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: 'Le lien ne doit pas dépasser {{ limit }} caractères'
+    )]
     #[ORM\Column(type: 'string', length: 255)]
     private string $link;
 

@@ -16,19 +16,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					{% for hello_asso in hello_assos %}
-						<tr>
-							<td>{{ hello_asso.id }}</td>
-							<td>{{ hello_asso.link }}</td>
-							<td class="d-flex">
-								<a href="{{ path('admin_asso_edit', {'id': hello_asso.id}) }}">Modifier</a>
-							</td>
-						</tr>
-					{% else %}
-						<tr>
-							<td colspan="3">Aucun lien trouvé</td>
-						</tr>
-					{% endfor %}
+					<tr>
+						<td>{{ hello_asso_link.id }}</td>
+						<td>{{ hello_asso_link.link }}</td>
+						<td class="d-flex">
+							<a href="{{ path('admin_asso_edit', {'id': hello_asso_link.id}) }}">Modifier</a>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
