@@ -12,3 +12,75 @@ h1, h2, h3, h4 {
 body {
     font-family: $textFont;
 }
+
+/* Corners Section */
+.corners {
+    display: inline-block;
+    position: relative;
+}
+  
+.corners:before,
+.corners:after {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    content: '';
+}
+  
+.corners:before {
+    right: 0;
+    top: 0;
+    border-right: 3px solid  $primary;
+    border-top: 3px solid  $primary;
+}
+  
+.corners:after {
+    margin: -3px;
+    left: 0;
+    bottom: 0;
+    border-left: 3px solid  $primary;
+    border-bottom: 3px solid  $primary;
+}
+
+.corner {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+}
+  
+.corner:before,
+.corner:after {
+    margin-left: 120px;
+    margin-right: 120px;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    content: '';
+}
+  
+.corner:before {
+    right: 0;
+    top: 0;
+    border-right: 3px solid  $primary;
+    border-top: 3px solid  $primary;
+}
+  
+.corner:after {
+    
+    left: 0;
+    bottom: 0;
+    border-left: 3px solid  $primary;
+    border-bottom: 3px solid  $primary;
+} 
+
+@media screen and (max-width: 992px) {
+    .corner::before,.corner::after {
+      display:none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .corners::before,.corners::after {
+      display:none;
+    }
+}

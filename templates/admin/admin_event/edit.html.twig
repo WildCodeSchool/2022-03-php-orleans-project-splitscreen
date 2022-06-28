@@ -4,11 +4,11 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="ms-2 text-center">Modifier l'événement</h1>
-	<div class="row justify-content-center">
-		<div class="w-50">
+	<h1 class="pt-4 text-center">Modifier l'événement</h1>
+	<a href="{{ path('admin_event_index') }}" class="ms-5 btn btn-primary">
+		<i class="bi bi-arrow-left"></i>
+		Retour à la liste</a>
+		<div class="w-50 mx-auto my-4 text-center">
 			{{ include('admin/admin_event/_form.html.twig', {'button_label': 'Modifier'}) }}
-			<a class=" btn btn-primary btn-lg m-2" href="{{ path('admin_event_index') }}">Retour à la liste</a>
 		</div>
-	</div>
 {% endblock %}
