@@ -1,8 +1,62 @@
 {% extends 'admin/baseAdmin.html.twig' %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('homeAdmin') }}
+{% endblock %}
 {% block title %}
 	{{parent()}}
-	| Home
+	| Accueil
 {% endblock %}
 {% block body %}
-	<h2 class="text-center">Bienvenue dans votre espace administrateur</h2>
+	<h1 class="text-center my-4">Bienvenue dans votre espace administrateur</h1>
+	<section class="row">
+		<div class="adminCard mb-5 d-flex justify-content-center">
+			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
+				<div class="box border border-dark">
+
+					<h2 class="m-5 text-light">Événements</h2>
+				</div>
+			</a>
+		</div>
+		<div class="adminCard mb-5 d-flex justify-content-center">
+			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
+				<div class="box border border-dark">
+
+					<h2 class="m-5 text-light">Actualités</h2>
+				</div>
+			</a>
+		</div>
+		<div class="adminCard mb-5 d-flex justify-content-center">
+			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
+				<div class="box border border-dark">
+
+					<h2 class="m-5 text-light">Membres</h2>
+				</div>
+			</a>
+		</div>
+		<div class="adminCard mb-5 d-flex justify-content-center">
+			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
+				<div class="box border border-dark">
+
+					<h2 class="m-5 text-light">Réseaux</h2>
+				</div>
+			</a>
+		</div>
+		<div class="adminCard mb-5 d-flex justify-content-center">
+			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
+				<div class="box border border-dark">
+
+					<h2 class="m-5 text-light">Partenaire</h2>
+				</div>
+			</a>
+		</div>
+		<div class="adminCard mb-5 d-flex justify-content-center">
+			<a class="text-decoration-none" href="{{ path('admin_event_index') }}">
+				<div class="box border border-dark">
+
+					<h2 class="m-5 text-light">HelloAsso</h2>
+				</div>
+			</a>
+		</div>
+
+	</section>
 {% endblock %}

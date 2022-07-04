@@ -1,0 +1,30 @@
+{% extends '/admin/baseAdmin.html.twig' %}
+
+{% block title %}HelloAsso
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<h1>HelloAsso</h1>
+		<div class="d-flex justify-content-start">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Lien</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{ hello_asso_link.id }}</td>
+						<td>{{ hello_asso_link.link }}</td>
+						<td class="d-flex">
+							<a href="{{ path('admin_asso_edit', {'id': hello_asso_link.id}) }}">Modifier</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>
+{% endblock %}

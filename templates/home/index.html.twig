@@ -12,7 +12,7 @@
 {% block body %}
 	{% include 'components/_header.html.twig' with {'title': 'Accueil'} %}
 	<h1 class="text-center mt-5">Split Screen : l’art de jouer</h1>
-	<h2 class="text-center">Events Gaming - Tournois - Expos - Ateliers - Conférences</h2>
+	<h2 class="text-center mt-1">Events Gaming - Tournois - Expos - Ateliers - Conférences</h2>
 
 	{% include 'components/_banner.html.twig'%}
 
@@ -24,7 +24,7 @@
 					<div class="row py-2">
 						<div class="col">
 							<div class="card m-2 shadow-sm">
-								<img src="{{ asset('build/images/' ~ event.image) }}" alt="photographie mise en avant" class="eventActu card-img-top">
+								<img src="{{ vich_uploader_asset(event) }}" alt="photographie mise en avant" class="eventActu card-img-top">
 								<div class="card-body">
 									<h5 class="text-truncate card-title text-center">{{ event.title }}</h5>
 									<p class="text-center">
@@ -52,7 +52,7 @@
 										{{ actu.date| date }}
 									</p>
 									<p class="overflow-ellipsis card-text text-center text-truncate">{{ actu.catchPhrase}}</p>
-									<a href="#" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
+									<a href="{{ path('actuality_show', { id: actu.id }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
 								</div>
 							</div>
 						</div>

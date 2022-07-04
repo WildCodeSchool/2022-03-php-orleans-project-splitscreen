@@ -3,11 +3,15 @@
 namespace App\Entity;
 
 use App\Repository\ActualityRepository;
+use DateTimeImmutable;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ActualityRepository::class)]
+#[Vich\Uploadable]
 class Actuality
 {
     #[ORM\Id]
@@ -24,13 +28,21 @@ class Actuality
     private string $title;
 
     #[ORM\Column(type: 'datetime')]
-    #[Assert\DateTime]
     #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
     private DateTimeInterface $date;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
-    private string $image;
+    #[Vich\UploadableField(mapping: 'actu_image', fileNameProperty: 'image')]
+    #[Assert\File(
+        maxSize: '1024k',
+        mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
+    )]
+    private ?File $imageFile = null;
+
+    #[ORM\Column(type: 'string', nullable: true)]
+    private ?string $image = null;
+
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private ?\DateTimeInterface $updatedAt = null;
 
     #[ORM\Column(type: 'text')]
     #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
@@ -43,7 +55,24 @@ class Actuality
     )]
     private string $catchPhrase;
 
+    public function __construct()
+    {
+        $this->updatedAt = new DateTimeImmutable();
+    }
 
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+        if (null !== $imageFile) {
+            $this->updatedAt = new DateTimeImmutable();
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
 
     public function getId(): ?int
     {
@@ -103,7 +132,7 @@ class Actuality
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): ?self
     {
         $this->image = $image;
 
