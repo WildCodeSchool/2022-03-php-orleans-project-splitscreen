@@ -9,7 +9,7 @@
 			{% if partners is not empty %}
 				{% for partner in partners %}
 					<a href=" {{ partner.link }}" class="col-lg-2">
-						<img src="{{ asset('images/partners/' ~ partner.image) }}" class=" w-100 partner-image"/>
+						<img src="{{ asset('uploads/partners/' ~ partner.image) }}" class=" w-100 partner-image"/>
 					</a>
 				{% endfor %}
 			{% else %}

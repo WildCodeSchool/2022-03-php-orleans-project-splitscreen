@@ -3,8 +3,8 @@ vich_uploader:
 
     mappings:
        partner_image:
-           uri_prefix: /images/partners
-           upload_destination: '%kernel.project_dir%/public/images/partners'
+           uri_prefix: /uploads/partners
+           upload_destination: '%kernel.project_dir%/public/uploads/partners'
            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
            inject_on_load: false
