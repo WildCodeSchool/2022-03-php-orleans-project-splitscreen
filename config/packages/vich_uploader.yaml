@@ -10,6 +10,15 @@ vich_uploader:
            inject_on_load: false
            delete_on_update: true
            delete_on_remove: true
+
+       actu_image:
+           uri_prefix: /uploads/actu
+           upload_destination: '%kernel.project_dir%/public/uploads/actu'
+           namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+           inject_on_load: false
+           delete_on_update: true
+           delete_on_remove: true
            
        event_image:
            uri_prefix: /uploads/event
