@@ -15,7 +15,7 @@
 	</div>
 	<div class="mb-3 m-5">
 		<div class="d-flex justify-content-center align-items-center">
-			<img src="{{ asset('build/images/' ~ event.image) }}" class="w-50" alt="Photographie d'un évènement">
+			<img src="{{ vich_uploader_asset(event) }}" class="w-50" alt="Photographie d'un évènement">
 		</div>
 		<div class="mx-5 mt-5 px-5">
 			<p class="">{{ event.description|raw }}</p>
