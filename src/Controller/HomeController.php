@@ -32,9 +32,6 @@ class HomeController extends AbstractController
     #[Route('/mentions-legales', name: 'legal_notice_index')]
     public function legalNotice(): Response
     {
-
         return $this->render('legal-notice/index.html.twig');
     }
-
-
 }
