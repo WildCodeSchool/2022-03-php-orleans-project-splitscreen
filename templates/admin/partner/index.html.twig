@@ -1,0 +1,42 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Partenaires
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<h1>Partenaires</h1>
+		<div class="d-flex justify-content-start">
+			<a class="btn btn-secondary btn-lg m-2" href="{{ path('partners_new') }}">Ajouter<i class="bi bi-cloud-plus ms-2"></i>
+			</a>
+		</div>
+
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Lien</th>
+					<th>Image</th>
+					<th class="d-flex justify-content-center">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for partner in partners %}
+					<tr>
+						<td>{{ partner.link }}</td>
+						<td>{{ partner.image }}</td>
+						<td class="d-flex justify-content-center">
+							<a href="{{ path('partners_edit', {'id': partner.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
+							</a>
+							{{ include('admin/partner/_delete_form.html.twig') }}
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="6">Aucun résultat</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</main>
+{% endblock %}

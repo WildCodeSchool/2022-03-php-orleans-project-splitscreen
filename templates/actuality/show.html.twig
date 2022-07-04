@@ -10,7 +10,7 @@
 			<i class="bi bi-arrow-left fs-1"></i>
 		</a>
 	</div>
-	<div class="corner d-flex justify-content-center">
+	<div class=" d-flex justify-content-center">
 		<h1 class="">{{ actuality.title }}</h1>
 	</div>
 	<div class="mb-3 m-5">
@@ -18,7 +18,7 @@
 			<img src="{{ asset('build/images/' ~ actuality.image) }}" class="w-50" alt="Photographie d'une actualité">
 		</div>
 		<div class="mx-5 mt-5 px-5">
-		<p class="">{{ actuality.description }}</p>
+		<p class="">{{ actuality.description|raw }}</p>
 			<p class="card-text mt-2">
 				<small class="text-muted">{{ actuality.date|date }}</small>
 			</p>
