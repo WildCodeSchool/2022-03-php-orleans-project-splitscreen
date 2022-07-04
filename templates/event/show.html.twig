@@ -18,7 +18,7 @@
 			<img src="{{ asset('build/images/' ~ event.image) }}" class="w-50" alt="Photographie d'un évènement">
 		</div>
 		<div class="mx-5 mt-5 px-5">
-			<p class="">{{ event.description }}</p>
+			<p class="">{{ event.description|raw }}</p>
 			<p class="card-text mt-2">
 				<small class="text-muted">{{ event.date|date }}</small>
 			</p>
