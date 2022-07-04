@@ -1,6 +1,6 @@
 <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
 	<div class="card m-2 shadow-sm">
-		<img src="{{ asset('build/images/' ~ event.image) }}" alt="{{'photographie de ' ~ event.title}}" class="card-img-top">
+		<img src="{{ vich_uploader_asset(event) }}" alt="{{'photographie de ' ~ event.title}}" class="card-img-top">
 		<div class="card-body">
 			<h5 class="card-title text-center">{{ event.title }}</h5>
 			<p class="text-center">
