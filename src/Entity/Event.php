@@ -6,7 +6,10 @@ use DateTime;
 use DateTimeInterface;
 use App\Repository\EventRepository;
 use DateTimeImmutable;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
@@ -48,6 +51,7 @@ class Event
     public function __construct()
     {
         $this->updatedAt = new DateTimeImmutable();
+        $this->participants = new ArrayCollection();
     }
     #[ORM\Column(type: 'string', length: 80)]
     #[Assert\Length(
@@ -65,6 +69,9 @@ class Event
         max: 255,
     )]
     private ?string $slug;
+
+    #[ORM\OneToMany(mappedBy: 'event', targetEntity: Participant::class)]
+    private Collection $participants;
 
     public function getId(): ?int
     {
@@ -155,6 +162,36 @@ class Event
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Participant>
+     */
+    public function getParticipants(): Collection
+    {
+        return $this->participants;
+    }
+
+    public function addParticipant(Participant $participant): self
+    {
+        if (!$this->participants->contains($participant)) {
+            $this->participants[] = $participant;
+            $participant->setEvent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeParticipant(Participant $participant): self
+    {
+        if ($this->participants->removeElement($participant)) {
+            // set the owning side to null (unless already changed)
+            if ($participant->getEvent() === $this) {
+                $participant->setEvent(null);
+            }
+        }
 
         return $this;
     }

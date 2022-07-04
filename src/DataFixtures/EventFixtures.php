@@ -25,6 +25,7 @@ class EventFixtures extends Fixture
             $imageName = 'event' . $i . '.jpg';
             copy('src/DataFixtures/event.jpg', 'public/uploads/event/' . $imageName);
             $event->setImage($imageName);
+            $this->addReference('event' . $i, $event);
             $manager->persist($event);
         }
         $manager->flush();
