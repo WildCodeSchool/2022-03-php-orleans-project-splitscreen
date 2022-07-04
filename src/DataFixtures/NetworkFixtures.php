@@ -1,6 +1,6 @@
 <?php
 
-namespace App\NetworkFixtures;
+namespace App\DataFixtures;
 
 use App\Entity\Network;
 use Doctrine\Bundle\FixturesBundle\Fixture;
