@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DataFixtures;
+namespace App\NetworkFixtures;
 
 use App\Entity\Network;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -9,31 +9,49 @@ use Symfony\Component\Validator\Constraints\Length;
 
 class NetworkFixtures extends Fixture
 {
-    private const NETWORKS = [
-        'Facebook',
-        'Instagram',
-        'Twitter',
-        'Discord',
-        'Linkedin',
-        'Tiktok',
+    public const NETWORKS = [
+        [
+            'id' => 0,
+            'title' => 'Facebook',
+            'link' => 'https://www.facebook.com/splitscreenasso'
+        ],
+        [
+            'id' => 1,
+            'title' => 'Instagram',
+            'link' => 'https://www.instagram.com/splitscreenasso'
+        ],
+        [
+            'id' => 2,
+            'title' => 'Twitter',
+            'link' => 'https://twitter.com/SplitScreenn?t=7T9yIfazpk4ATZ2uhpn6FA&s=09'
+        ],
+        [
+            'id' => 3,
+            'title' => 'Discord',
+            'link' => 'https://discord.gg/ftJeetZT9j'
+        ],
+        [
+            'id' => 4,
+            'title' => 'Linkedin',
+            'link' => 'https://www.linkedin.com/company/splitscreenasso'
+        ],
+        [
+            'id' => 5,
+            'title' => 'TikTok',
+            'link' => ''
+        ],
     ];
-    private const LINKS = [
-        'https://www.facebook.com/splitscreenasso/',
-        ' https://www.instagram.com/splitscreenasso',
-        'https://twitter.com/SplitScreenn?t=7T9yIfazpk4ATZ2uhpn6FA&s=09',
-        ' https://discord.gg/ftJeetZT9j',
-        'https://www.linkedin.com/company/splitscreenasso',
-        '',
-    ];
+
     public function load(ObjectManager $manager): void
     {
-        for ($i = 0; $i < count(self::NETWORKS); $i++) {
+        foreach (self::NETWORKS as $networkItems) {
             $network = new Network();
-            $network->setTitle(self::NETWORKS[$i]);
-            $network->setLink(self::LINKS[$i]);
+            $network->setTitle($networkItems['title']);
+            $network->setLink($networkItems['link']);
             $manager->persist($network);
-            $this->addReference('networks' . $i, $network);
+            $this->addReference('network_' . $networkItems['id'], $network);
         }
+
         $manager->flush();
     }
 }
