@@ -24,7 +24,6 @@ class EventType extends AbstractType
             ])
             ->add('imageFile', VichImageType::class, [
                 'label' => 'Image',
-
             ])
             ->add('description', CKEditorType::class, [
                 'label' => 'Description',
