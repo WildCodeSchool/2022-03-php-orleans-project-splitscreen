@@ -15,7 +15,7 @@
 		<small class="text-muted">{{ actuality.date|date }}</small>
 	</div>
 	<div class="d-flex justify-content-center align-items-center">
-		<img src="{{ asset('build/images/' ~ actuality.image) }}" class="w-50" alt="Photographie d'une actualité">
+		<img src="{{ asset('build/images/' ~ actuality.image) }}" class="w-50" alt="{{ actuality.title }}">
 	</div>
 	<p class="m-5">{{ actuality.description|raw }}</p>
 {% endblock %}
