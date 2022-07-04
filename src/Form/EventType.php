@@ -32,6 +32,7 @@ class EventType extends AbstractType
             ])
             ->add('slug', TextType::class, [
                 'label' => 'Slug du tournoi (optionnel)',
+                'required'   => false,
             ]);
     }
 
