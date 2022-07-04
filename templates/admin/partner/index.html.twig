@@ -12,7 +12,7 @@
 		</div>
 
 
-		<table class="table">
+		<table class="table align-middle">
 			<thead>
 				<tr>
 					<th>Lien</th>
@@ -24,8 +24,8 @@
 				{% for partner in partners %}
 					<tr>
 						<td>{{ partner.link }}</td>
-						<td>{{ partner.image }}</td>
-						<td class="d-flex justify-content-center">
+						<td><img src="{{ asset('images/partners/' ~ partner.image) }}" class="w-25"/></td>
+						<td>
 							<a href="{{ path('partners_edit', {'id': partner.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
 							</a>
 							{{ include('admin/partner/_delete_form.html.twig') }}
