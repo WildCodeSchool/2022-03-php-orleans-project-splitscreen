@@ -14,10 +14,11 @@ class EventController extends AbstractController
     #[Route('/', name: 'index')]
     public function index(EventRepository $eventRepository): Response
     {
-        $events = $eventRepository->findAll();
+        $pastEvents = $eventRepository->findAllPastEvents();
+        $upcomingEvents = $eventRepository->findAllUpcomingEvents();
         return $this->render('event/index.html.twig', [
-            'events' => $events,
-            'title' => 'Les Évènements',
+            'upcomingEvents' => $upcomingEvents,
+            'pastEvents' => $pastEvents,
         ]);
     }
 
