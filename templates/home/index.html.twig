@@ -12,38 +12,55 @@
 {% block body %}
 	{% include 'components/_header.html.twig' with {'title': 'Accueil'} %}
 	<h1 class="text-center mt-5">Split Screen : l’art de jouer</h1>
-	<h2 class="text-center">Events Gaming - Tournois - Expos - Ateliers - Conférences</h2>
+	<h2 class="text-center mt-1">Events Gaming - Tournois - Expos - Ateliers - Conférences</h2>
 
 	{% include 'components/_banner.html.twig'%}
 
-	<div class="container my-5">
-		<div class="row">
-			<div class="col mb-5">
-				<h2 class="border-bottom border-2 border-secondary pb-2 text-primary">Nos Évènements</h2>
+	<div class="container-fluid my-5">
+		<div class="row justify-content-evenly">
+			<div class="col col-lg-4 mb-5">
+				<h2 class="border-bottom border-2 border-secondary pb-2 ms-2 text-primary">Nos Évènements</h2>
+				{% for event in events %}
+					<div class="row py-2">
+						<div class="col">
+							<div class="card m-2 shadow-sm">
+								<img src="{{ vich_uploader_asset(event) }}" alt="photographie mise en avant" class="eventActu card-img-top">
+								<div class="card-body">
+									<h5 class="text-truncate card-title text-center">{{ event.title }}</h5>
+									<p class="text-center">
+										{{ event.date| date }}
+									</p>
+									<p class="text-truncate card-text text-center text-truncate">{{ event.catchPhrase }}</p>
+									<a href="{{ path('event_show', { id: event.id }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
 			</div>
-			<div class="col mb-5">
-				<h2 class="border-bottom border-2 border-secondary pb-2 text-primary">Dernières actus</h2>
+			
+			<div class="col col-lg-4 col-md-12 col-sm-12 mb-5">
+				<h2 class="border-bottom border-2 border-secondary pb-2 ms-2 text-primary">Dernières actus</h2>
+				{% for actu in actus %}
+					<div class="row py-2">
+						<div class="col">
+							<div class="card m-2 shadow-sm">
+								<img src="{{ asset('build/images/' ~ actu.image) }}" alt="photographie mise en avant" class="eventActu card-img-top">
+								<div class="card-body">
+									<h5 class="card-title text-center">{{ actu.title }}</h5>
+									<p class="text-center">
+										{{ actu.date| date }}
+									</p>
+									<p class="overflow-ellipsis card-text text-center text-truncate">{{ actu.catchPhrase}}</p>
+									<a href="#" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 
-		{% for event in events %}
-			<div class="row py-2">
-				<div class="col me-5">
-					<div class="card m-2">
-						<img src="{{ asset('build/images/' ~ event.image) }}" alt="photographie mise en avant" class="card-img-top">
-						<div class="card-body">
-							<h5 class="card-title text-center">{{ event.title }}</h5>
-							<p class="text-center">
-								{{ event.date| date }}
-							</p>
-							<p class="card-text text-center">{{ event.catchPhrase }}</p>
-							<a href="{{ path('event_show', { id: event.id }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-				</div>
-			</div>
-		{% endfor %}
+
 	</div>
 {% endblock %}

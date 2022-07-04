@@ -1,11 +1,13 @@
-.col h2 {
-    width: fit-content;
-}
-
 .controller-img {
-    background-image: url('../images/manette.jpg');
+    background-image: url("../images/manette.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.eventActu {
+    height: 300px;
+    object-fit: cover;
+}
+

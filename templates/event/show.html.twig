@@ -1,7 +1,4 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %}
-	{{ encore_entry_link_tags('event') }}
-{% endblock %}
 
 {% block title %}Évènement :
 	{{ event.title }}
@@ -13,19 +10,24 @@
 			<i class="bi bi-arrow-left fs-1"></i>
 		</a>
 	</div>
-	<div class="corner d-flex justify-content-center">
+	<div class="d-flex justify-content-center">
 		<h1 class="">{{ event.title }}</h1>
 	</div>
-	<section class="d-flex justify-content-center mb-3">
-		<div class="mb-3 m-5 w-75">
-			<img src="{{ asset('build/images/' ~ event.image) }}" class="card-img-top" alt="...">
-			<div class="card-body">
-
-				<p class="card-text">
-					<small class="text-muted">{{ event.date|date }}</small>
-				</p>
-				<p class="card-text">{{ event.description }}</p>
-			</div>
+	<div class="mb-3 m-5">
+		<div class="d-flex justify-content-center align-items-center">
+			<img src="{{ asset('build/images/' ~ event.image) }}" class="w-50" alt="Photographie d'un évènement">
 		</div>
-	</section>
+		<div class="mx-5 mt-5 px-5">
+			<p class="">{{ event.description }}</p>
+			<p class="card-text mt-2">
+				<small class="text-muted">{{ event.date|date }}</small>
+			</p>
+		</div>
+	</div>
+
+	{% if event.slug %}
+		<div class="w-75 mx-auto my-5 border border-3 border-dark">
+			<iframe src="https://start.gg/tournament/{{event.slug}}/register/embed" frameborder="1" height="800" width="100%"></iframe>
+		</div>
+	{% endif %}
 {% endblock %}

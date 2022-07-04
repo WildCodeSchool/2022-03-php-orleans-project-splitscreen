@@ -25,6 +25,14 @@ Encore
         // only copy files matching this pattern
         // pattern: /\.(png|jpg|jpeg)$/
     })
+    .copyFiles([
+        {from: './node_modules/ckeditor4/', to: 'ckeditor/[path][name].[ext]', pattern: /\.(js|css)$/, includeSubdirectories: false},
+        {from: './node_modules/ckeditor4/adapters', to: 'ckeditor/adapters/[path][name].[ext]'},
+        {from: './node_modules/ckeditor4/lang', to: 'ckeditor/lang/[path][name].[ext]'},
+        {from: './node_modules/ckeditor4/plugins', to: 'ckeditor/plugins/[path][name].[ext]'},
+        {from: './node_modules/ckeditor4/skins', to: 'ckeditor/skins/[path][name].[ext]'},
+        {from: './node_modules/ckeditor4/vendor', to: 'ckeditor/vendor/[path][name].[ext]'}
+    ])
     /*
      * ENTRY CONFIG
      *
@@ -32,13 +40,11 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
-    .addStyleEntry('event', './assets/styles/event.scss')
-    .addStyleEntry('homeAdmin', './assets/styles/homeAdmin.scss')
+    .addStyleEntry('contact', './assets/styles/contact.scss')
     .addStyleEntry('header', './assets/styles/header.scss')
     .addStyleEntry('home', './assets/styles/home.scss')
     .addStyleEntry('navbar', './assets/styles/navbar.scss')
     .addStyleEntry('banner', './assets/styles/banner.scss')
-    .addStyleEntry('association', './assets/styles/association.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

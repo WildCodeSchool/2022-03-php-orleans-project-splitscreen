@@ -1,0 +1,41 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Membres
+{% endblock %}
+
+{% block body %}
+<main class="container">
+	<h1>Membres</h1>
+	<div class="d-flex justify-content-start">
+    <a class="btn btn-secondary btn-lg m-2" href="{{ path('admin_member_add') }}">Ajouter<i class="bi bi-cloud-plus ms-2"></i></a>
+    </div>
+
+	<table class="table align-middle">
+		<thead>
+			<tr>
+				<th>Image</th>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th class="d-flex justify-content-center">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for member in members %}
+				<tr>
+					<td>{{ member.image }}</td>
+					<td>{{ member.lastName }}</td>
+					<td>{{ member.firstName }}</td>
+					<td class="d-flex justify-content-center">
+						<a href="{{ path('admin_member_edit', {'id': member.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i></a>
+						{{ include('admin/admin_member/_delete_form.html.twig') }}
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="6">Pas de membres trouvés</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	</main>	
+{% endblock %}

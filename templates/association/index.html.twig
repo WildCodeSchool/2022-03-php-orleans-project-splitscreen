@@ -1,32 +1,29 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %}
-	{{ encore_entry_link_tags('association') }}
-{% endblock %}
 {% block title %}Split Screen
 {% endblock %}
 
 {% block body %}
-{% include 'components/_header.html.twig' with {'title': 'Association'} %}
+	{% include 'components/_header.html.twig' with {'title': 'Association'} %}
 	<main class="container d-flex justify-content-center flex-column">
-	<section>
-		<h1 class="text-center p-2 mt-5">"Découvrez ce qu'est Split Screen !"</h1>
-	</section>
+		<section>
+			<h1 class="text-center p-2 mt-5">"Découvrez ce qu'est Split Screen !"</h1>
+		</section>
 		<div class="corner my-5">
 			<h2 class="text-center text-secondary">
 				Qui sommes-nous ?
 			</h2>
 
 			<div class="row justify-content-center">
-				<p class="w-50">
+				<p class="w-75">
 					L'association Split Screen est une association loi 1901 basée à Orléans, dont l'objet est de promouvoir et développer la culture vidéo ludique.<br><br>Fondée en 2019, l'association souhaite permettre aux joueurs et fans de jeux vidéo de se retrouver afin de vivre leur passion commune, tout en partageant la culture et l’histoire du jeu vidéo au grand public.
 				</p>
 			</div>
 		</div>
 
-		<section class="row align-items-center mb-5">
+		<section class="row align-items-center">
 			<img src="{{ asset('build/images/mannettes.jpg') }}" class="col-lg-6 my-4" alt="Gaming Photo"/>
-			<div class="col-lg-6">
-				<div class="corners card-body">
+			<div class="corners col-lg-6">
+				<div class="card-body">
 					<h2 class="card-title text-secondary">Fédérer</h2>
 					<p class="card-text">
 						Réunir les joueurs et communautés de joueurs dispersés sur tout le territoire orléanais grâce à des événements et manifestations organisés tout au long del'année

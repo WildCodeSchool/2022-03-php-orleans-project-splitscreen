@@ -1,0 +1,16 @@
+{% extends 'admin/baseAdmin.html.twig' %}
+
+{% block title %}Modifier un membre
+{% endblock %}
+
+{% block body %}
+	<h1 class="pt-4 text-center">Modifier le membre</h1>
+	<a href="{{ path('admin_member_index') }}" class="ms-5 btn btn-primary">
+		<i class="bi bi-arrow-left"></i>
+		Retour à la liste</a>
+	<div class="row justify-content-center my-4">
+		<div class="w-50">
+			{{ include('admin/admin_member/_form.html.twig', {'button_label': 'Modifier'}) }}
+		</div>
+	</div>
+{% endblock %}

@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class ActualityType extends AbstractType
 {
@@ -23,8 +24,11 @@ class ActualityType extends AbstractType
             ->add('image', TextType::class, [
                 'label' => 'Image',
             ])
-            ->add('message', TextType::class, [
-                'label' => 'Texte',
+            ->add('catchPhrase', TextType::class, [
+                'label' => 'Phrase d\'accroche',
+            ])
+            ->add('description', CKEditorType::class, [
+                'label' => 'Description',
             ]);
     }
 
