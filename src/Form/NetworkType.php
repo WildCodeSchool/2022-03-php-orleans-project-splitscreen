@@ -14,7 +14,7 @@ class NetworkType extends AbstractType
     {
         $builder
             ->add('link', TextType::class, [
-                'label' => 'lien',
+                'label' => 'Lien',
             ]);
     }
 
