@@ -1,21 +1,24 @@
 @import "variables.scss";
-h2
-{
+
+h2 {
     mix-blend-mode: difference;
 }
 
 
-.adminCard .box
-{  
+.adminCard .box {
     background: rgb(23, 23, 23);
-    background: linear-gradient(
-        -50deg,
-        rgba(23, 23, 23, 1) 45%,
-        rgba(0, 0, 0, 1) 50%,
-        rgba(255, 255, 255, 1) 50.1%,
-        rgba(255, 255, 255, 1) 50%
-    );
+    background: linear-gradient(-50deg,
+            rgba(23, 23, 23, 1) 45%,
+            rgba(0, 0, 0, 1) 50%,
+            rgba(255, 255, 255, 1) 50.1%,
+            rgba(255, 255, 255, 1) 50%);
     width: 80rem;
     height: 15vh;
     box-shadow: -6px -6px 10px white, 6px 6px 5px white
+}
+
+.vich-image img {
+    width: 100%;
+    padding: 30px;
+    margin-right: 20px; 
 }

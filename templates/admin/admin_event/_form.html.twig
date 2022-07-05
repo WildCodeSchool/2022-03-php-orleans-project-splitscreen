@@ -1,11 +1,20 @@
 <div class="ms-1 border border-3 border-primary p-3">
-{{ form_start(form) }}
-		{{ form_row(form.title) }}
-		{{ form_row(form.date) }}
-		{{ form_row(form.description) }}
-		{{ form_row(form.catchPhrase) }}
-		{{ form_row(form.slug) }}
-		{{ form_row(form.imageFile) }}
-		<button class="btn btn-secondary btn-lg m-2">{{ button_label|default('Enregistrer') }}</button>
-{{ form_end(form) }}
+	{{ form_start(form) }}
+	{{ form_row(form.title) }}
+	{{ form_row(form.date) }}
+	{{ form_row(form.description) }}
+	{{ form_row(form.catchPhrase) }}
+	{{ form_row(form.slug) }}
+	<div class="mb-3">
+		{% for participant in form.participants %}
+			<div class="d-flex justify-content-start mb-3 gap-2">
+				{{ form_label(participant.pseudo, 'rank ' ~ loop.index) }}
+				{{ form_errors(participant.pseudo) }}
+				{{ form_widget(participant.pseudo) }}
+			</div>
+		{% endfor %}
+	</div>
+	{{ form_row(form.imageFile) }}
+	<button class="btn btn-secondary btn-lg m-2">{{ button_label|default('Enregistrer') }}</button>
+	{{ form_end(form) }}
 </div>
