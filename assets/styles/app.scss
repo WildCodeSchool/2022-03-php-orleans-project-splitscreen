@@ -13,6 +13,11 @@ body {
     font-family: $textFont;
 }
 
+.imgDimension {
+    height: 300px;
+    object-fit: cover;
+}
+
 /* Corners Section */
 .corners {
     display: inline-block;
