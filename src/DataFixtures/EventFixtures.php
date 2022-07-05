@@ -15,7 +15,7 @@ class EventFixtures extends Fixture
     {
         $faker = Factory::create();
 
-        for ($i = 0; $i < self::VALUE; $i++) {
+        for ($i = 0; $i <= self::VALUE; $i++) {
             $event = new Event();
             $event->setTitle($faker->words(2, true));
             $event->setDate($faker->dateTime());
