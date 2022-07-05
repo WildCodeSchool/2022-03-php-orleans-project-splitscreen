@@ -5,12 +5,14 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="ms-2 text-center">Modifier {{ network.title }}</h1>
-	<div class="row justify-content-center">
-		<div class="w-50">
-			{{ include('admin/admin_network/_form.html.twig', {'button_label': 'Modifier'}) }}
-			<a class=" btn btn-primary btn-lg m-2" href="{{ path('admin_network_index') }}">Retour à la liste</a>
+	<h1 class="text-center pt-4">Modifier
+		{{ network.title }}</h1>
+	<a href="{{ path('admin_network_index') }}" class="ms-5 btn btn-primary">
+		<i class="bi bi-arrow-left"></i>Retour à la liste</a>
+	
+		<div class="w-50 mx-auto my-4 text-center">
+			{{ include('admin/admin_actuality/_form.html.twig', {'button_label': 'Modifier'}) }}
 		</div>
-	</div>
+
 
 {% endblock %}

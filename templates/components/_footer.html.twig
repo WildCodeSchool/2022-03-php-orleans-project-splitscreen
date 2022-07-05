@@ -1,4 +1,4 @@
-<footer class="footer bg-dark text-light py-2">
+<footer class="footer bg-dark text-light py-3">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8">
@@ -15,8 +15,14 @@
 								contact.splitscreen@gmail.com
 							</p>
 						</li>
-						<li class="list-unstyled">
-							<p>Mentions légales</p>
+						<li class="list-unstyled d-flex gap-2">
+							<a class="text-light" href="{{ path('legal_notice_index') }}">
+								<p>Mentions légales</p>
+							</a> 
+							<p>|</p>
+							<a class="text-light" href="{{ path('connection') }}">
+								<p>Admin</p>
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -24,7 +30,8 @@
 			<div class="col-lg-1"></div>
 			<div class="col-lg-3">
 				<div class="d-flex align-items-center justify-content-center h-100">
-					<a type="button" class="btn btn-secondary" href="{{ path('contact_index') }}#reseaux"><i class="ps-2 bi bi-grid-fill me-2"></i>Nos réseaux sociaux</a>
+					<a type="button" class="btn btn-secondary" href="{{ path('contact_index') }}#reseaux">
+						<i class="ps-2 bi bi-grid-fill me-2"></i>Nos réseaux sociaux</a>
 				</div>
 			</div>
 		</div>

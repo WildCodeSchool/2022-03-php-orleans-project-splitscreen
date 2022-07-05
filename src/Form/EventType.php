@@ -10,6 +10,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class EventType extends AbstractType
 {
@@ -25,7 +26,7 @@ class EventType extends AbstractType
             ->add('imageFile', VichImageType::class, [
                 'label' => 'Image',
             ])
-            ->add('description', TextType::class, [
+            ->add('description', CKEditorType::class, [
                 'label' => 'Description',
             ])
             ->add('catchPhrase', TextType::class, [
@@ -38,6 +39,7 @@ class EventType extends AbstractType
                 'entry_type' => ParticipantType::class,
                 'entry_options' => ['label' => false],
                 'allow_add' => true,
+                'required'   => false,
             ]);
     }
 

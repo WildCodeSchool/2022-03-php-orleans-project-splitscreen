@@ -12,7 +12,7 @@
 		</div>
 
 
-		<table class="table">
+		<table class="table align-middle">
 			<thead>
 				<tr>
 					<th>Lien</th>
@@ -24,11 +24,12 @@
 				{% for partner in partners %}
 					<tr>
 						<td>{{ partner.link }}</td>
-						<td>{{ partner.image }}</td>
-						<td class="d-flex justify-content-center">
-							<a href="{{ path('partners_edit', {'id': partner.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
-							</a>
-							{{ include('admin/partner/_delete_form.html.twig') }}
+						<td><img class="w-25" src="{{ vich_uploader_asset(partner, 'imageFile') }}"/></td>
+						<td>
+							<div class="d-flex justify-content-center">
+								<a href="{{ path('partners_edit', {'id': partner.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
+								</a>
+								{{ include('admin/partner/_delete_form.html.twig') }}</div>
 						</td>
 					</tr>
 				{% else %}
