@@ -7,7 +7,7 @@
 						{% if network.link %}
 							<tr>
 								<td class="pb-3 text-primary d-flex flex-column">
-									<a href="{{ network.link }}" class="link-primary text-decoration-none fs-3" target="_blank">{{ network.title }}</a>
+									<a href="{{ network.link }}" class="link-primary text-decoration-none fs-3" target="_blank">{{ network.title|capitalize }}</a>
 								</td>
 								<td>
 									<a href="{{ network.link }}">
