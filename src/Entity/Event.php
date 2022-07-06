@@ -70,7 +70,7 @@ class Event
     )]
     private ?string $slug;
 
-    #[ORM\OneToMany(mappedBy: 'event', targetEntity: Participant::class)]
+    #[ORM\OneToMany(mappedBy: 'event', targetEntity: Participant::class, cascade:['persist'])]
     private Collection $participants;
 
     public function getId(): ?int
