@@ -17,5 +17,7 @@
 	<div class="d-flex justify-content-center align-items-center">
 		<img src="{{ asset('build/images/' ~ actuality.image) }}" class="w-50" alt="{{ actuality.title }}">
 	</div>
-	<p class="m-5">{{ actuality.description|raw }}</p>
+	<div class="m-5">
+		<p>{{ actuality.description|raw }}</p>
+	</div>
 {% endblock %}
