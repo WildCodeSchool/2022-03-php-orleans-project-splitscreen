@@ -22,7 +22,7 @@
 	</div>
 	<div>
 		<div class="d-flex justify-content-center align-items-center">
-			<img src="{{ vich_uploader_asset(event) }}" class="w-50" alt="Photographie d'un évènement">
+			<img src="{{ vich_uploader_asset(event) }}" class="w-50" alt="{{ event.title }}">
 		</div>
 		<p class="m-5">{{ event.description|raw }}</p>
 	</div>
