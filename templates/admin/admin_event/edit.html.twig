@@ -1,5 +1,9 @@
 {% extends 'admin/baseAdmin.html.twig' %}
 
+{% block javascripts %}
+	{{ encore_entry_script_tags('participants') }}
+{% endblock %}
+
 {% block title %}Modifier l'événement
 {% endblock %}
 
