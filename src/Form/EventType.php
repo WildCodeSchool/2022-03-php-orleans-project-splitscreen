@@ -36,12 +36,14 @@ class EventType extends AbstractType
             ])
             ->add('slug', TextType::class, [
                 'label' => 'Slug du tournoi (optionnel)',
+                'required'   => false,
             ])
             ->add('participants', CollectionType::class, [
                 'entry_type' => ParticipantType::class,
                 'entry_options' => ['label' => false],
                 'allow_add' => true,
-                'required'   => false,
+                'allow_delete' => true,
+                'by_reference' => false,
             ]);
     }
 

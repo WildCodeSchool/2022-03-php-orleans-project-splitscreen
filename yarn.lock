@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@a2lix/symfony-collection@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@a2lix/symfony-collection/-/symfony-collection-0.4.0.tgz#89ea63b63fedfeac4ba76c5fa93c1c948cd8af1b"
+  integrity sha512-dtpOFF3WQGdAGBnn0T6K0r26HVncnqQ1q0Tv/BzRLTZysprFGnf0mM9WtEH9Ga+oy3qTD3Zz2AEpesGFr2Z7XQ==
+
 "@ampproject/remapping@^2.1.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.2.0.tgz#56c133824780de3174aed5ab6834f3026790154d"
