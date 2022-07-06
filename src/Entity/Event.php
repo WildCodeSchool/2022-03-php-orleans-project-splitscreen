@@ -52,6 +52,7 @@ class Event
     {
         $this->updatedAt = new DateTimeImmutable();
         $this->participants = new ArrayCollection();
+        $this->pictures = new ArrayCollection();
     }
     #[ORM\Column(type: 'string', length: 80)]
     #[Assert\Length(
@@ -72,6 +73,9 @@ class Event
 
     #[ORM\OneToMany(mappedBy: 'event', targetEntity: Participant::class)]
     private Collection $participants;
+
+    #[ORM\OneToMany(mappedBy: 'event', targetEntity: Picture::class)]
+    private Collection $pictures;
 
     public function getId(): ?int
     {
@@ -190,6 +194,36 @@ class Event
             // set the owning side to null (unless already changed)
             if ($participant->getEvent() === $this) {
                 $participant->setEvent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Picture>
+     */
+    public function getPictures(): Collection
+    {
+        return $this->pictures;
+    }
+
+    public function addPicture(Picture $picture): self
+    {
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures[] = $picture;
+            $picture->setEvent($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Picture $picture): self
+    {
+        if ($this->pictures->removeElement($picture)) {
+            // set the owning side to null (unless already changed)
+            if ($picture->getEvent() === $this) {
+                $picture->setEvent(null);
             }
         }
 
