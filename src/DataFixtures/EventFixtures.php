@@ -15,7 +15,7 @@ class EventFixtures extends Fixture
     {
         $faker = Factory::create();
 
-        for ($i = 0; $i < self::VALUE; $i++) {
+        for ($i = 0; $i <= self::VALUE; $i++) {
             $event = new Event();
             $event->setTitle($faker->words(2, true));
             $event->setDate($faker->dateTime());
@@ -25,6 +25,7 @@ class EventFixtures extends Fixture
             $imageName = 'event' . $i . '.jpg';
             copy('src/DataFixtures/event.jpg', 'public/uploads/event/' . $imageName);
             $event->setImage($imageName);
+            $this->addReference('event' . $i, $event);
             $manager->persist($event);
         }
         $manager->flush();
