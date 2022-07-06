@@ -22,6 +22,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "@a2lix/symfony-collection": "^0.4.0",
         "bootstrap-icons": "^1.8.3",
         "ckeditor4": "^4.13.0"
     }
