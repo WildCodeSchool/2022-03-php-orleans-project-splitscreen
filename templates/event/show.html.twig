@@ -18,7 +18,7 @@
 
 		<a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
 			<div class="d-flex justify-content-center align-items-center">
-				<img src="{{ vich_uploader_asset(event) }}" class="w-25" alt="Photographie d'un évènement">
+				<img src="{{ vich_uploader_asset(event) }}" class="w-25" alt="{{ event.title }}">
 			</div>
 		</a>
 
@@ -29,7 +29,7 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<img src="{{ vich_uploader_asset(event) }}" class="w-100" alt="Photographie d'un évènement">
+						<img src="{{ vich_uploader_asset(event) }}" class="w-100" alt="{{ event.title }}">
 					</div>
 				</div>
 			</div>
