@@ -16,15 +16,15 @@
 
 	{% include 'components/_banner.html.twig'%}
 
-	<div class="container-fluid my-5">
-		<div class="row justify-content-evenly">
+	<div class="container-fluid">
+		<div class="row justify-content-evenly py-5">
 			<div class="col col-lg-4 mb-5">
 				<h2 class="border-bottom border-2 border-secondary pb-2 ms-2 text-primary">Nos Évènements</h2>
 				{% for event in events %}
 					<div class="row py-2">
 						<div class="col">
-							<div class="card m-2 shadow-sm">
-								<img src="{{ vich_uploader_asset(event) }}" alt={{"photographie de " ~ event.title }} class="imgCards card-img-top">
+							<div class="card m-2 shadow-sm bg-light text-dark">
+								<img src="{{ vich_uploader_asset(event) }}" alt="photographie mise en avant" class="eventActu card-img-top">
 								<div class="card-body">
 									<h5 class="text-truncate card-title text-center">{{ event.title }}</h5>
 									<p class="text-center">
@@ -44,15 +44,15 @@
 				{% for actu in actus %}
 					<div class="row py-2">
 						<div class="col">
-							<div class="card m-2 shadow-sm">
-								<img src="{{ asset('build/images/' ~ actu.image) }}" alt={{"photographie de " ~ actu.title }} class="imgCards card-img-top">
+							<div class="card m-2 shadow-sm bg-light text-dark">
+								<img src="{{ asset('build/images/' ~ actu.image) }}" alt="photographie mise en avant" class="eventActu card-img-top">
 								<div class="card-body">
 									<h5 class="card-title text-center">{{ actu.title }}</h5>
 									<p class="text-center">
 										{{ actu.date| date }}
 									</p>
 									<p class="overflow-ellipsis card-text text-center text-truncate">{{ actu.catchPhrase}}</p>
-									<a href="{{ path('actuality_show', { id: actu.id }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
+									<a href="{{ path('actuality_show', { id: actu.id }) }}" class="btn btn-secondary d-block mx-auto">Plus d'informations</a>
 								</div>
 							</div>
 						</div>
