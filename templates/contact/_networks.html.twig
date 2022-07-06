@@ -4,15 +4,23 @@
 			<tbody>
 				<tr>
 					{% for network in networks %}
-					<tr>
-						<td class="pb-3 text-primary d-flex flex-column">
-							<h3>
-								<a href="{{ network.link }}" class="link-primary text-decoration-none" target="_blank">{{ network.title }}
-								</a>
-							</h3>
-						</td>
-						
-						<td><a href="{{ network.link }}" <i class=" bi bi-{{network.title}} fs-3"></i></a></td>
+						{% if network.link %}
+							<tr>
+								<td class="pb-3 text-primary d-flex flex-column">
+									<a href="{{ network.link }}" class="link-primary text-decoration-none fs-3" target="_blank">{{ network.title }}</a>
+								</td>
+								<td>
+									<a href="{{ network.link }}">
+										<i class=" bi bi-{{network.title}} fs-3"></i>
+									</a>
+								</td>
+							</tr>
+						{% endif %}
+					{% else %}
+						<tr>
+							<td class="pb-3 text-primary d-flex flex-column">
+								<p>Aucun réseau social n'est actuellement disponible</p>
+							</td>
 						</tr>
 					{% endfor %}
 				</tr>
