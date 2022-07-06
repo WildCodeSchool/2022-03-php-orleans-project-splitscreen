@@ -18,7 +18,9 @@
 		<div class="d-flex justify-content-center align-items-center">
 			<img src="{{ vich_uploader_asset(event) }}" class="w-50" alt="Photographie d'un évènement">
 		</div>
-			<p class="m-5">{{ event.description|raw }}</p>
+		<div class="m-5">
+			<p>{{ event.description|raw }}</p>
+		</div>
 	</div>
 
 	{% if event.slug %}
