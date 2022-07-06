@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+	{{ encore_entry_link_tags('podium') }}
+{% endblock %}
+
 {% block title %}Évènement :
 	{{ event.title }}
 {% endblock %}
@@ -28,4 +32,6 @@
 			<iframe src="https://start.gg/tournament/{{event.slug}}/register/embed" frameborder="1" height="800" width="100%"></iframe>
 		</div>
 	{% endif %}
+
+	{% include 'event/_participant.html.twig' %}
 {% endblock %}

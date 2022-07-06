@@ -22,7 +22,7 @@ class Participant
     private string $pseudo;
 
     #[ORM\ManyToOne(targetEntity: Event::class, inversedBy: 'participants')]
-    private Event $event;
+    private ?Event $event;
 
     public function getId(): ?int
     {
