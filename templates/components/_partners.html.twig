@@ -8,7 +8,7 @@
 		<div class="row justify-content-around mx-3">
 			{% if partners is not empty %}
 				{% for partner in partners %}
-					<a href=" {{ partner.link }}" class="col-lg-2">
+					<a target="_blank" href="{{ partner.link }}" class="col-lg-2">
 						<img src="{{ asset('uploads/partners/' ~ partner.image) }}" class=" w-100 partner-image"/>
 					</a>
 				{% endfor %}

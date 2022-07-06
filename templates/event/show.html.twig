@@ -34,8 +34,9 @@
 				</div>
 			</div>
 		</div>
-
-		<p class="m-5">{{ event.description|raw }}</p>
+		<div class="m-5">
+			<p>{{ event.description|raw }}</p>
+		</div>
 	</div>
 
 	{% if event.slug %}

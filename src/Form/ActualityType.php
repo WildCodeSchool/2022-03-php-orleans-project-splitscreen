@@ -24,6 +24,8 @@ class ActualityType extends AbstractType
             ])
             ->add('imageFile', VichImageType::class, [
                 'label' => 'Image',
+                'allow_delete'  => false,
+                'download_link' => false,
             ])
             ->add('catchPhrase', TextType::class, [
                 'label' => 'Phrase d\'accroche',
