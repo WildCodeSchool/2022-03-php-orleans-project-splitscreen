@@ -40,6 +40,7 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
+    .addEntry('participants', './assets/participants.js')
     .addStyleEntry('contact', './assets/styles/contact.scss')
     .addStyleEntry('header', './assets/styles/header.scss')
     .addStyleEntry('home', './assets/styles/home.scss')

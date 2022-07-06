@@ -39,7 +39,9 @@ class EventType extends AbstractType
                 'entry_type' => ParticipantType::class,
                 'entry_options' => ['label' => false],
                 'allow_add' => true,
+                'allow_delete' => true,
                 'required'   => false,
+                'by_reference' => false,
             ]);
     }
 
