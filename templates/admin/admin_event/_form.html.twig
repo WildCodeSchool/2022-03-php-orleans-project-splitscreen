@@ -5,15 +5,6 @@
 	{{ form_row(form.description) }}
 	{{ form_row(form.catchPhrase) }}
 	{{ form_row(form.slug) }}
-	{# <div class="mb-3 participants">
-		{% for participant in form.participants %}
-			<div class="d-flex justify-content-start mb-3 gap-2 ">
-				{{ form_label(participant.pseudo, 'rank ' ~ loop.index) }}
-				{{ form_widget(participant.pseudo) }}
-				{{ form_errors(participant.pseudo) }}
-			</div>
-		{% endfor %}
-	</div> #}
 	{{ form_row(form.participants) }}
 	{{ form_row(form.imageFile) }}
 	<button class="btn btn-secondary btn-lg m-2">{{ button_label|default('Enregistrer') }}</button>
