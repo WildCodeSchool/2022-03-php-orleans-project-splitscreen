@@ -16,6 +16,7 @@
         "doctrine/orm": "^2.11",
         "fakerphp/faker": "^1.19",
         "friendsofsymfony/ckeditor-bundle": "^2.4",
+        "guzzlehttp/guzzle": "^7.0",
         "phpdocumentor/reflection-docblock": "^5.3",
         "phpstan/phpdoc-parser": "^1.4",
         "sensio/framework-extra-bundle": "^6.1",

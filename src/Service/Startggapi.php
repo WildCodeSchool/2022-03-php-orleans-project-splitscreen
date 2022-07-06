@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Service;
+// namespace App\Service;
 
-use Symfony\Contracts\HttpClient\HttpClientInterface;
+// use Doctrine\Common\Collections\ArrayCollection;
+// use Symfony\Contracts\HttpClient\HttpClientInterface;
+// use GuzzleHttp\Client;
 
-class Startggapi
-{
+// class Startggapi
+// {
 //     private HttpClientInterface $client;
 
 //     public function __construct(HttpClientInterface $client)
@@ -13,43 +15,34 @@ class Startggapi
 //         $this->client = $client;
 //     }
 
-//     public function fetchResultTournament(): array
+//     public function fetchResultTournament()
 //     {
 
-//         $query = <<<'GRAPHQL'
-//         query TournamentId($tourneySlug: String!) {
-//             tournament(slug: $tourneySlug) {
-//               id
-//             }
-//           },
-//         GRAPHQL;
-
-//         $rep = $this->graphql_query('https://api.start.gg/gql/alpha', $query, ['tourneySlug' => 'test-4510'],
-//  '7b0c90d42b1fcdf13346421af9e949f3');
-
-//         dd($rep);
-//         exit;
-//     }
-
-//     public function graphql_query(string $endpoint, string $query,
-//  array $variables = [], ?string $token = null): array
-//     {
-//         $headers = ['Content-Type: application/json', 'User-Agent: Dunglas\'s minimal GraphQL client'];
-//         if (null !== $token) {
-//             $headers[] = "Authorization: bearer $token";
+//         $query = <<<GQL
+//         query TournamentQuery(\$slug: String) {
+//             tournament(slug: \$slug){
+//             id
+//           }
 //         }
+//       GQL;
 
-//         if (false === $data = @file_get_contents($endpoint, false, stream_context_create([
-//             'http' => [
-//                 'method' => 'POST',
-//                 'header' => $headers,
-//                 'content' => json_encode(['query' => $query, 'variables' => $variables]),
-//             ]
-//         ]))) {
-//             $error = error_get_last();
-//             throw new \ErrorException($error['message'], $error['type']);
-//         }
-
-//         return json_decode($data, true);
+//       $graphqlEndpoint = 'https://api.start.gg/gql/alpha';
+//       $client = new Client;
+//       $accessToken = '7b0c90d42b1fcdf13346421af9e949f3';
+//       $response = $client->request('POST', $graphqlEndpoint, [
+//         'headers' => [
+//           'Content-Type' => 'application/json',
+//           'Authorization' => 'Bearer '.$accessToken,
+//               ],
+//         'json' => [
+//           'query' => $query,
+//           'variables' => ['slug' => 'split-screen-joystick-cup-1']
+//         ]
+//       ]);
+//       $json = $response->getBody()->getContents();
+//       dump($json);
+//       exit;
+//       $body = json_decode($json);
+//       $data = $body->data;
 //     }
-}
+// }
