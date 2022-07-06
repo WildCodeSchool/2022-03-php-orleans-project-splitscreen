@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Event;
 use App\Form\EventType;
 use App\Repository\EventRepository;
+use App\Services\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,13 +23,15 @@ class AdminEventController extends AbstractController
     }
 
     #[Route('/ajouter', name: 'add', methods: ['GET', 'POST'])]
-    public function new(Request $request, EventRepository $eventRepository): Response
+    public function new(Request $request, EventRepository $eventRepository, Slugify $slugify): Response
     {
         $event = new Event();
         $form = $this->createForm(EventType::class, $event);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $slug = $slugify->generate($event->getTitle());
+            $event->setSlug($slug);
             $eventRepository->add($event, true);
             $this->addFlash('success', 'Nouvel évènement ajouté');
             return $this->redirectToRoute('admin_event_index', [], Response::HTTP_SEE_OTHER);

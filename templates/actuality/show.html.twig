@@ -10,12 +10,35 @@
 			<i class="bi bi-arrow-left fs-1 text-secondary"></i>
 		</a>
 	</div>
-	<div class="text-center m-5">
-		<h1 class="">{{ actuality.title }}</h1>
+	<div class="d-flex flex-column justify-content-center align-items-center mb-3">
+		<div class="d-flex align-items-center">
+			<i class="bi bi-newspaper fs-2 me-2 text-primary"></i>
+			<h1 class="">{{ actuality.title }}</h1>
+			<i class="bi bi-dpad fs-2 ms-2 text-secondary"></i>
+		</div>
 		<small class="text-muted">{{ actuality.date|date }}</small>
 	</div>
-	<div class="d-flex justify-content-center align-items-center">
-		<img src="{{ asset('build/images/' ~ actuality.image) }}" class="w-50" alt="{{ actuality.title }}">
+
+
+	<a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+		<div class="d-flex justify-content-center align-items-center">
+			<img src="{{ asset('build/images/' ~ actuality.image) }}" class="w-25" alt="{{ actuality.title }}">
+		</div>
+	</a>
+
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-fullscreen">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<img src="{{ asset('build/images/' ~ actuality.image) }}" class="w-100" alt="{{ actuality.title }}">
+				</div>
+			</div>
+		</div>
 	</div>
-	<p class="m-5">{{ actuality.description|raw }}</p>
+	<div class="m-5">
+		<p>{{ actuality.description|raw }}</p>
+	</div>
 {% endblock %}
