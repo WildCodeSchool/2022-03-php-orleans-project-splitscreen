@@ -26,7 +26,9 @@ class AdminActualityController extends AbstractController
     public function new(Request $request, ActualityRepository $actualityRepository, Slugify $slugify): Response
     {
         $actuality = new Actuality();
-        $form = $this->createForm(ActualityType::class, $actuality);
+        $form = $this->createForm(ActualityType::class, $actuality, [
+            'validation_groups' => ['add']
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -54,7 +56,9 @@ class AdminActualityController extends AbstractController
     #[Route('/{id}/modifier', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Actuality $actuality, ActualityRepository $actualityRepository): Response
     {
-        $form = $this->createForm(ActualityType::class, $actuality);
+        $form = $this->createForm(ActualityType::class, $actuality, [
+            'validation_groups' => ['default']
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
