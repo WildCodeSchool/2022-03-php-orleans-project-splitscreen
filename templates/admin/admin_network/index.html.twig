@@ -1,42 +1,34 @@
 {% extends 'admin/baseAdmin.html.twig' %}
 
-{% block title %}Réseaux sociaux
-{% endblock %}
+{% block title %}Réseaux sociaux{% endblock %}
 
 {% block body %}
-	<main class="container">
-		<h1>Réseaux sociaux</h1>
-		<div class="alert alert-warning pt-4">
-			<p><i class="bi bi-exclamation-circle-fill mx-3"></i>Les réseaux sociaux avec des liens vides ne s'afficheront pas sur la page de contact</p>
-			</div>
-		<div class="d-flex justify-content-start">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Titre</th>
-						<th>Lien</th>
-						<th>Actions</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for network in networks %}
-						<tr>
-							<td>{{ network.title }}</td>
-							<td>{{ network.link }}</td>
-							<td class="d-flex">
-                                <a href="{{ path('admin_network_edit', {'id': network.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
-								</td>
-							</td>
-						</tr>
-					{% else %}
-						<tr>
-							<td colspan="4">Pas de réseaux sociaux trouvés</td>
-						</tr>
-					{% endfor %}
-					
-				</tbody>
-			</table>
-			</div>
-		</main>
-		
-	{% endblock %}
+<main class="container">
+    <h1>Réseaux sociaux</h1>
+    <div class="d-flex justify-content-start">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Lien</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for network in networks %}
+            <tr>
+                <td>{{ network.title|capitalize }}</td>
+                <td>{{ network.link }}</td>
+                <td class="d-flex">
+                    <a href="{{ path('admin_network_edit', {'id': network.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Pas de réseaux sociaux trouvés</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}
