@@ -1,0 +1,22 @@
+{% block stylesheets %}
+	{{ encore_entry_link_tags('partners') }}
+{% endblock %}
+
+<h1 class="text-center">Nos Membres</h1>
+<section class="partners mb-5">
+	<div class="container-fluid">
+		<div class="row justify-content-around mx-3">
+			{% if members is not empty %}
+				{% for member in members %}
+					<figure class="col-lg-2">
+						<img src="{{ asset('uploads/member/' ~ member.image) }}" class=" w-100 partner-image" alt="{{ member.lastName }} {{ member.firstName }}"/>
+						<figcaption class="text-center">{{ member.lastName }}
+							{{ member.firstName }}</figcaption>
+					</figure>
+				{% endfor %}
+			{% else %}
+				<h2 class="d-flex justify-content-center h3">Pas de membres à afficher.</h2>
+			{% endif %}
+		</div>
+	</div>
+</section>
