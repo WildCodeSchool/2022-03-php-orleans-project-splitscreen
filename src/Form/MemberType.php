@@ -22,8 +22,9 @@ class MemberType extends AbstractType
             ])
             ->add('imageFile', VichImageType::class, [
                 'label' => 'Image',
-                'allow_delete'  => false,
+                'allow_delete'  => true,
                 'download_link' => false,
+                'required'   => false,
             ])
         ;
     }

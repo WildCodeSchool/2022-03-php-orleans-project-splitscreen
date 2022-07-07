@@ -26,6 +26,7 @@ class ActualityType extends AbstractType
                 'label' => 'Image',
                 'allow_delete'  => false,
                 'download_link' => false,
+                'required'   => false,
             ])
             ->add('catchPhrase', TextType::class, [
                 'label' => 'Phrase d\'accroche',
