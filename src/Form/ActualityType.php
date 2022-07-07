@@ -40,6 +40,7 @@ class ActualityType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Actuality::class,
+            'validation_groups' => ['add'],
         ]);
     }
 }

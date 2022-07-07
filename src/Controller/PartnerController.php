@@ -25,7 +25,9 @@ class PartnerController extends AbstractController
     public function new(Request $request, PartnerRepository $partnersRepository): Response
     {
         $partner = new Partner();
-        $form = $this->createForm(PartnerType::class, $partner);
+        $form = $this->createForm(PartnerType::class, $partner, [
+            'validation_groups' => ['add']
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -44,7 +46,9 @@ class PartnerController extends AbstractController
     #[Route('/{id}/modifier', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Partner $partner, PartnerRepository $partnersRepository): Response
     {
-        $form = $this->createForm(PartnerType::class, $partner);
+        $form = $this->createForm(PartnerType::class, $partner, [
+            'validation_groups' => ['default']
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

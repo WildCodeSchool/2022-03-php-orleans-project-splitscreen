@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
 #[Vich\Uploadable]
@@ -40,6 +41,7 @@ class Event
         maxSize: '1024k',
         mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
     )]
+    #[Assert\NotBlank(groups: ['add'])]
     private ?File $imageFile = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
@@ -48,11 +50,7 @@ class Event
     #[ORM\Column(type: 'datetime')]
     private ?\DateTimeInterface $updatedAt = null;
 
-    public function __construct()
-    {
-        $this->updatedAt = new DateTimeImmutable();
-        $this->participants = new ArrayCollection();
-    }
+
     #[ORM\Column(type: 'string', length: 80)]
     #[Assert\Length(
         max: 80,
@@ -70,8 +68,14 @@ class Event
     )]
     private ?string $slug;
 
-    #[ORM\OneToMany(mappedBy: 'event', targetEntity: Participant::class, cascade:['persist', 'remove'])]
+    #[ORM\OneToMany(mappedBy: 'event', targetEntity: Participant::class, cascade: ['persist', 'remove'])]
     private Collection $participants;
+
+    public function __construct()
+    {
+        $this->updatedAt = new DateTimeImmutable();
+        $this->participants = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
