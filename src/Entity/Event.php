@@ -48,11 +48,7 @@ class Event
     #[ORM\Column(type: 'datetime')]
     private ?\DateTimeInterface $updatedAt = null;
 
-    public function __construct()
-    {
-        $this->updatedAt = new DateTimeImmutable();
-        $this->participants = new ArrayCollection();
-    }
+
     #[ORM\Column(type: 'string', length: 80)]
     #[Assert\Length(
         max: 80,
@@ -70,8 +66,17 @@ class Event
     )]
     private ?string $slug;
 
-    #[ORM\OneToMany(mappedBy: 'event', targetEntity: Participant::class, cascade:['persist', 'remove'])]
+    #[ORM\OneToMany(mappedBy: 'event', targetEntity: Participant::class, cascade: ['persist', 'remove'])]
     private Collection $participants;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private string $tournamentSlug;
+
+    public function __construct()
+    {
+        $this->updatedAt = new DateTimeImmutable();
+        $this->participants = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -192,6 +197,18 @@ class Event
                 $participant->setEvent(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTournamentSlug(): ?string
+    {
+        return $this->tournamentSlug;
+    }
+
+    public function setTournamentSlug(?string $tournamentSlug): self
+    {
+        $this->tournamentSlug = $tournamentSlug;
 
         return $this;
     }
