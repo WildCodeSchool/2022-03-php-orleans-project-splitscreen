@@ -44,6 +44,6 @@
 			{% endif %}
 		</div>
 	</main>
-	{% include 'components/_banner.html.twig'%}
+	{{ render(controller('App\\Controller\\DefaultController::banner')) }}
 	{% include '/event/_eventList.html.twig' %}
 {% endblock %}
