@@ -22,7 +22,7 @@ class Network
         max: 255,
         maxMessage: 'Le lien ne doit pas dépasser {{ limit }} caractères'
     )]
-    private string $link;
+    private ?string $link;
 
     public function getId(): ?int
     {

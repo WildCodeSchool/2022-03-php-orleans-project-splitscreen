@@ -14,7 +14,7 @@
 	<h1 class="text-center mt-5">Split Screen : l’art de jouer</h1>
 	<h2 class="text-center mt-1">Events Gaming - Tournois - Expos - Ateliers - Conférences</h2>
 
-	{% include 'components/_banner.html.twig'%}
+	  {{ render(controller('App\\Controller\\DefaultController::banner')) }}
 
 	<div class="container-fluid">
 		<div class="row justify-content-evenly py-5">
@@ -31,7 +31,7 @@
 										{{ event.date| date }}
 									</p>
 									<p class="text-truncate card-text text-center text-truncate">{{ event.catchPhrase }}</p>
-									<a href="{{ path('event_show', { id: event.id }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
+									<a href="{{ path('event_show', { slug: event.slug }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
 								</div>
 							</div>
 						</div>
@@ -52,7 +52,7 @@
 										{{ actu.date| date }}
 									</p>
 									<p class="overflow-ellipsis card-text text-center text-truncate">{{ actu.catchPhrase}}</p>
-									<a href="{{ path('actuality_show', { id: actu.id }) }}" class="btn btn-secondary d-block mx-auto">Plus d'informations</a>
+									<a href="{{ path('actuality_show', { slug: actu.slug }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
 								</div>
 							</div>
 						</div>

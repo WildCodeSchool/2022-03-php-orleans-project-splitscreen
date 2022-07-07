@@ -11,10 +11,17 @@
 		</a>
 	</div>
 	<div class="d-flex flex-column justify-content-center align-items-center mb-3">
-		<h1>{{ event.title }}</h1>
+		<div class="d-flex align-items-center">
+			<i class="bi bi-joystick fs-2 me-2 text-primary"></i>
+			<h1>
+				{{ event.title }}
+			</h1>
+			<i class="bi bi-controller fs-2 ms-2 text-secondary"></i>
+		</div>
 		<small class="text-muted">{{ event.date|date }}</small>
 	</div>
 	<div>
+
 
 		<a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
 			<div class="d-flex justify-content-center align-items-center">
@@ -44,4 +51,6 @@
 			<iframe src="https://start.gg/tournament/{{event.slug}}/register/embed" frameborder="1" height="800" width="100%"></iframe>
 		</div>
 	{% endif %}
+
+	{% include 'event/_participant.html.twig' %}
 {% endblock %}
