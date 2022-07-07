@@ -4,6 +4,10 @@
 
 {% block body %}
 <pre>
-    {{ dump(test) }}
+    {{ dump(rankings) }}
 </pre>
+
+{% for rank in rankings %}
+    <li>{{rank.placement}} | {{rank.entrant.name}}</li>
+{% endfor %}
 {% endblock %}
