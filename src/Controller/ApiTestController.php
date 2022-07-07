@@ -10,10 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class ApiTestController extends AbstractController
 {
     #[Route('/api/test', name: 'app_api_test')]
-    public function index(Startggapi $startggapi): Response
+    public function index(Startggapi $startggapi, string $slug): Response
     {
         $rankings = $startggapi->fetchResultTournament(
-            'tournament/split-screen-joystick-cup-1/event/joystick-cup-1-smash-bros-ultimate'
+            '$slug'
         );
 
         return $this->render('api_test/index.html.twig', [
