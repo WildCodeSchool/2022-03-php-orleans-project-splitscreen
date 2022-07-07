@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Actuality;
 use App\Repository\ActualityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,13 +20,11 @@ class ActualityController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', methods: ['GET'], name: 'show')]
-    public function show(int $id, ActualityRepository $actualityRepository): Response
+    #[Route('/{slug}', methods: ['GET'], name: 'show')]
+    public function show(Actuality $actuality): Response
     {
-        $actuality = $actualityRepository->findOneById($id);
         return $this->render('actuality/show.html.twig', [
             'actuality' => $actuality,
-            'id' => $id,
         ]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Actuality;
 use App\Form\ActualityType;
 use App\Repository\ActualityRepository;
+use App\Services\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,13 +23,15 @@ class AdminActualityController extends AbstractController
     }
 
     #[Route('/ajouter', name: 'new', methods: ['GET', 'POST'])]
-    public function new(Request $request, ActualityRepository $actualityRepository): Response
+    public function new(Request $request, ActualityRepository $actualityRepository, Slugify $slugify): Response
     {
         $actuality = new Actuality();
         $form = $this->createForm(ActualityType::class, $actuality);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $slug = $slugify->generate($actuality->getTitle());
+            $actuality->setSlug($slug);
             $actualityRepository->add($actuality, true);
             $this->addFlash('success', 'Nouvelle actualité ajoutée');
             return $this->redirectToRoute('admin_actuality_index', [], Response::HTTP_SEE_OTHER);

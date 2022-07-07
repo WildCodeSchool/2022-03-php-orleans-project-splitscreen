@@ -10,17 +10,15 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th>Id</th>
 						<th>Lien</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>{{ hello_asso_link.id }}</td>
 						<td>{{ hello_asso_link.link }}</td>
 						<td class="d-flex">
-							<a href="{{ path('admin_asso_edit', {'id': hello_asso_link.id}) }}">Modifier</a>
+							<a href="{{ path('admin_asso_edit', {'id': hello_asso_link.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
 						</td>
 					</tr>
 				</tbody>
