@@ -14,7 +14,7 @@
 	<h1 class="text-center mt-5">Split Screen : l’art de jouer</h1>
 	<h2 class="text-center mt-1">Events Gaming - Tournois - Expos - Ateliers - Conférences</h2>
 
-	{% include 'components/_banner.html.twig'%}
+	  {{ render(controller('App\\Controller\\DefaultController::banner')) }}
 
 	<div class="container-fluid">
 		<div class="row justify-content-evenly py-5">
