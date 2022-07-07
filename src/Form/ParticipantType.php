@@ -14,7 +14,7 @@ class ParticipantType extends AbstractType
     {
         $builder
             ->add('pseudo', TextType::class, [
-                'label' => 'Classement',
+                'label' => 'Podium',
             ]);
     }
 
