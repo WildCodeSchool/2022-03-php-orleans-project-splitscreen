@@ -20,7 +20,7 @@
                 <td>{{ network.title|capitalize }}</td>
                 <td>{{ network.link }}</td>
                 <td class="d-flex">
-                    <a class="btn btn-primary btn-lg" href="{{ path('admin_network_edit', {'id': network.id}) }}">Modifier</a>
+                    <a href="{{ path('admin_network_edit', {'id': network.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
                 </td>
             </tr>
         {% else %}
