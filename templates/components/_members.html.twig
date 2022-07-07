@@ -9,7 +9,7 @@
 			{% if members is not empty %}
 				{% for member in members %}
 					<figure class="col-lg-2">
-						<img src="{{ asset('uploads/member/' ~ member.image) }}" class=" w-100 partner-image"/>
+						<img src="{{ asset('uploads/member/' ~ member.image) }}" class=" w-100 partner-image" alt="{{ member.lastName }} {{ member.firstName }}"/>
 						<figcaption class="text-center">{{ member.lastName }}
 							{{ member.firstName }}</figcaption>
 					</figure>
