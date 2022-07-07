@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Network;
 use App\Form\ContactFormType;
+use App\Repository\NetworkRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,9 +15,10 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/contact', name: 'contact_')]
 class ContactController extends AbstractController
 {
-    #[Route('/', name: 'index')]
-    public function index(Request $request, MailerInterface $mailer): Response
+    #[Route('/', name: 'index', methods: ['GET'])]
+    public function index(Request $request, MailerInterface $mailer, NetworkRepository $networkRepository): Response
     {
+        $networks = $networkRepository->findAll();
         $form = $this->createForm(ContactFormType::class);
         $form->handleRequest($request);
 
@@ -33,6 +36,7 @@ class ContactController extends AbstractController
 
         return $this->render('contact/index.html.twig', [
             'form' => $form->createView(),
+            'networks' => $networks,
         ]);
     }
 }

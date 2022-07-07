@@ -11,27 +11,27 @@ class NetworkFixtures extends Fixture
 {
     public const NETWORKS = [
         [
-            'title' => 'Facebook',
+            'title' => 'facebook',
             'link' => 'https://www.facebook.com/splitscreenasso'
         ],
         [
-            'title' => 'Instagram',
+            'title' => 'instagram',
             'link' => 'https://www.instagram.com/splitscreenasso'
         ],
         [
-            'title' => 'Twitter',
+            'title' => 'twitter',
             'link' => 'https://twitter.com/SplitScreenn?t=7T9yIfazpk4ATZ2uhpn6FA&s=09'
         ],
         [
-            'title' => 'Discord',
+            'title' => 'discord',
             'link' => 'https://discord.gg/ftJeetZT9j'
         ],
         [
-            'title' => 'Linkedin',
+            'title' => 'linkedin',
             'link' => 'https://www.linkedin.com/company/splitscreenasso'
         ],
         [
-            'title' => 'TikTok',
+            'title' => 'tiktok',
             'link' => ''
         ],
     ];
