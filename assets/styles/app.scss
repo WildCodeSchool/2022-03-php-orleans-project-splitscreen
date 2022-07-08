@@ -97,3 +97,9 @@ body {
       display:none;
     }
 }
+
+@media screen and (max-width: 600px) {
+.imgLeft, .imgRight {
+        box-shadow: 0 0;
+    }
+}
