@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "@a2lix/symfony-collection": "^0.4.0",
+        "aos": "^2.3.4",
         "bootstrap-icons": "^1.8.3",
         "ckeditor4": "^4.13.0"
     }

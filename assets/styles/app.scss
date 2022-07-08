@@ -1,5 +1,6 @@
 @import "variables.scss";
 @import "~bootstrap/scss/bootstrap";
+@import 'aos/dist/aos.css';
 
 html {
     scroll-behavior: smooth;
@@ -11,6 +12,14 @@ h1, h2, h3, h4 {
 
 body {
     font-family: $textFont;
+}
+
+.imgRight {
+    box-shadow: 20px 20px $primary;
+}
+
+.imgLeft {
+    box-shadow: -20px -20px $secondary;
 }
 
 .imgCards {
@@ -87,5 +96,11 @@ body {
 @media screen and (max-width: 992px) {
     .corners::before,.corners::after {
       display:none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+.imgLeft, .imgRight {
+        box-shadow: 0 0;
     }
 }
