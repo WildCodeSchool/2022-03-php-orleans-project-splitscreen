@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block body %}
-{% include 'components/_header.html.twig' with {'title': 'Actualités'} %}
+	{% include 'components/_header.html.twig' with {'title': 'Actualités'} %}
 	<section>
 		<h1 class="text-center p-2 mt-5">"Suivez toutes nos actualités !"</h1>
 	</section>
@@ -28,8 +28,8 @@
 							<a href="{{ path('actuality_show', { slug: actuality.slug }) }}" class="btn btn-secondary text-light d-block mx-auto">Plus d'informations</a>
 						</div>
 					</div>
-				</div>
-			{% endfor %}
+				{% endfor %}
+			{% endif %}
 		</div>
 	</main>
 {% endblock %}

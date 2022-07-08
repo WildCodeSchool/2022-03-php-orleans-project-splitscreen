@@ -71,6 +71,9 @@ class Event
     #[ORM\OneToMany(mappedBy: 'event', targetEntity: Participant::class, cascade: ['persist', 'remove'])]
     private Collection $participants;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $tournamentSlug;
+
     public function __construct()
     {
         $this->updatedAt = new DateTimeImmutable();
@@ -196,6 +199,18 @@ class Event
                 $participant->setEvent(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTournamentSlug(): ?string
+    {
+        return $this->tournamentSlug;
+    }
+
+    public function setTournamentSlug(?string $tournamentSlug): self
+    {
+        $this->tournamentSlug = $tournamentSlug;
 
         return $this;
     }
