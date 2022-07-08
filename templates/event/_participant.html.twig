@@ -12,15 +12,12 @@
 				<p class="mt-3">{{ participant.pseudo }}</p>
 			</div>
 		{% endfor %}
-		<div class="">
-			{% for participant in event.participants|slice(3,15) %}
-				<li class="list-group-item mt-4">
-					<p class="text-center">
-						N°{{ loop.index + 3 }}
-						{{ participant.pseudo }}
-					</p>
-				</li>
-			{% endfor %}
-		</div>
+        <div class="">
+		    {% for participant in event.participants|slice(3,15) %}
+                <li class="list-group-item mt-4">
+			    <p class="text-center"> N°{{ loop.index + 3 }} {{ participant.pseudo }} </p>
+                </li>
+		    {% endfor %}
+        </div>
 	</div>
 </section>
