@@ -4,7 +4,7 @@
 		<div class="card-body">
 			<h5 class="card-title text-center">{{ event.title }}</h5>
 			<p class="text-center">
-				{{ event.date| date("H:i d/m/Y") }}
+				{{ event.date| date("d/m/Y") }}
 			</p>
 			<p class="card-text text-center text-truncate">{{ event.catchPhrase }}</p>
 			<a href="{{ path('event_show', { slug: event.slug }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
