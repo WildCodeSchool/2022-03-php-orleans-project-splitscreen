@@ -72,7 +72,7 @@ class Event
     private Collection $participants;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private string $tournamentSlug;
+    private ?string $tournamentSlug;
 
     public function __construct()
     {
