@@ -1,0 +1,10 @@
+@import "variables.scss";
+
+.cardGrey-image {
+    filter: opacity(0.5) grayscale(100%);
+    transition: filter 0.5s ease-in-out;
+}
+
+.cardGrey-image:hover {
+    filter: none;
+}
