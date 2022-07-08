@@ -26,7 +26,9 @@ class AdminEventController extends AbstractController
     public function new(Request $request, EventRepository $eventRepository, Slugify $slugify): Response
     {
         $event = new Event();
-        $form = $this->createForm(EventType::class, $event);
+        $form = $this->createForm(EventType::class, $event, [
+            'validation_groups' => ['add']
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -46,7 +48,9 @@ class AdminEventController extends AbstractController
     #[Route('/{id}/modifier', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Event $event, EventRepository $eventRepository): Response
     {
-        $form = $this->createForm(EventType::class, $event);
+        $form = $this->createForm(EventType::class, $event, [
+            'validation_groups' => ['default']
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

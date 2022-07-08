@@ -44,6 +44,11 @@ class Member
     #[ORM\Column(type: 'datetime')]
     private ?\DateTimeInterface $updatedAt = null;
 
+    public function __construct()
+    {
+        $this->updatedAt = new DateTimeImmutable();
+    }
+
     public function setImageFile(?File $imageFile = null): void
     {
         $this->imageFile = $imageFile;

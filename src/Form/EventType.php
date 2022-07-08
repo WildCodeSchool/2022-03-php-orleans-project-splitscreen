@@ -27,6 +27,7 @@ class EventType extends AbstractType
                 'label' => 'Image',
                 'allow_delete'  => false,
                 'download_link' => false,
+                'required'   => false,
             ])
             ->add('description', CKEditorType::class, [
                 'label' => 'Description',
@@ -51,6 +52,7 @@ class EventType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Event::class,
+            'validation_groups' => ['add'],
         ]);
     }
 }

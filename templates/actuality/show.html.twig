@@ -22,7 +22,7 @@
 
 	<a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
 		<div class="d-flex justify-content-center align-items-center offset-lg-3 col-lg-6">
-			<img src="{{ asset('build/images/' ~ actuality.image) }}" class="w-100" alt="{{ actuality.title }}">
+			<img src="{{ vich_uploader_asset(actuality) }}" class="w-100" alt="{{ actuality.title }}">
 		</div>
 	</a>
 
@@ -33,7 +33,7 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<img src="{{ asset('build/images/' ~ actuality.image) }}" class="w-100" alt="{{ actuality.title }}">
+					<img src="{{ vich_uploader_asset(actuality) }}" class="w-100" alt="{{ actuality.title }}">
 				</div>
 			</div>
 		</div>
