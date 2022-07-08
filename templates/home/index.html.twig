@@ -45,7 +45,7 @@
 					<div class="row py-2">
 						<div class="col">
 							<div class="card m-2 shadow-sm">
-								<img src="{{ asset('build/images/' ~ actu.image) }}" alt="{{"photographie de " ~ actu.title }}" class="imgCards card-img-top">
+								<img src="{{ vich_uploader_asset(actuality) }}" alt="{{"photographie de " ~ actu.title }}" class="imgCards card-img-top">
 								<div class="card-body">
 									<h5 class="card-title text-center">{{ actu.title }}</h5>
 									<p class="text-center">
