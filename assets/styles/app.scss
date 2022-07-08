@@ -13,6 +13,14 @@ body {
     font-family: $textFont;
 }
 
+.imgRight {
+    box-shadow: 20px 20px $primary;
+}
+
+.imgLeft {
+    box-shadow: -20px -20px $secondary;
+}
+
 .imgCards {
     height: 300px;
     object-fit: cover;
