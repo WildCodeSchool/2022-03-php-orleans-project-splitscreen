@@ -9,7 +9,11 @@
 			{% if members is not empty %}
 				{% for member in members %}
 					<figure class="col-lg-2">
-						<img src="{{ asset('uploads/member/' ~ member.image) }}" class=" w-100 partner-image" alt="{{ member.lastName }} {{ member.firstName }}"/>
+						{% if member.image %}
+							<img src="{{ asset('uploads/member/' ~ member.image) }}" class=" w-100 partner-image" alt="{{ member.lastName }} {{ member.firstName }}"/>
+						{% else %}
+							<img src="{{ asset('build/images/member.png') }}" class=" w-100 partner-image" alt="{{ member.lastName }} {{ member.firstName }}"/>
+						{% endif %}
 						<figcaption class="text-center">{{ member.lastName }}
 							{{ member.firstName }}</figcaption>
 					</figure>
