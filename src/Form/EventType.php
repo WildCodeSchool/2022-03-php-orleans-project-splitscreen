@@ -35,7 +35,7 @@ class EventType extends AbstractType
             ->add('catchPhrase', TextType::class, [
                 'label' => 'Phrase d\'accroche',
             ])
-            ->add('slug', TextType::class, [
+            ->add('tournamentSlug', TextType::class, [
                 'label' => 'Slug du tournoi (optionnel)',
                 'required'   => false,
             ])
