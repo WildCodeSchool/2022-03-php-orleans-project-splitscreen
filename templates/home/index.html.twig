@@ -23,7 +23,7 @@
 				{% for event in events %}
 					<div class="row py-2">
 						<div class="col">
-							<div class="card m-2 shadow-sm">
+							<div class="card m-2 shadow-sm" data-aos="fade-right">
 								<img src="{{ vich_uploader_asset(event) }}" alt="{{"photographie de " ~ event.title }}" class="imgCards card-img-top">
 								<div class="card-body">
 									<h5 class="text-truncate card-title text-center">{{ event.title }}</h5>
@@ -44,7 +44,7 @@
 				{% for actu in actus %}
 					<div class="row py-2">
 						<div class="col">
-							<div class="card m-2 shadow-sm">
+							<div class="card m-2 shadow-sm" data-aos="fade-left">
 								<img src="{{ vich_uploader_asset(actu) }}" alt="{{"photographie de " ~ actu.title }}" class="imgCards card-img-top">
 								<div class="card-body">
 									<h5 class="card-title text-center">{{ actu.title }}</h5>
