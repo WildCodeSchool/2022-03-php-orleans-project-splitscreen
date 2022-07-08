@@ -1,16 +1,16 @@
 {% block stylesheets %}
-	{{ encore_entry_link_tags('partners') }}
+	{{ encore_entry_link_tags('members') }}
 {% endblock %}
 
 <h1 class="text-center">Nos Membres</h1>
-<section class="partners mb-5">
+<section class="members mb-5">
 	<div class="container-fluid">
 		<div class="row justify-content-around mx-3">
 			{% if members is not empty %}
 				{% for member in members %}
 					<figure class="col-lg-2">
 						{% if member.image %}
-							<img src="{{ asset('uploads/member/' ~ member.image) }}" class=" w-100 partner-image" alt="{{ member.lastName }} {{ member.firstName }}"/>
+							<img src="{{ asset('uploads/member/' ~ member.image) }}" class=" w-100 member-image" alt="{{ member.lastName }} {{ member.firstName }}"/>
 						{% else %}
 							<img src="{{ asset('build/images/member.png') }}" class=" w-100 partner-image" alt="{{ member.lastName }} {{ member.firstName }}"/>
 						{% endif %}
