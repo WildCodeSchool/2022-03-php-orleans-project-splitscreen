@@ -48,6 +48,7 @@ Encore
     .addStyleEntry('banner', './assets/styles/banner.scss')
     .addStyleEntry('partners', './assets/styles/partners.scss')
     .addStyleEntry('homeAdmin', './assets/styles/homeAdmin.scss')
+    .addStyleEntry('cards', './assets/styles/cards.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
