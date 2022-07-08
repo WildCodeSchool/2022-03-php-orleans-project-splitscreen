@@ -14,6 +14,14 @@ body {
     font-family: $textFont;
 }
 
+.imgRight {
+    box-shadow: 20px 20px $primary;
+}
+
+.imgLeft {
+    box-shadow: -20px -20px $secondary;
+}
+
 .imgCards {
     height: 300px;
     object-fit: cover;
@@ -88,5 +96,11 @@ body {
 @media screen and (max-width: 992px) {
     .corners::before,.corners::after {
       display:none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+.imgLeft, .imgRight {
+        box-shadow: 0 0;
     }
 }
