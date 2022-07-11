@@ -84,7 +84,7 @@ symfony console doctrine:fixture:load
 Start the server
 
 ```bash
-  symfony serve
+  symfony server:start
 ```
 
 
