@@ -1,3 +1,106 @@
+
+# Project SplitScreen
+
+Website for the association SplitScreen
+
+
+## Tech Stack
+
+Built With:
+- PHP 8
+- Symfony 6
+- Boostrap 5
+- MySQL
+- Composer
+- Yarn
+
+
+
+## Installation
+
+Prerequisites:
+- Yarn
+- Composer
+- Symfony
+- php/zip ext
+
+Clone the project
+
+```bash
+git clone git@github.com:WildCodeSchool/2022-03-php-orleans-project-splitscreen.git
+```
+
+Install packages
+
+```bash
+composer install
+yarn install
+yarn encore
+```
+
+Create your .env.local file by making a copy of the .env file.
+
+Configure your database in env.local:
+
+```bash
+# DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7&charset=utf8mb4"
+```
+
+Configure your mailer in env.local:
+
+```bash
+# MAILER_DSN=null://null
+```
+
+Run symfony command:
+
+```bash
+symfony console d:d:c
+symfony console d:m:m
+```
+
+
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd project-SplitScreen
+```
+
+Start the server
+
+```bash
+  symfony serve
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Project 3 - Starter Kit - Symfony
 
 ## Presentation
