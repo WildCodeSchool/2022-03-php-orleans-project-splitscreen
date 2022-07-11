@@ -1,5 +1,9 @@
 <div class="ms-1 border border-3 border-primary p-3">{{ form_start(form) }}
-	{{ form_widget(form) }}
+	{{ form_row(form.title) }}
+	{{ form_row(form.date) }}
+	{{ form_row(form.catchPhrase) }}
+	{{ form_row(form.imageFile) }}
+	{{ form_row(form.description) }}
 	<button class="btn btn-secondary m-2">{{ button_label|default('Valider') }}<i class="ms-1 bi bi-check-lg"></i></button>
 	{{ form_end(form) }}
 </div>
