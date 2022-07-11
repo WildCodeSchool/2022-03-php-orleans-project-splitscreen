@@ -29,6 +29,8 @@
 						<td class="d-flex justify-content-end">
 							<a href="{{ path('admin_event_edit', {'id': event.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
 							</a>
+							<a href="{{ path('app_picture_index', {'id': event.id}) }}" class="btn btn-warning m-2">Galerie<i class="bi bi-pen ms-2"></i>
+							</a>
 							{{ include('admin/admin_event/_delete_form.html.twig') }}
 						</td>
 					</tr>

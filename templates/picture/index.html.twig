@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Picture index{% endblock %}
+
+{% block body %}
+    <h1>Picture index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>ImageName</th>
+                <th>UpdatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for picture in pictures %}
+            <tr>
+                <td>{{ picture.id }}</td>
+                <td>{{ picture.imageName }}</td>
+                <td>{{ picture.updatedAt ? picture.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_picture_show', {'id': picture.id}) }}">show</a>
+                    <a href="{{ path('app_picture_edit', {'id': picture.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_picture_new') }}">Create new</a>
+{% endblock %}
