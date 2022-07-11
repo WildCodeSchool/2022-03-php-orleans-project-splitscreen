@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ picture.id }}</td>
                 <td>{{ picture.imageName }}</td>
-                <td>{{ picture.updatedAt ? picture.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                {# <td>{{ picture.updatedAt ? picture.updatedAt|date('Y-m-d H:i:s') : '' }}</td> #}
                 <td>
                     <a href="{{ path('app_picture_show', {'id': picture.id}) }}">show</a>
                     <a href="{{ path('app_picture_edit', {'id': picture.id}) }}">edit</a>
