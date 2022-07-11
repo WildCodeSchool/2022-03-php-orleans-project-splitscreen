@@ -14,14 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/picture')]
 class PictureController extends AbstractController
 {
-    #[Route('/{id}', name: 'app_picture_index', methods: ['GET'])]
-    public function index(PictureRepository $pictureRepository, Event $event): Response
-    {
-        return $this->render('picture/index.html.twig', [
-            'pictures' => $pictureRepository->findBy(['event' => $event]),
-        ]);
-    }
-
     #[Route('/new', name: 'app_picture_new', methods: ['GET', 'POST'])]
     public function new(Request $request, PictureRepository $pictureRepository): Response
     {
@@ -40,6 +32,15 @@ class PictureController extends AbstractController
             'form' => $form,
         ]);
     }
+    #[Route('/{id}', name: 'app_picture_index', methods: ['GET'])]
+    public function index(PictureRepository $pictureRepository, Event $event): Response
+    {
+        return $this->render('picture/index.html.twig', [
+            'pictures' => $pictureRepository->findBy(['event' => $event]),
+        ]);
+    }
+
+
 
     #[Route('/{id}', name: 'app_picture_show', methods: ['GET'])]
     public function show(Picture $picture): Response

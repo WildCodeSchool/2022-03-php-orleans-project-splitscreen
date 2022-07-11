@@ -18,7 +18,7 @@ class Picture
     #[ORM\Column(type: 'integer')]
     private int $id;
 
-    #[Vich\UploadableField(mapping: 'pictures_image', fileNameProperty: 'image')]
+    #[Vich\UploadableField(mapping: 'pictures_image', fileNameProperty: 'imageName')]
     #[Assert\File(
         maxSize: '1024k',
         mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],

@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Event;
 use App\Entity\Picture;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -14,7 +15,7 @@ class PictureType extends AbstractType
     {
         $builder
             ->add('imageFile', VichFileType::class, [
-                'label' => 'Image',
+                'label' => 'ImageFile',
             ])
         ;
     }
@@ -23,6 +24,7 @@ class PictureType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Picture::class,
+            'event_class' => Event::class,
         ]);
     }
 }
