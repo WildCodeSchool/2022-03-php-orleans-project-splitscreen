@@ -22,8 +22,6 @@
 			<small class="text-muted">{{ event.date| date("d/m/Y")}}</small>
 		</div>
 		<div>
-
-
 			<a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
 				<div class="d-flex justify-content-center align-items-center offset-lg-3 col-lg-6">
 					<img src="{{ vich_uploader_asset(event) }}" class="w-100" alt="{{ event.title }}">
@@ -47,11 +45,11 @@
 			</div>
 		</div>
 
-	{% if event.tournamentSlug %}
-		<div class="w-75 mx-auto my-5 border border-3 border-dark">
-			<iframe src="https://start.gg/tournament/{{event.tournamentSlug}}/register/embed" frameborder="1" height="800" width="100%"></iframe>
-		</div>
-	{% endif %}
+		{% if event.tournamentSlug %}
+			<div class="w-75 mx-auto my-5 border border-3 border-dark">
+				<iframe src="https://start.gg/tournament/{{event.tournamentSlug}}/register/embed" frameborder="1" height="800" width="100%"></iframe>
+			</div>
+		{% endif %}
 
 		{% include 'event/_participant.html.twig' %}
 	</main>
