@@ -29,7 +29,7 @@ class AdminNetworkController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $networkRepository->add($network, true);
-
+            $this->addFlash('success', 'Le lien du réseaux social à été modifié');
             return $this->redirectToRoute('admin_network_index', [], Response::HTTP_SEE_OTHER);
         }
 
