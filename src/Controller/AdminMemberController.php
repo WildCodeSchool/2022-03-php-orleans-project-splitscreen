@@ -25,7 +25,9 @@ class AdminMemberController extends AbstractController
     public function new(Request $request, MemberRepository $memberRepository): Response
     {
         $member = new Member();
-        $form = $this->createForm(MemberType::class, $member);
+        $form = $this->createForm(MemberType::class, $member, [
+            'validation_groups' => ['default']
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -43,7 +45,9 @@ class AdminMemberController extends AbstractController
     #[Route('/{id}/modifier', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Member $member, MemberRepository $memberRepository): Response
     {
-        $form = $this->createForm(MemberType::class, $member);
+        $form = $this->createForm(MemberType::class, $member, [
+            'validation_groups' => ['default']
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

@@ -33,6 +33,7 @@ class MemberType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Member::class,
+            'validation_groups' => ['add'],
         ]);
     }
 }

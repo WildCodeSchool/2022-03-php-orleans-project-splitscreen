@@ -36,6 +36,12 @@ class Member
     private string $firstName;
 
     #[Vich\UploadableField(mapping: 'member_image', fileNameProperty: 'image')]
+    #[Assert\Image(
+        mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
+        maxSize: '2M',
+        groups: ['add', 'default'],
+    )]
+    #[Assert\NotBlank(groups: ['add'])]
     private ?File $imageFile = null;
 
     #[ORM\Column(type: 'string', nullable: true)]
