@@ -8,3 +8,13 @@
 .cardGrey-image:hover {
     filter: none;
 }
+
+@media screen and (max-width: 600px) {
+    .cardGrey-image {
+        filter: opacity(1);
+    }
+
+    .cardGrey-image:hover {
+        filter: none;
+    }
+}
