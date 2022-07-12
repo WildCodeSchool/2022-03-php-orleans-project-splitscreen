@@ -38,6 +38,7 @@ class EventType extends AbstractType
             ->add('tournamentSlug', TextType::class, [
                 'label' => 'Lien du tournoi (optionnel)',
                 'required'   => false,
+                'help' => 'Saisir le nom du tournoi présent dans le lien après "/tournament/" ',
             ])
             ->add('participants', CollectionType::class, [
                 'entry_type' => ParticipantType::class,
