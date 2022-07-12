@@ -29,7 +29,7 @@ class AdminAssoController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $helloAssoRepository->add($helloAsso, true);
-
+            $this->addFlash('success', 'Le lien HelloAsso à été modifié');
             return $this->redirectToRoute('admin_asso_index', [], Response::HTTP_SEE_OTHER);
         }
 

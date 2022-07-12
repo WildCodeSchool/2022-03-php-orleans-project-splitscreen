@@ -19,10 +19,10 @@ class Partner
     private ?int $id = null;
 
     #[Vich\UploadableField(mapping: 'partner_image', fileNameProperty: 'image')]
-    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
-    #[Assert\File(
-        maxSize: '1024k',
+    #[Assert\Image(
         mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
+        maxSize: '2M',
+        groups: ['add', 'default'],
     )]
     #[Assert\NotBlank(groups: ['add'])]
     private ?File $imageFile = null;
