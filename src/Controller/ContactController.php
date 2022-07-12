@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/contact', name: 'contact_')]
 class ContactController extends AbstractController
 {
-    #[Route('/', name: 'index', methods: ['GET'])]
+    #[Route('/', name: 'index', methods: ['GET', 'POST'])]
     public function index(Request $request, MailerInterface $mailer, NetworkRepository $networkRepository): Response
     {
         $networks = $networkRepository->findAll();
