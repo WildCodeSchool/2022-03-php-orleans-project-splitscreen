@@ -37,9 +37,10 @@ class Event
     private \DateTimeInterface $date;
 
     #[Vich\UploadableField(mapping: 'event_image', fileNameProperty: 'image')]
-    #[Assert\File(
-        maxSize: '1024k',
+    #[Assert\Image(
         mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
+        maxSize: '2M',
+        groups: ['add', 'default'],
     )]
     #[Assert\NotBlank(groups: ['add'])]
     private ?File $imageFile = null;
