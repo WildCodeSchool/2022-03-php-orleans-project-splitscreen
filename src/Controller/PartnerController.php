@@ -69,7 +69,7 @@ class PartnerController extends AbstractController
         if ($this->isCsrfTokenValid('delete' . $partner->getId(), $request->request->get('_token'))) {
             $partnersRepository->remove($partner, true);
         }
-        $this->addFlash('success', 'Partenaire supprimer');
+        $this->addFlash('success', 'Partenaire supprimé');
         return $this->redirectToRoute('partners_index', [], Response::HTTP_SEE_OTHER);
     }
 }
