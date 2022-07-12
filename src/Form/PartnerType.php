@@ -22,6 +22,7 @@ class PartnerType extends AbstractType
                     'label' => 'image',
                     'allow_delete'  => false,
                     'download_link' => false,
+                    'required'   => false,
                 ]
             )
             ->add('link', TextType::class, [
@@ -33,6 +34,7 @@ class PartnerType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Partner::class,
+            'validation_groups' => ['add'],
         ]);
     }
 }

@@ -36,6 +36,7 @@ class Actuality
         maxSize: '1024k',
         mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
     )]
+    #[Assert\NotBlank(groups: ['add'])]
     private ?File $imageFile = null;
 
     #[ORM\Column(type: 'string', nullable: true)]

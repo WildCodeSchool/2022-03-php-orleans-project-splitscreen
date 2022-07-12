@@ -1,0 +1,10 @@
+@import "variables.scss";
+
+.member-image {
+    object-fit: contain;
+    height: 200px;
+}
+
+.member-image:hover {
+    filter: none;
+}

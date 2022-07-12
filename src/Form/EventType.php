@@ -27,6 +27,7 @@ class EventType extends AbstractType
                 'label' => 'Image',
                 'allow_delete'  => false,
                 'download_link' => false,
+                'required'   => false,
             ])
             ->add('description', CKEditorType::class, [
                 'label' => 'Description',
@@ -34,9 +35,10 @@ class EventType extends AbstractType
             ->add('catchPhrase', TextType::class, [
                 'label' => 'Phrase d\'accroche',
             ])
-            ->add('slug', TextType::class, [
-                'label' => 'Slug du tournoi (optionnel)',
+            ->add('tournamentSlug', TextType::class, [
+                'label' => 'Lien du tournoi (optionnel)',
                 'required'   => false,
+                'help' => 'Saisir le nom du tournoi présent dans le lien après "/tournament/" ',
             ])
             ->add('participants', CollectionType::class, [
                 'entry_type' => ParticipantType::class,
@@ -51,6 +53,7 @@ class EventType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Event::class,
+            'validation_groups' => ['add'],
         ]);
     }
 }

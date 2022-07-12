@@ -1,10 +1,14 @@
-<div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
-	<div class="card w-100 m-2 shadow-sm">
+{% block stylesheets %}
+	{{ encore_entry_link_tags('cards') }}
+{% endblock %}
+
+<div class="cardGrey-image col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+	<div class="card w-100 m-2 shadow-sm data-aos="zoom-in"">
 		<img src="{{ vich_uploader_asset(event) }}" alt="{{'photographie de ' ~ event.title}}" class="imgCards card-img-top">
 		<div class="card-body">
 			<h5 class="card-title text-center">{{ event.title }}</h5>
 			<p class="text-center">
-				{{ event.date| date("H:i d/m/Y") }}
+				{{ event.date| date("d/m/Y") }}
 			</p>
 			<p class="card-text text-center text-truncate">{{ event.catchPhrase }}</p>
 			<a href="{{ path('event_show', { slug: event.slug }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
