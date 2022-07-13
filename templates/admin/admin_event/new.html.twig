@@ -4,7 +4,8 @@
 	{{ encore_entry_script_tags('participants') }}
 {% endblock %}
 
-{% block title %}Nouvel Événement
+{% block title %}{{parent()}}
+	| Nouvel Événement
 {% endblock %}
 
 {% block body %}

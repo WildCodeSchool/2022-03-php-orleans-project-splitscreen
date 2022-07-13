@@ -1,6 +1,7 @@
 {% extends 'admin/baseAdmin.html.twig' %}
 
-{% block title %}Événements
+{% block title %}{{parent()}}
+	| Événements
 {% endblock %}
 
 {% block body %}
@@ -24,7 +25,7 @@
 				{% for event in events %}
 					<tr>
 						<td>{{ event.title }}</td>
-						<td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
+						<td>{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
 						<td>{{ event.image }}</td>
 						<td class="d-flex justify-content-end">
 							<a href="{{ path('admin_event_edit', {'id': event.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>

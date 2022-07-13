@@ -17,7 +17,7 @@
 		{% block header %}
 			{% include 'components/_navbar.html.twig' %}
 		{% endblock %}
-		{% include 'components/_flash.html.twig' %}
+		{% block flash %}{% endblock %}
 		{% block body %}{% endblock %}
 		{% block footer%}
 			{% include 'components/_footer.html.twig' %}

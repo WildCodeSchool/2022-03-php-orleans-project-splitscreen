@@ -1,16 +1,21 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+	{{ encore_entry_link_tags('event') }}
+{% endblock %}
+
 {% block title %}Évènement :
 	{{ event.title }}
 {% endblock %}
 
 {% block body %}
-	<main class="container">
-		<div class="mt-5 ms-5">
-			<a href="{{ path('event_index') }}">
-				<i class="bi bi-arrow-left fs-1"></i>
-			</a>
+	<a class="ms-5 d-flex gap-3 text-decoration-none" href="{{ path('event_index') }}">
+		<i class="bi bi-arrow-left fs-1"></i>
+		<div class="d-flex align-self-center">
+			<p class="arrowT m-0 fs-5">Retour à la liste des événements</p>
 		</div>
+	</a>
+	<main class="container">
 		<div class="d-flex flex-column justify-content-center align-items-center mb-3">
 			<div class="d-flex align-items-center">
 				<i class="bi bi-joystick fs-2 me-2 text-primary"></i>
@@ -52,7 +57,6 @@
 				<iframe src="https://start.gg/tournament/{{event.tournamentSlug}}/register/embed" frameborder="1" height="800" width="100%"></iframe>
 			</div>
 		{% endif %}
-
-		{% include 'event/_participant.html.twig' %}
 	</main>
+	{% include 'event/_participant.html.twig' %}
 {% endblock %}

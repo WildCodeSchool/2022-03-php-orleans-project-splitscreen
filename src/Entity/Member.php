@@ -20,18 +20,26 @@ class Member
     private int $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    #[Assert\NotBlank(
+        message: 'Ce champ ne peut pas être vide',
+        groups: ['add', 'default'],
+    )]
     #[Assert\Length(
         max: 255,
-        maxMessage: 'Le nom ne doit pas dépasser {{ limit }} caractères'
+        maxMessage: 'Le nom ne doit pas dépasser {{ limit }} caractères',
+        groups: ['add', 'default'],
     )]
     private string $lastName;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    #[Assert\NotBlank(
+        message: 'Ce champ ne peut pas être vide',
+        groups: ['add', 'default'],
+    )]
     #[Assert\Length(
         max: 255,
-        maxMessage: 'Le prénom ne doit pas dépasser {{ limit }} caractères'
+        maxMessage: 'Le prénom ne doit pas dépasser {{ limit }} caractères',
+        groups: ['add', 'default'],
     )]
     private string $firstName;
 
