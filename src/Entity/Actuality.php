@@ -20,15 +20,22 @@ class Actuality
     private int $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    #[Assert\NotBlank(
+        message: 'Ce champ ne peut pas être vide',
+        groups: ['add', 'default'],
+    )]
     #[Assert\Length(
         max: 255,
-        maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères'
+        maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères',
+        groups: ['add', 'default'],
     )]
     private string $title;
 
     #[ORM\Column(type: 'datetime')]
-    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    #[Assert\NotBlank(
+        message: 'Ce champ ne peut pas être vide',
+        groups: ['add', 'default'],
+    )]
     private DateTimeInterface $date;
 
     #[Vich\UploadableField(mapping: 'actu_image', fileNameProperty: 'image')]
@@ -47,17 +54,27 @@ class Actuality
     private ?\DateTimeInterface $updatedAt = null;
 
     #[ORM\Column(type: 'text')]
-    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    #[Assert\NotBlank(
+        message: 'Ce champ ne peut pas être vide',
+        groups: ['add', 'default'],
+    )]
     private string $description;
 
-    #[ORM\Column(type: 'string', length: 80)]
+    #[ORM\Column(
+        type: 'string',
+        length: 80,
+    )]
     #[Assert\Length(
         max: 80,
-        maxMessage: 'La phrase d\'accroche ne doit pas dépasser {{ limit }} caractères'
+        maxMessage: 'La phrase d\'accroche ne doit pas dépasser {{ limit }} caractères',
+        groups: ['add', 'default'],
     )]
     private string $catchPhrase;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(
+        type: 'string',
+        length: 255,
+    )]
     private string $slug;
 
     public function __construct()

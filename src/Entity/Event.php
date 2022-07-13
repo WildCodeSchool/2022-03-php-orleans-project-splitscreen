@@ -25,15 +25,22 @@ class Event
     private int $id;
 
     #[ORM\Column(type: 'string', length: 80)]
-    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    #[Assert\NotBlank(
+        message: 'Ce champ ne peut pas être vide',
+        groups: ['add', 'default'],
+    )]
     #[Assert\Length(
         max: 80,
-        maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères'
+        maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères',
+        groups: ['add', 'default'],
     )]
     private string $title;
 
     #[ORM\Column(type: 'datetime')]
-    #[Assert\NotBlank(message: 'Ce champ ne peut pas être vide')]
+    #[Assert\NotBlank(
+        message: 'Ce champ ne peut pas être vide',
+        groups: ['add', 'default'],
+    )]
     private \DateTimeInterface $date;
 
     #[Vich\UploadableField(mapping: 'event_image', fileNameProperty: 'image')]
