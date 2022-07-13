@@ -12,8 +12,14 @@
 
 {% block body %}
 	{% include 'components/_header.html.twig' with {'title': 'Contact'} %}
-
-	<h1 class="text-center py-5">Nous sommes à votre écoute</h1>
+	{% for label, messages in app.flashes(['success', 'warning']) %}
+		{% for message in messages %}
+			<div class="alert alert-{{ label }} my-4 w-50 mx-auto">
+				{{ message }}
+			</div>
+		{% endfor %}
+	{% endfor %}
+	<h1 class="text-center py-5">"Nous sommes à votre écoute"</h1>
 
 	{% include 'contact/_contactForm.html.twig' %}
 
