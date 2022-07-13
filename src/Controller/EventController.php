@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-#[Route('/evenement', name: 'event_')]
+#[Route('/evenements', name: 'event_')]
 class EventController extends AbstractController
 {
     #[Route('/', name: 'index')]
