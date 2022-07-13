@@ -26,7 +26,7 @@
 					<tr>
 						<td>{{ event.title }}</td>
 						<td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
-						<td>{{ event.image }}</td>
+						<td><img class="w-25" src="{{ vich_uploader_asset(event, 'imageFile') }}"/></td>
 						<td class="d-flex justify-content-end">
 							<a href="{{ path('admin_event_edit', {'id': event.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
 							</a>
