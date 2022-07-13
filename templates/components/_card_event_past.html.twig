@@ -1,4 +1,8 @@
-<div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+{% block stylesheets %}
+	{{ encore_entry_link_tags('cards') }}
+{% endblock %}
+
+<div class="cardGrey-image col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
 	<div class="card w-100 m-2 shadow-sm data-aos="zoom-in"">
 		<img src="{{ vich_uploader_asset(event) }}" alt="{{'photographie de ' ~ event.title}}" class="imgCards card-img-top">
 		<div class="card-body">

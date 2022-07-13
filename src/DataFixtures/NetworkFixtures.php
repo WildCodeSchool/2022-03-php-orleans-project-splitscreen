@@ -31,6 +31,10 @@ class NetworkFixtures extends Fixture
             'link' => 'https://www.linkedin.com/company/splitscreenasso'
         ],
         [
+            'title' => 'youtube',
+            'link' => 'https://www.youtube.com/channel/UCjYHTIvSwNM1LAQjd2bfLQQ'
+        ],
+        [
             'title' => 'tiktok',
             'link' => ''
         ],

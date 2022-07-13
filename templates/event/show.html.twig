@@ -9,8 +9,11 @@
 {% endblock %}
 
 {% block body %}
+	<a href="{{ path('event_index') }}">
+		<i class="ms-5 bi bi-arrow-left fs-1"></i>
+	</a>
 	<main class="container">
-		<div class="mt-5 ms-5">
+		<div class="ms-5">
 			<a class="d-flex gap-3 text-decoration-none" href="{{ path('event_index') }}">
 				<i class="bi bi-arrow-left fs-1"></i>
 				<div class="d-flex align-self-center">
@@ -59,7 +62,6 @@
 				<iframe src="https://start.gg/tournament/{{event.tournamentSlug}}/register/embed" frameborder="1" height="800" width="100%"></iframe>
 			</div>
 		{% endif %}
-
-		{% include 'event/_participant.html.twig' %}
 	</main>
+	{% include 'event/_participant.html.twig' %}
 {% endblock %}
