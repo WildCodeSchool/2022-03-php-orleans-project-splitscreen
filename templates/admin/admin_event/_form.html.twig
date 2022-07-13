@@ -7,6 +7,6 @@
 	{{ form_row(form.description) }}
 	{{ form_row(form.tournamentSlug) }}
 	{{ form_row(form.participants, {'attr': {'class': 'participantForm'}}) }}
-	<button class="btn btn-secondary btn-lg m-2">{{ button_label|default('Enregistrer') }}</button>
+	<button class="btn btn-secondary btn-lg m-2">{{ button_label|default('Enregistrer') }}<i class="ms-1 bi bi-check-lg"></i></button>
 	{{ form_end(form) }}
 </div>
