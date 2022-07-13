@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('admin/actualite', name: 'admin_actuality_')]
+#[Route('admin/actualites', name: 'admin_actuality_')]
 class AdminActualityController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
