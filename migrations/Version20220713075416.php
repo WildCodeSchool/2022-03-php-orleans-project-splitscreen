@@ -56,7 +56,5 @@ final class Version20220713075416 extends AbstractMigration
         $this->addSql('DROP TABLE partner');
         $this->addSql('DROP TABLE `user`');
         $this->addSql('DROP TABLE messenger_messages');
-        $this->addSql("TRUNCATE TABLE hello_asso");
-        $this->addSql("TRUNCATE TABLE network");
     }
 }
