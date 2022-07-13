@@ -9,18 +9,13 @@
 {% endblock %}
 
 {% block body %}
-	<a href="{{ path('event_index') }}">
-		<i class="ms-5 bi bi-arrow-left fs-1"></i>
+	<a class="ms-5 d-flex gap-3 text-decoration-none" href="{{ path('event_index') }}">
+		<i class="bi bi-arrow-left fs-1"></i>
+		<div class="d-flex align-self-center">
+			<p class="arrowT m-0 fs-5">Retour à la liste des événements</p>
+		</div>
 	</a>
 	<main class="container">
-		<div class="ms-5">
-			<a class="d-flex gap-3 text-decoration-none" href="{{ path('event_index') }}">
-				<i class="bi bi-arrow-left fs-1"></i>
-				<div class="d-flex align-self-center">
-					<p class="arrowT m-0 fs-5">Retour à la liste des événements</p>
-				</div>
-			</a>
-		</div>
 		<div class="d-flex flex-column justify-content-center align-items-center mb-3">
 			<div class="d-flex align-items-center">
 				<i class="bi bi-joystick fs-2 me-2 text-primary"></i>
