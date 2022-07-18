@@ -1,16 +1,17 @@
 <main class="container d-flex justify-content-center flex-column mt-5 mb-3">
 
-	<h1 class="text-center m-5 text-primary">
-		Nos différents événements
-	</h1>
-
-	<div class="row justify-content-center mb-5">
-		<p class="w-75 d-flex justify-content-center">Split Screen ce sont des événements pensés pour promouvoir et faire vivre la culture vidéoludique. Concerts, ateliers, conférences ou tournoi : vous trouverez ici tous les différents événements que nous organisons chaque mois. A vos agendas !</p>
+	<div class="corner my-5">
+		<h1 class="text-center text-primary">
+			Nos différents événements
+		</h1>
+		<div class="row justify-content-center">
+			<p class="w-75 ">Split Screen ce sont des événements pensés pour promouvoir et faire vivre la culture vidéoludique. Concerts, ateliers, conférences ou tournoi : vous trouverez ici tous les différents événements que nous organisons chaque mois. A vos agendas !</p>
+		</div>
 	</div>
 
 	<section class="row align-items-center mb-2">
-		<img src="{{ asset('build/images/Tournois1.jpg') }}" class="col-lg-6 my-4" alt="Tournois"/>
-		<div class="corners col-lg-6">
+		<img src="{{ asset('build/images/Tournois1.jpg') }}" class="col-lg-6 my-4 imgLeft p-0" alt="Tournois"/>
+		<div class="col-lg-6">
 			<div class="card-body">
 				<h2 class="card-title text-secondary">Tournois</h2>
 				<p class="card-text">Si vous souhaitez affronter les meilleurs joueurs de la région, c’est par ici ! Régulièrement nous organisons des tournois sur les jeux du moments, mais aussi les plus anciens. Que ce soit Mario Kart ou Smash Bros, de Street Fighter à Tekken, tous les styles sont présents.</p>
@@ -19,7 +20,7 @@
 	</section>
 
 	<section class="row align-items-center flex-column-reverse flex-lg-row mb-2">
-		<div class="corners col-lg-6">
+		<div class="col-lg-6">
 			<div class="card-body">
 				<h2 class="card-title text-secondary">Conférences</h2>
 				<p class="card-text">
@@ -27,12 +28,12 @@
 				</p>
 			</div>
 		</div>
-		<img src="{{ asset('build/images/TablesRondes.jpg') }}" class="col-lg-6 my-4" alt="Tables Rondes"/>
+		<img src="{{ asset('build/images/TablesRondes.jpg') }}" class="col-lg-6 my-4 imgRight p-0" alt="Tables Rondes"/>
 	</section>
 
 	<section class=" row align-items-center mb-5">
-		<img src="{{ asset('build/images/Atelier.jpg') }}" class="col-lg-6 my-4" alt="Atelier"/>
-		<div class="corners col-lg-6 mb-5">
+		<img src="{{ asset('build/images/Atelier.jpg') }}" class="col-lg-6 my-4 imgLeft p-0" alt="Atelier"/>
+		<div class="col-lg-6 mb-5">
 			<div class="card-body">
 				<h2 class="card-title text-secondary">Ateliers</h2>
 				<p class="card-text">Aujourd’hui les jeux vidéo occupent une place centrale dans notre quotidien. Mais c’est aussi un médium qui évolue de plus en plus vite. Nos ateliers ont pour vocation d’aider à mieux comprendre et s’approprier ce nouveau loisir. Ces ateliers sont également des moments d’échanges et de sensibilisation afin de favoriser une pratique sereine du jeu vidéo.</p>
