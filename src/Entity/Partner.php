@@ -30,6 +30,9 @@ class Partner
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private ?string $image = null;
 
+    #[Assert\Url(
+        groups: ['add', 'default'],
+    )]
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     #[Assert\NotBlank(
         message: 'Ce champ ne peut pas être vide',
