@@ -1,6 +1,7 @@
 {% extends 'admin/baseAdmin.html.twig' %}
 
-{% block title %}{{parent()}}
+{% block title %}
+	{{parent()}}
 	| Actualités
 {% endblock %}
 
@@ -8,17 +9,17 @@
 	<main class="container">
 		<h1>Actualités</h1>
 		<div class="d-flex justify-content-start">
-			<a class="btn btn-secondary btn-lg m-2" href="{{ path('admin_actuality_new') }}">Ajouter<i class="bi bi-cloud-plus ms-2"></i></a>
+			<a class="btn btn-secondary btn-lg m-2" href="{{ path('admin_actuality_new') }}">Ajouter<i class="bi bi-cloud-plus ms-2"></i>
+			</a>
 		</div>
 
 
-		<table class="table">
+		<table class="table align-middle">
 			<thead>
 				<tr>
 					<th>Titre</th>
 					<th>Date</th>
 					<th>Image</th>
-					<th>Phrase d'accroche</th>
 					<th class="d-flex justify-content-center">Actions</th>
 				</tr>
 			</thead>
@@ -26,11 +27,11 @@
 				{% for actuality in actualities %}
 					<tr>
 						<td>{{ actuality.title }}</td>
-						<td>{{ actuality.date ? actuality.date|date('Y-m-d H:i:s') : '' }}</td>
-						<td>{{ actuality.image }}</td>
-						<td>{{ actuality.catchPhrase }}</td>
-						<td class="d-flex">
-							<a href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}" class="btn btn-warning m-2" >Modifier<i class="bi bi-pen ms-2"></i></a>
+						<td class="w-25">{{ actuality.date ? actuality.date|date('Y-m-d H:i:s') : '' }}</td>
+						<td><img class="w-25" src="{{ vich_uploader_asset(actuality, 'imageFile') }}"/></td>
+						<td class="d-flex justify-content-end">
+							<a href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
+							</a>
 							{{ include('admin/admin_actuality/_delete_form.html.twig') }}
 						</td>
 					</tr>
