@@ -11,7 +11,7 @@
 				{{ event.date| date("d/m/Y") }}
 			</p>
 			<p class="card-text text-center text-truncate">{{ event.catchPhrase }}</p>
-			<a href="{{ path('event_show', { slug: event.slug }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations</a>
+			<a href="{{ path('event_show', { slug: event.slug }) }}" class="btn btn-primary d-block mx-auto">Plus d'informations <i class="bi bi-info-circle"></i></a>
 		</div>
 	</div>
 </div>
