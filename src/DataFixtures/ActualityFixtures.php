@@ -25,7 +25,9 @@ class ActualityFixtures extends Fixture
             $actuality = new Actuality();
             $actuality->setTitle($faker->word());
             $actuality->setDate($faker->dateTime());
-            $actuality->setImage('Actuality.jpg');
+            $imageName = 'actu' . $i . '.webp';
+            copy('src/DataFixtures/actu.webp', 'public/uploads/actu/' . $imageName);
+            $actuality->setImage($imageName);
             $actuality->setCatchPhrase($faker->words(5, true));
             $actuality->setDescription($faker->sentence(50));
             $actuality->setSlug($this->slugify->generate($actuality->getTitle()));
