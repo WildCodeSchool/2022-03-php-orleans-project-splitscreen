@@ -18,7 +18,6 @@
 			<thead>
 				<tr>
 					<th>Titre</th>
-					<th>Phrase d'accroche</th>
 					<th>Date</th>
 					<th>Image</th>
 					<th class="d-flex justify-content-center">Actions</th>
@@ -28,10 +27,9 @@
 				{% for actuality in actualities %}
 					<tr>
 						<td>{{ actuality.title }}</td>
-						<td>{{ actuality.catchPhrase }}</td>
 						<td class="w-25">{{ actuality.date ? actuality.date|date('Y-m-d H:i:s') : '' }}</td>
-						<td><img class="w-50" src="{{ vich_uploader_asset(actuality, 'imageFile') }}"/></td>
-						<td class="d-flex">
+						<td><img class="w-25" src="{{ vich_uploader_asset(actuality, 'imageFile') }}"/></td>
+						<td class="d-flex justify-content-end">
 							<a href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
 							</a>
 							{{ include('admin/admin_actuality/_delete_form.html.twig') }}
