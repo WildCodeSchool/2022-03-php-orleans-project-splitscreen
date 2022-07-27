@@ -1,6 +1,7 @@
 {% extends 'admin/baseAdmin.html.twig' %}
 
-{% block title %}{{parent()}}
+{% block title %}
+	{{parent()}}
 	| Événements
 {% endblock %}
 
@@ -27,10 +28,12 @@
 						<td>{{ event.title }}</td>
 						<td class="w-25">{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
 						<td><img class="w-25" src="{{ vich_uploader_asset(event, 'imageFile') }}"/></td>
-						<td class="d-flex justify-content-end">
-							<a href="{{ path('admin_event_edit', {'id': event.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
-							</a>
-							{{ include('admin/admin_event/_delete_form.html.twig') }}
+						<td>
+							<div class="d-flex justify-content-end">
+								<a href="{{ path('admin_event_edit', {'id': event.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
+								</a>
+								{{ include('admin/admin_event/_delete_form.html.twig') }}
+							</div>
 						</td>
 					</tr>
 				{% else %}
@@ -40,6 +43,5 @@
 				{% endfor %}
 			</tbody>
 		</table>
-
 	</main>
 {% endblock %}
