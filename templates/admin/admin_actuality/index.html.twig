@@ -31,7 +31,7 @@
 						<td><img class="w-25" src="{{ vich_uploader_asset(actuality, 'imageFile') }}"/></td>
 						<td>
 							<div  class="d-flex justify-content-end">
-								<a href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
+								<a href="{{ path('admin_actuality_edit', {'id': actuality.id}) }}" class="btn btn-warning m-2 d-flex">Modifier<i class="bi bi-pen ms-2"></i>
 								</a>
 								{{ include('admin/admin_actuality/_delete_form.html.twig') }}
 							</div>
