@@ -3,6 +3,7 @@ twig:
     form_themes:
         - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
         - 'bootstrap_5_horizontal_layout.html.twig'
+
 when@test:
     twig:
         strict_variables: true
