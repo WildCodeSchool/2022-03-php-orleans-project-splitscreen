@@ -5,7 +5,7 @@
 	</section>
 
 	<section>
-		<div class="row justify-content-around mb-5">
+		<div class="row justify-content-around mb-5 mx-0">
 			{% for participant in event.participants|slice(0,3) %}
 				<div class="col-lg-4 text-center">
 					<img src="{{ asset('build/images/TOP' ~ loop.index ~ '.png') }}" id="logo"/>
@@ -13,11 +13,11 @@
 				</div>
 			{% endfor %}
 			<div>
-				<ul>
+				<ul class="px-5">
 					{% for participant in event.participants|slice(3,15) %}
 						<li class="list-group-item mt-4">
 							<p class="text-center">
-								N°{{ loop.index + 3 }}
+								N°{{ loop.index + 3 }}:  
 								{{ participant.pseudo }}
 							</p>
 						</li>

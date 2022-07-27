@@ -28,11 +28,12 @@
 						<td><img class="w-25" src="{{ vich_uploader_asset(member, 'imageFile') }}"/></td>
 						<td>{{ member.lastName }}</td>
 						<td>{{ member.firstName }}</td>
-						
 						<td>
-							<a href="{{ path('admin_member_edit', {'id': member.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
-							</a>
-							{{ include('admin/admin_member/_delete_form.html.twig') }}
+							<div class="d-flex">
+								<a href="{{ path('admin_member_edit', {'id': member.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
+								</a>
+								{{ include('admin/admin_member/_delete_form.html.twig') }}
+							</div>
 						</td>
 					</tr>
 				{% else %}

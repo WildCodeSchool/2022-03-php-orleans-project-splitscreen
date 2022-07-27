@@ -28,14 +28,14 @@
 						<td><img class="w-25" src="{{ vich_uploader_asset(partner, 'imageFile') }}"/></td>
 						<td>
 							<div class="d-flex justify-content-center">
-								<a href="{{ path('partners_edit', {'id': partner.id}) }}" class="btn btn-warning m-2">Modifier<i class="bi bi-pen ms-2"></i>
+								<a href="{{ path('partners_edit', {'id': partner.id}) }}" class="btn btn-warning m-2 d-flex">Modifier<i class="bi bi-pen ms-2"></i>
 								</a>
 								{{ include('admin/partner/_delete_form.html.twig') }}</div>
 						</td>
 					</tr>
 				{% else %}
 					<tr>
-						<td colspan="6">Aucun résultat</td>
+						<td colspan="6">Pas de partenaires pour le moment</td>
 					</tr>
 				{% endfor %}
 			</tbody>
